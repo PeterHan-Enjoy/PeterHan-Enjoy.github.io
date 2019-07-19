@@ -3,17 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://peterhan-enjoy.github.com/utils/git/</loc>
-    <lastmod>2019-05-31T11:30:30+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://peterhan-enjoy.github.com/utils/markdown/</loc>
-    <lastmod>2019-05-31T11:30:30+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peterhan-enjoy.github.com/utils/maven/</loc>
     <lastmod>2019-05-31T11:30:30+08:00</lastmod>
   </url>
   
@@ -35,6 +25,30 @@
   <url>
     <loc>https://peterhan-enjoy.github.com/tags/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/utils/docker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/utils/gitlab/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/utils/hugo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/utils/nexus3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/utils/pm20/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/utils/verdaccio/</loc>
   </url>
   
   <url>

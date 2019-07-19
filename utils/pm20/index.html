@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.55.6" />
     <title>PerHan_Enjoy</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-19T16:48:14 CST">
-<title>规范 :: PerHan_Enjoy</title>
+<title>pm2常用 命令 :: PerHan_Enjoy</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -24,7 +23,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/utils/pm20/">
     
       <header>
   <div class="logo">
@@ -47,10 +46,11 @@
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/utils/" class="dd-item haschildren
+    <li data-nav-id="/utils/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/utils/">工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/utils/markdown/" class="dd-item">
@@ -88,7 +88,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/utils/pm20/" class="dd-item">
+      <li data-nav-id="/utils/pm20/" class="dd-item active">
         <div>
           <a href="/utils/pm20/">
             pm2常用 命令
@@ -169,7 +169,15 @@
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/utils/" >
-   工具类</option>
+   工具类</option> 
+      <option value="/utils/markdown/" >- Markdown使用</option>
+      <option value="/utils/docker/" >- docker 基本使用</option>
+      <option value="/utils/gitlab/" >- gitlab 离线安装</option>
+      <option value="/utils/hugo/" >- hugo 搭建个人博客</option>
+      <option value="/utils/nexus3/" >- nexus3安装及使用</option>
+      <option value="/utils/pm20/"  selected>- pm2常用 命令</option>
+      <option value="/utils/verdaccio/" >- 内网搭建npm私服</option>
+  
     <option value="/design/" >
    设计模式</option>
 
@@ -194,27 +202,81 @@
       </div>
 
 
-    
+    <h1>pm2常用 命令</h1>
 
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
+    
 
-	
-		<h1>Welcome to myspace</h1>
-	
-	<p><i class="fa fa-heart fa-4x"></i></p>
+<h4 id="1-启动">1. 启动</h4>
 
+<pre><code>pm2 start app.js  
+pm2 start app.js --name my-api   #my-api为PM2进程名称  
+pm2 start app.js -i 0           #根据CPU核数启动进程个数  
+pm2 start app.js --watch   #实时监控app.js的方式启动，当app.js文件有变动时，pm2会自动reload  
+</code></pre>
+
+<h4 id="2-查看进程">2. 查看进程</h4>
+
+<pre><code>pm2 list
+pm2 show 0 或者 # pm2 info 0  #查看进程详细信息，0为PM2进程id
+</code></pre>
+
+<h4 id="3-监控">3. 监控</h4>
+
+<pre><code>pm2 monit
+</code></pre>
+
+<h4 id="4-停止">4. 停止</h4>
+
+<pre><code>pm2 stop all  #停止PM2列表中所有的进程
+pm2 stop 0    #停止PM2列表中进程为0的进程
+</code></pre>
+
+<h4 id="5-重载">5. 重载</h4>
+
+<pre><code>pm2 reload all    #重载PM2列表中所有的进程
+pm2 reload 0     #重载PM2列表中进程为0的进程
+</code></pre>
+
+<h4 id="6-重启">6. 重启</h4>
+
+<pre><code>pm2 restart all     #重启PM2列表中所有的进程
+pm2 restart 0      #重启PM2列表中进程为0的进程
+</code></pre>
+
+<h4 id="7-删除pm2进程">7. 删除PM2进程</h4>
+
+<pre><code>pm2 delete 0     #删除PM2列表中进程为0的进程
+pm2 delete all   #删除PM2列表中所有的进程
+</code></pre>
+
+<h5 id="8-日志操作">8. 日志操作</h5>
+
+<pre><code>pm2 logs [--raw]   #Display all processes logs in streaming
+pm2 flush              #Empty all log file
+pm2 reloadLogs    #Reload all logs
+</code></pre>
+
+<h4 id="9-升级pm2">9. 升级PM2</h4>
+
+<pre><code>npm install pm2@lastest -g   #安装最新的PM2版本
+pm2 updatePM2                    #升级pm2
+</code></pre>
+
+<h4 id="10-更多命令参数请查看帮助">10. 更多命令参数请查看帮助</h4>
+
+<pre><code>pm2 --help
+</code></pre>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/utils/" title="工具类" style="margin-right: 0px;"><label>工具类</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/utils/nexus3/" title="nexus3安装及使用"> <i class="fa fa-chevron-left"></i><label>nexus3安装及使用</label></a>
+    <a class="nav nav-next" href="/utils/verdaccio/" title="内网搭建npm私服" style="margin-right: 0px;"><label>内网搭建npm私服</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -227,10 +289,6 @@
 
     
 
-    
-    <div class="date">
-
-    </div>
     
 
     

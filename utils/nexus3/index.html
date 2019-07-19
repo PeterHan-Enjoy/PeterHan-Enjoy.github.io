@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-19T16:48:14 CST">
-<title>工具类 :: PerHan_Enjoy</title>
+<title>nexus3安装及使用 :: PerHan_Enjoy</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/utils/">
+  <body data-url="/utils/nexus3/">
     
       <header>
   <div class="logo">
@@ -46,7 +46,7 @@
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/utils/" class="dd-item parent active haschildren
+    <li data-nav-id="/utils/" class="dd-item parent haschildren
         ">
       <div>
       <a href="/utils/">工具类</a>
@@ -81,7 +81,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/utils/nexus3/" class="dd-item">
+      <li data-nav-id="/utils/nexus3/" class="dd-item active">
         <div>
           <a href="/utils/nexus3/">
             nexus3安装及使用
@@ -168,13 +168,13 @@
       <center>Navigation :
         <select onchange="javascript:location.href = this.value;">
           
-    <option value="/utils/"  selected>
+    <option value="/utils/" >
    工具类</option> 
       <option value="/utils/markdown/" >- Markdown使用</option>
       <option value="/utils/docker/" >- docker 基本使用</option>
       <option value="/utils/gitlab/" >- gitlab 离线安装</option>
       <option value="/utils/hugo/" >- hugo 搭建个人博客</option>
-      <option value="/utils/nexus3/" >- nexus3安装及使用</option>
+      <option value="/utils/nexus3/"  selected>- nexus3安装及使用</option>
       <option value="/utils/pm20/" >- pm2常用 命令</option>
       <option value="/utils/verdaccio/" >- 内网搭建npm私服</option>
   
@@ -202,24 +202,218 @@
       </div>
 
 
-    <h1>工具类</h1>
+    <h1>nexus3安装及使用</h1>
 
     
     
     
+    
 
+<h4 id="nexus3-安装">Nexus3 安装：</h4>
 
+<p> Nexus3 运行时需要java8以上的环境，官方说不支持openjdk，但是我使用目前没有发现问题；</p>
 
-<h2 id="工具使用">工具使用</h2>
+<p>Nexus3允许为程序配置专用的jre环境，这样的话不会影响外部程序的运行。版本不一样也没问题。</p>
 
+<p> 只需要修改启动文件，/bin/nexus。 INSTALL4J_JAVA_HOME_OVERRIDE=/usr/lib/jvm/java-8-oracle</p>
+
+<p> </p>
+
+<p>在linux安装 两种方式：docker安装，和包安装</p>
+
+<p>以下介绍包安装方式，nexus3没有硬编码目录，在任何目录下都可以运行，只需要解压tar包</p>
+
+<p>解压命令：</p>
+
+<pre><code>tar -zxvf 包名
+</code></pre>
+
+<h4 id="nexus3开机自启动">Nexus3开机自启动：</h4>
+
+<p>两种方式：主要区别是在linux系统的区别CentOS6,7</p>
+
+<p>6采用init.d,chkconfig的方式</p>
+
+<pre><code>sudo ln -s $ NEXUS_HOME / bin / nexus /etc/init.d/nexus
+
+cd /etc/init.d
+
+sudo chkconfig --add nexus    
+
+sudo chkconfig --levels 345 nexus on
+
+ sudo service nexus start
+</code></pre>
+
+<p>第二种方式CentOS7，以服务 的方式运行</p>
+
+<p>编写nexus.service文件 ：</p>
+
+<pre><code>vi /etc/systemd/system/nexus.service
+
+[Unit]
+
+Description=nexus service
+
+After=network.target
+
+ 
+
+[Service]
+
+Type=forking
+
+LimitNOFILE=65536
+
+ExecStart=/opt/nexus/bin/nexus start
+
+ExecStop=/opt/nexus/bin/nexus stop
+
+User=nexus
+
+Restart=on-abort
+
+ 
+
+[Install]
+
+WantedBy=multi-user.target
+
+ 
+
+：wq
+
+sudo systemctl daemon-reload
+
+sudo systemctl enable nexus.service
+
+sudo systemctl start nexus.service
+</code></pre>
+
+<p> </p>
+
+<p>之后就可以启动了</p>
+
+<p>tail -f /自定义目录/sonatype-work/nexus3/log/nexus.log</p>
+
+<p>可以看到启动成功的日志</p>
+
+<p>其他默认就好；</p>
+
+<p>此时，应该都已经设置好了：访问web界面：Ip：8081。          默认端口是8081.可以自定义修改</p>
+
+<p>它的用户名是  admin ，密码是  admin123。您可以使用用户界面右上角的按钮登录。</p>
+
+<p> </p>
+
+<p>如果你只是安装自己玩玩，到这里就结束了。如果是实际使用，那就需要看下面的部分</p>
+
+<p>在服务器上，程序有两个目录</p>
+
+<p>安装目录。数据目录。</p>
+
+<p>安装目录</p>
+
+<pre><code>
+$ ls -1 nexus-&lt;version&gt;
+
+LICENSE.txt
+
+NOTICE.txt
+
+bin
+
+deploy
+
+etc
+
+lib
+
+public
+
+system
+</code></pre>
+
+<p> </p>
+
+<p>LICENSE.txt 和 NOTICE.txt</p>
+
+<p>这些文件包含有关许可和版权声明的法律详细信息</p>
+
+<p>bin</p>
+
+<p>此目录包含  nexus 启动脚本本身以及与启动相关的配置文件</p>
+
+<p>etc</p>
+
+<p>该目录包含配置文件</p>
+
+<p>lib</p>
+
+<p>该目录包含与Apache Karaf相关的二进制库</p>
+
+<p>public</p>
+
+<p>该目录包含应用程序的公共资源</p>
+
+<p>system</p>
+
+<p>该目录包含构成应用程序的所有组件和插件</p>
+
+<p>数据目录
+默认情况下找到的数据目录  ../sonatype-work/nexus3包含子目录，这些子目录包含存储库管理器提供的所有组件，存储库，配置和其他数据。子目录列为：</p>
+
+<p>blobs/</p>
+
+<p>这是blob存储的默认位置。如果在创建新的Blob存储库时提供了完全限定的路径，则它可能不会在此目录中结束。</p>
+
+<p>cache/</p>
+
+<p>此目录包含有关当前缓存的Karaf捆绑包的信息</p>
+
+<p>db/</p>
+
+<p>此目录包含OrientDB数据库，它是存储库管理器元数据的主存储</p>
+
+<p>elasticsearch/</p>
+
+<p>此目录包含当前配置的Elasticsearch状态</p>
+
+<p>etc/</p>
+
+<p>此目录包含存储库管理器的主运行时配置和自定义。配置运行时环境中进一步说明了这些文件  。</p>
+
+<p>health-check/</p>
+
+<p>此目录包含来自存储库运行状况检查功能的缓存报告</p>
+
+<p>keystores/</p>
+
+<p>它包含用于标识存储库管理器的自动生成的密钥</p>
+
+<p>log/</p>
+
+<p>此目录包含几个日志文件，用于捕获有关正在运行的存储库管理器的各个方面的信 在  nexus.log 和  request.log 文件旋转，所以每天这个目录也包含这些文件的归档副本。要回收磁盘空间，可以从logs目录中删除旧的日志文件。在此目录中找到的日志文件包括： </p>
+
+<p>nexus.log -  主存储库管理器应用程序日志。日志消息包含标准日志输出字段，包括日期/时间，日志级别，关联的线程，类和消息。</p>
+
+<p>request.log - 用于将http访问请求记录到正在运行的存储库管理器。日志消息包含客户端主机，用户和HTTP请求属性等信息，包括状态代码，字节和用户代理标头。</p>
+
+<p>jvm.log  - 包含JVM标准输出，stderr和线程转储消息</p>
+
+<p>karaf.log  - 这是Apache Karaf容器日志文件，其中包含特定于存储库管理器启动的消息</p>
+
+<p>该  log 目录还包含一个tasks 子目录，该  子目录包含运行的每个任务的单独的，唯一命名的（按日期，时间和任务名称）日志输出文件。有关 这些文件的命名策略和内容的更多详细信息，请参阅  任务日志记录。</p>
+
+<p>tmp/ -该目录用于临时存储</p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/" title="规范"> <i class="fa fa-chevron-left"></i><label>规范</label></a>
-    <a class="nav nav-next" href="/utils/markdown/" title="Markdown使用" style="margin-right: 0px;"><label>Markdown使用</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/utils/hugo/" title="hugo 搭建个人博客"> <i class="fa fa-chevron-left"></i><label>hugo 搭建个人博客</label></a>
+    <a class="nav nav-next" href="/utils/pm20/" title="pm2常用 命令" style="margin-right: 0px;"><label>pm2常用 命令</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -232,10 +426,6 @@
 
     
 
-    
-    <div class="date">
-
-    </div>
     
 
     

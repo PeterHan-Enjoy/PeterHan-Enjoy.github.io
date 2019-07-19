@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.55.6" />
     <title>PerHan_Enjoy</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-19T16:48:14 CST">
-<title>规范 :: PerHan_Enjoy</title>
+<title>gitlab 离线安装 :: PerHan_Enjoy</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -24,7 +23,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/utils/gitlab/">
     
       <header>
   <div class="logo">
@@ -47,10 +46,11 @@
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/utils/" class="dd-item haschildren
+    <li data-nav-id="/utils/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/utils/">工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/utils/markdown/" class="dd-item">
@@ -67,7 +67,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/utils/gitlab/" class="dd-item">
+      <li data-nav-id="/utils/gitlab/" class="dd-item active">
         <div>
           <a href="/utils/gitlab/">
             gitlab 离线安装
@@ -169,7 +169,15 @@
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/utils/" >
-   工具类</option>
+   工具类</option> 
+      <option value="/utils/markdown/" >- Markdown使用</option>
+      <option value="/utils/docker/" >- docker 基本使用</option>
+      <option value="/utils/gitlab/"  selected>- gitlab 离线安装</option>
+      <option value="/utils/hugo/" >- hugo 搭建个人博客</option>
+      <option value="/utils/nexus3/" >- nexus3安装及使用</option>
+      <option value="/utils/pm20/" >- pm2常用 命令</option>
+      <option value="/utils/verdaccio/" >- 内网搭建npm私服</option>
+  
     <option value="/design/" >
    设计模式</option>
 
@@ -194,27 +202,113 @@
       </div>
 
 
-    
+    <h1>gitlab 离线安装</h1>
 
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
+    
 
-	
-		<h1>Welcome to myspace</h1>
-	
-	<p><i class="fa fa-heart fa-4x"></i></p>
+<h4 id="1-配置本地yum源">1. 配置本地yum源</h4>
 
+<p>需要准备CentOs-Everything的iso作为本地yum源。一下以/root/CentOs-7-x86_64-DVD-1708.iso为例。</p>
+
+<h4 id="2-挂载镜像">2. 挂载镜像</h4>
+
+<pre><code>mount -o loop /root/CentOs-7-x86_64-DVD-1708.iso /mnt/yum-iso  
+</code></pre>
+
+<p>如果文件夹不存在可以提前mkdir</p>
+
+<h4 id="3-启动httpd服务">3. 启动httpd服务</h4>
+
+<pre><code>systemctl start httpd.service
+</code></pre>
+
+<h4 id="4-检查httpd服务状态">4. 检查httpd服务状态</h4>
+
+<pre><code>systemctl status httpd.service
+</code></pre>
+
+<p>如果状态正常，通过“http://服务器IP:80/”应该可以访问到http的欢迎页，如果开启防火墙，要开放80端口。</p>
+
+<h4 id="5-添加软链接">5. 添加软链接</h4>
+
+<pre><code>ln -s /mnt/yum-ios/ /var/www/html/CentOS-7-x86_64
+</code></pre>
+
+<p>如果顺利，通过“http://服务器IP:80/CentOS-7-x86_64”可以访问到iso中的文件。</p>
+
+<h4 id="6-准备配置本地yum源">6. 准备配置本地yum源</h4>
+
+<pre><code>cd /etc/yum.repos.d
+</code></pre>
+
+<h4 id="7-备份其他">7. 备份其他</h4>
+
+<pre><code>repo:tar zcvf repo-bk.tar.gz CentOS-*
+</code></pre>
+
+<h5 id="8-移除其他">8. 移除其他</h5>
+
+<pre><code>repo:rm -rf ./CentOS-*
+</code></pre>
+
+<h4 id="9-配置本地">9. 配置本地</h4>
+
+<pre><code>repo:vi CentOS-Media.repo
+</code></pre>
+
+<p>内容如下</p>
+
+<pre><code>name=CentOS-$releasever - Media
+baseurl=file:///yum/yum-iso/
+gpgcheck=0
+enable=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+</code></pre>
+
+<h4 id="10-制作cashe">10. 制作cashe</h4>
+
+<pre><code>yum clear all
+yum makecache
+</code></pre>
+
+<h4 id="11-上传gitlab-ee文件">11. 上传gitlab-ee文件</h4>
+
+<h4 id="12-跳转到gitlab-ee文件夹位置">12. 跳转到gitlab-ee文件夹位置</h4>
+
+<h4 id="13-安装">13.安装</h4>
+
+<pre><code>yum localinstall ./gitlab-ee-11.0.rpm
+</code></pre>
+
+<p>一路y知道成功</p>
+
+<h4 id="14-配置">14. 配置</h4>
+
+<p>主要修改各端口配置，避免端口占用
+其中externam_url &ldquo;服务器ip:端口&rdquo; 为主界面ip及端口</p>
+
+<h4 id="15-更新配置">15. 更新配置</h4>
+
+<pre><code>gitlab-ctl reconfigure
+</code></pre>
+
+<h4 id="16-启动git">16. 启动git</h4>
+
+<pre><code>gitlab-car restart
+</code></pre>
+
+<p>如果出现502，检查端口号是否占用，然后调用步骤15,16重新访问。</p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/utils/" title="工具类" style="margin-right: 0px;"><label>工具类</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/utils/docker/" title="docker 基本使用"> <i class="fa fa-chevron-left"></i><label>docker 基本使用</label></a>
+    <a class="nav nav-next" href="/utils/hugo/" title="hugo 搭建个人博客" style="margin-right: 0px;"><label>hugo 搭建个人博客</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -227,10 +321,6 @@
 
     
 
-    
-    <div class="date">
-
-    </div>
     
 
     

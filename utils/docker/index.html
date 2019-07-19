@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-19T16:48:14 CST">
+<title>docker 基本使用 :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/utils/docker/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item active">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option> 
+      <option value="/utils/markdown/" >- Markdown使用</option>
+      <option value="/utils/docker/"  selected>- docker 基本使用</option>
+      <option value="/utils/gitlab/" >- gitlab 离线安装</option>
+      <option value="/utils/hugo/" >- hugo 搭建个人博客</option>
+      <option value="/utils/nexus3/" >- nexus3安装及使用</option>
+      <option value="/utils/pm20/" >- pm2常用 命令</option>
+      <option value="/utils/verdaccio/" >- 内网搭建npm私服</option>
+  
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>docker 基本使用</h1>
+
+    
+    
+    
+    
+
+<h3 id="一-docker常用命令">一．  docker常用命令</h3>
+
+<h4 id="1-从公网拉取一个镜像">1. 从公网拉取一个镜像</h4>
+
+<pre><code>docker pull images_name
+</code></pre>
+
+<h4 id="2-查看已有的docker镜像">2. 查看已有的docker镜像</h4>
+
+<pre><code>[root@docker ~]# docker images
+</code></pre>
+
+<h4 id="3-查看帮助">3. 查看帮助</h4>
+
+<pre><code>docker command --help
+</code></pre>
+
+<h4 id="4-查看镜像列表">4. 查看镜像列表</h4>
+
+<pre><code>docker search nginx
+</code></pre>
+
+<h4 id="5-启动一个容器">5. 启动一个容器</h4>
+
+<p>基于hello-world镜像启动一个容器，如果本地没有镜像会从公网拉取过来，这次做为测试用</p>
+
+<pre><code>docker run hello-world
+</code></pre>
+
+<h4 id="6-导出镜像">6. 导出镜像</h4>
+
+<pre><code>docker save -o image_name.tar image_name
+</code></pre>
+
+<h4 id="7-删除镜像">7. 删除镜像</h4>
+
+<pre><code>docker rmi image_name
+</code></pre>
+
+<h4 id="8-启动一个容器">8. 启动一个容器</h4>
+
+<pre><code>docker run --name=con_name images
+</code></pre>
+
+<p>&ndash;name  #设置容器名</p>
+
+<h4 id="9-基于创建好的容器自定义docker镜像">9. 基于创建好的容器自定义docker镜像</h4>
+
+<pre><code>docker commit -m &quot;con_name&quot; con_id image_name
+</code></pre>
+
+<h4 id="10-创建一个容器的同时进入这个容器">10.    创建一个容器的同时进入这个容器</h4>
+
+<pre><code>docker run -it --name=con_name images
+</code></pre>
+
+<p>-it     #在启动之后进入这个容器</p>
+
+<h4 id="11-创建一个容器-放入后台运行-把物理机80端口映射到容器的80端口">11.    创建一个容器，放入后台运行，把物理机80端口映射到容器的80端口</h4>
+
+<pre><code>docker run -d -p 81:80 image_name
+</code></pre>
+
+<p>#-p 参数说明
+-p hostPort:containerPort
+-p ip:hostPort:containerPort
+-p ip::containerPort
+-p hostPort:containerPort:udp</p>
+
+<h4 id="12-看容器的端口映射情况">12.    看容器的端口映射情况</h4>
+
+<pre><code>docker port con_id
+</code></pre>
+
+<h4 id="13-查看正在运行的容器">13.    查看正在运行的容器</h4>
+
+<pre><code>docker ps
+</code></pre>
+
+<h4 id="14-查看所有的容器">14.    查看所有的容器</h4>
+
+<pre><code>docker ps -a
+</code></pre>
+
+<h4 id="15-动态查看容器日志">15.    动态查看容器日志</h4>
+
+<pre><code>docker logs -f con_name
+</code></pre>
+
+<h4 id="16-进入容器">16.    进入容器</h4>
+
+<pre><code>docker attach con_name
+</code></pre>
+
+<h4 id="17-退出容器">17.    退出容器</h4>
+
+<p>方法一</p>
+
+<pre><code>exit
+</code></pre>
+
+<p>方法二
+ctrl+p &amp;&amp; ctrl+q (一起按，注意顺序，退出后容器依然保持启动状态)</p>
+
+<h4 id="18-删除容器">18.    删除容器</h4>
+
+<pre><code>docker rm  con_name
+</code></pre>
+
+<p>强制删除需要加-f，不加-f不能删除正在运行中的容器，非常危险，最好不用</p>
+
+<h4 id="19-查看docker网络">19.    查看docker网络</h4>
+
+<pre><code>[root@docker ~]# docker network ls
+</code></pre>
+
+<p>NETWORK ID          NAME                DRIVER              SCOPE
+3f91f2097286        bridge              bridge              local
+d7675dbd247c        docker_gwbridge     bridge              local
+5b36c7e947fd        host                host                local
+ims6qkpikafu        ingress             overlay             swarm
+85ba10e7ef79        none                null                local</p>
+
+<h4 id="20-创建一个docker网络my-docker">20.    创建一个docker网络my-docker</h4>
+
+<pre><code>docker network create -d bridge \
+</code></pre>
+
+<p>&ndash;subnet=192.168.0.0/24 <br />
+&ndash;gateway=192.168.0.100 <br />
+&ndash;ip-range=192.168.0.0/24 <br />
+my-docker</p>
+
+<h4 id="21-利用刚才创建的网络启动一个容器">21.    利用刚才创建的网络启动一个容器</h4>
+
+<pre><code>docker run --network=my-docker --ip=192.168.0.5 -itd --name=con_name -h lb01 image_name
+</code></pre>
+
+<p>&ndash;network   #指定容器网络
+&ndash;ip        #设定容器ip地址
+-h          #给容器设置主机名</p>
+
+<h4 id="22-查看容器pid">22.    查看容器pid</h4>
+
+<p>方法一：</p>
+
+<pre><code>docker top con_name
+</code></pre>
+
+<p>方法二：</p>
+
+<pre><code>docker inspect --format &quot;{{.State.Pid}}&quot; con_name
+</code></pre>
+
+<hr />
+
+<h4 id="23-运行dockerfile并给dockerfile创建的镜像建立名字">23.    运行dockerfile并给dockerfile创建的镜像建立名字</h4>
+
+<pre><code>docker build -t mysql:3.6.34 `pwd`
+</code></pre>
+
+<h4 id="24-mariadb容器启动前需先设置密码方法">24.    mariadb容器启动前需先设置密码方法</h4>
+
+<pre><code>docker run -d -P -e MYSQL_ROOT_PASSWORD=password  img_id
+</code></pre>
+
+<h4 id="25-docker修改镜像名">25.    docker修改镜像名</h4>
+
+<pre><code>docker tag imageid name:tag
+</code></pre>
+
+<h4 id="26-进入docker容器脚本">26.    进入docker容器脚本</h4>
+
+<pre><code>[root@docker ~]# cat nsenter.sh
+PID=`docker inspect --format &quot;{{.State.Pid}}&quot; $1`
+nsenter -t $PID -u --mount -i -n -p
+</code></pre>
+
+<h4 id="27-创建一个网络">27.    创建一个网络</h4>
+
+<pre><code>docker network create --driver bridge --subnet 172.22.16.0/
+</code></pre>
+
+<p>24 &ndash;gateway 172.22.16.1 my_net2</p>
+
+<h4 id="28-将容器添加到my-net2网络-connect">28.    将容器添加到my_net2网络 connect</h4>
+
+<pre><code>docker network connect my_net2 oldboy1
+</code></pre>
+
+<h4 id="29-docker日志模块">29.    docker日志模块</h4>
+
+<p>使用filebeat收集日志
+{
+  &ldquo;registry-mirrors&rdquo;: [&ldquo;<a href="https://56px195b.mirror.aliyuncs.com&quot;">https://56px195b.mirror.aliyuncs.com&quot;</a>],
+  &ldquo;cluster-store&rdquo;:&ldquo;consul://192.168.56.13:8500&rdquo;,
+  &ldquo;cluster-advertise&rdquo;: &ldquo;192.168.56.11:2375&rdquo;,
+  &ldquo;log-driver&rdquo;: &ldquo;fluentd&rdquo;,
+  &ldquo;log-opts&rdquo;: {
+        &ldquo;fluentd-address&rdquo;:&ldquo;192.168.56.13:24224&rdquo;,
+        &ldquo;tag&rdquo;:&ldquo;linux-node1.example.com&rdquo;
+        }
+}</p>
+
+<h3 id="二-docker安装mysql">二．  docker安装mysql</h3>
+
+<h4 id="第一步-拉取mysql镜像">第一步，拉取MySQL镜像</h4>
+
+<pre><code>$ sudo docker pull mysql
+</code></pre>
+
+<p>之后docker会自动拉取（下载）MySQL镜像。
+拉取成功后我们查看一下：</p>
+
+<pre><code>$ sudo docker images
+</code></pre>
+
+<hr />
+
+<h4 id="第二步-创建并启动一个mysql容器">第二步，创建并启动一个MySQL容器</h4>
+
+<p>输入以下命令：</p>
+
+<pre><code>$ sudo docker run --name pwc-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql
+</code></pre>
+
+<p>•   –name：给新创建的容器命名，此处命名为pwc-mysql
+•   -e：配置信息，此处配置mysql的root用户的登陆密码
+•   -p：端口映射，此处映射主机3306端口到容器pwc-mysql的3306端口
+•   -d：成功启动容器后输出容器的完整ID，例如上图 73f8811f669ee&hellip;
+•   最后一个mysql指的是mysql镜像名字
+到这里我们查看容器运行状态：</p>
+
+<pre><code>$ sudo docker ps
+</code></pre>
+
+<p>上图可以看到容器的简写ID，容器的源镜像，创建时间，状态，端口映射信息，容器名字等。</p>
+
+<h4 id="第三步-修改mysql登录权限">第三步，修改mysql登录权限</h4>
+
+<pre><code>docker exec -it xgmysql /bin/bash
+</code></pre>
+
+<p>进入mysql命令
+通过mysql -uroot -p进入mysql的命令行模式
+修改mysql登录权限</p>
+
+<pre><code>ALTER USER 'root'@'localhost' IDENTIFIED BY 'password'
+</code></pre>
+
+<p>PASSWORD EXPIRE NEVER;这里的password是你正在使用的密码</p>
+
+<pre><code>ALTER USER 'root'@'localhost' IDENTIFIED WITH
+</code></pre>
+
+<p>mysql_native_password BY &lsquo;password&rsquo;;#更新一下用户的密码这里的password为你修改的新密码。</p>
+
+<pre><code>FLUSH PRIVILEGES;
+</code></pre>
+
+<p>刷新权限，使自己的修改生效。</p>
+
+<pre><code>alter user 'root'@'%' identified by 'password' password expire never;
+alter user 'root'@'%' identified with mysql_native_password by 'why';//why是自己新修改的密码。
+flush privileges;再次刷新一下权限配置。
+</code></pre>
+
+<h3 id="三-redis安装-6379">三．  redis安装（6379）</h3>
+
+<pre><code>docker pull redis
+docker run -d --name myredis -p 6379:6379 redis --requirepass &quot;mypassword&quot;  加密码
+</code></pre>
+
+<h3 id="四-rabbitmq">四．  RabbitMq</h3>
+
+<pre><code>docker pull rabbitmq: 3-management
+</code></pre>
+
+<p>默认端口 <sup>5672</sup>&frasl;<sub>15672</sub>
+默认密码 guest/guest</p>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/utils/markdown/" title="Markdown使用"> <i class="fa fa-chevron-left"></i><label>Markdown使用</label></a>
+    <a class="nav nav-next" href="/utils/gitlab/" title="gitlab 离线安装" style="margin-right: 0px;"><label>gitlab 离线安装</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

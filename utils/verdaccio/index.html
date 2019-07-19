@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.55.6" />
     <title>PerHan_Enjoy</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-19T16:48:14 CST">
-<title>规范 :: PerHan_Enjoy</title>
+<title>内网搭建npm私服 :: PerHan_Enjoy</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -24,7 +23,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/utils/verdaccio/">
     
       <header>
   <div class="logo">
@@ -47,10 +46,11 @@
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/utils/" class="dd-item haschildren
+    <li data-nav-id="/utils/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/utils/">工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/utils/markdown/" class="dd-item">
@@ -95,7 +95,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+      <li data-nav-id="/utils/verdaccio/" class="dd-item active">
         <div>
           <a href="/utils/verdaccio/">
             内网搭建npm私服
@@ -169,7 +169,15 @@
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/utils/" >
-   工具类</option>
+   工具类</option> 
+      <option value="/utils/markdown/" >- Markdown使用</option>
+      <option value="/utils/docker/" >- docker 基本使用</option>
+      <option value="/utils/gitlab/" >- gitlab 离线安装</option>
+      <option value="/utils/hugo/" >- hugo 搭建个人博客</option>
+      <option value="/utils/nexus3/" >- nexus3安装及使用</option>
+      <option value="/utils/pm20/" >- pm2常用 命令</option>
+      <option value="/utils/verdaccio/"  selected>- 内网搭建npm私服</option>
+  
     <option value="/design/" >
    设计模式</option>
 
@@ -194,27 +202,80 @@
       </div>
 
 
-    
+    <h1>内网搭建npm私服</h1>
 
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
+    
 
-	
-		<h1>Welcome to myspace</h1>
-	
-	<p><i class="fa fa-heart fa-4x"></i></p>
+<h4 id="1-下载verdaccio">1、下载verdaccio</h4>
 
+<p>从github下载verdaccio，得到下载的包，之后拷贝到内网环境，在verdaccio文件目录下</p>
+
+<pre><code>npm install -g verdaccio --unsafe-perm
+</code></pre>
+
+<h4 id="2-配置">2、配置</h4>
+
+<p>C:\Users\用户名\AppData\Roaming\verdaccio\config.yaml
+在末尾加listen: 0.0.0.0:4873，不配置的话只能本机访问。<br />
+内网环境下将uplinks部分去掉或注释。</p>
+
+<h4 id="3-启动">3、启动</h4>
+
+<pre><code>verdaccio
+</code></pre>
+
+<h4 id="4-托管启动">4、托管启动</h4>
+
+<h5 id="安装pm2">安装pm2</h5>
+
+<p>从github下载pm2，得到下载的包，之后拷贝到内网环境，在pm2文件目录下</p>
+
+<pre><code>npm install
+npm link
+</code></pre>
+
+<h5 id="使用pm2启动">使用pm2启动</h5>
+
+<pre><code>pm2 start verdaccio
+</code></pre>
+
+<p><a href="/utils/pm2">Pm2常用命令</a></p>
+
+<h4 id="5-访问">5、访问</h4>
+
+<p>访问localhost:4873,可以看到登录页面</p>
+
+<h4 id="6-注册及登录">6、注册及登录</h4>
+
+<pre><code>npm adduser –registry http://localhost:4873
+</code></pre>
+
+<p>如果已经配置了地址，则不需要&ndash;registry部分，按照提示输入username，psd。</p>
+
+<h4 id="7-公共组件打包">7、公共组件打包</h4>
+
+<p>将写好的组件通过 npm run build打包，生成dist文件夹。
+将路径切换到项目的dist的文件夹下，执行命令npm init，生成package.json,里面包含了版本，组件名等信息：
+之后在npm上发布</p>
+
+<pre><code>npm publish --registry http://localhost:4873
+</code></pre>
+
+<p>之后在需要使用的项目下载</p>
+
+<pre><code>npm install table-two  --registry=http://localhost:4873
+</code></pre>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/utils/" title="工具类" style="margin-right: 0px;"><label>工具类</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/utils/pm20/" title="pm2常用 命令"> <i class="fa fa-chevron-left"></i><label>pm2常用 命令</label></a>
+    <a class="nav nav-next" href="/design/" title="设计模式" style="margin-right: 0px;"><label>设计模式</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -227,10 +288,6 @@
 
     
 
-    
-    <div class="date">
-
-    </div>
     
 
     

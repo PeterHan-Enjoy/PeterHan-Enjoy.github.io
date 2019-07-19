@@ -11,15 +11,6 @@
     
     
     <item>
-      <title>Git使用</title>
-      <link>https://peterhan-enjoy.github.com/utils/git/</link>
-      <pubDate>Fri, 31 May 2019 11:30:30 +0800</pubDate>
-      
-      <guid>https://peterhan-enjoy.github.com/utils/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Markdown使用</title>
       <link>https://peterhan-enjoy.github.com/utils/markdown/</link>
       <pubDate>Fri, 31 May 2019 11:30:30 +0800</pubDate>
@@ -47,12 +38,86 @@
     </item>
     
     <item>
-      <title>Maven使用</title>
-      <link>https://peterhan-enjoy.github.com/utils/maven/</link>
-      <pubDate>Fri, 31 May 2019 11:30:30 +0800</pubDate>
+      <title>docker 基本使用</title>
+      <link>https://peterhan-enjoy.github.com/utils/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peterhan-enjoy.github.com/utils/maven/</guid>
-      <description></description>
+      <guid>https://peterhan-enjoy.github.com/utils/docker/</guid>
+      <description>一． docker常用命令 1. 从公网拉取一个镜像 docker pull images_name  2. 查看已有的docker镜像 [root@docker ~]# docker images  3. 查看帮助 docker command --help  4. 查看镜像列表 docker search nginx  5. 启动一个容器 基于hello-world镜像启动一个容器，如果本地没有镜像会从公网拉取过来，这次做为测试用
+docker run hello-world  6. 导出镜像 docker save -o image_name.tar image_name  7. 删除镜像 docker rmi image_name  8. 启动一个容器 docker run --name=con_name images  &amp;ndash;name #设置容器名
+9. 基于创建好的容器自定义docker镜像 docker commit -m &amp;quot;con_name&amp;quot; con_id image_name  10. 创建一个容器的同时进入这个容器 docker run -it --name=con_name images  -it #在启动之后进入这个容器</description>
+    </item>
+    
+    <item>
+      <title>gitlab 离线安装</title>
+      <link>https://peterhan-enjoy.github.com/utils/gitlab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/utils/gitlab/</guid>
+      <description>1. 配置本地yum源 需要准备CentOs-Everything的iso作为本地yum源。一下以/root/CentOs-7-x86_64-DVD-1708.iso为例。
+2. 挂载镜像 mount -o loop /root/CentOs-7-x86_64-DVD-1708.iso /mnt/yum-iso  如果文件夹不存在可以提前mkdir
+3. 启动httpd服务 systemctl start httpd.service  4. 检查httpd服务状态 systemctl status httpd.service  如果状态正常，通过“http://服务器IP:80/”应该可以访问到http的欢迎页，如果开启防火墙，要开放80端口。
+5. 添加软链接 ln -s /mnt/yum-ios/ /var/www/html/CentOS-7-x86_64  如果顺利，通过“http://服务器IP:80/CentOS-7-x86_64”可以访问到iso中的文件。
+6. 准备配置本地yum源 cd /etc/yum.repos.d  7. 备份其他 repo:tar zcvf repo-bk.tar.gz CentOS-*  8. 移除其他 repo:rm -rf ./CentOS-*  9. 配置本地 repo:vi CentOS-Media.repo  内容如下
+name=CentOS-$releasever - Media baseurl=file:///yum/yum-iso/ gpgcheck=0 enable=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7  10. 制作cashe yum clear all yum makecache  11.</description>
+    </item>
+    
+    <item>
+      <title>hugo 搭建个人博客</title>
+      <link>https://peterhan-enjoy.github.com/utils/hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/utils/hugo/</guid>
+      <description>1.准备工作 1.1 msysGit客户端 在Windows下默认是没有预装Git的，如果你是Mac和Linux的用户则没有这个烦恼，因此我们首先需要在Windows系统下安装一个Git软件，笔者使用的是msysGit，截止发文最新的版本是2.6.3，官网Download会自动识别系统（32位和64位）下载，之后一个个步骤按照向导安装就行，上面英文写的很清楚，基本可以按照默认的来，但是到了Ajusting your PATH environment（即设置环境变量）这一步时，建议还是勾选第二项Run Git from Windows Command Prompt，这样在Windows命令行中就可以全局使用Git相关命令。
+1.2 注册Github 点击Github官网进入Github首页，这样你能够进行注册，输入用户名、Email地址、密码即可进行注册，我们选择不需要花钱的Free类型用户，点击Finish sign up，这样即可完成注册，此时在页面顶部Bootcamp系统会提示你接下来可以做哪些事情，而我们首先需要做的就是Create Repositories，我们可以点击这一项进去看看教程，当然也可以根据我下面的提示直接开始： 1. 点击右侧New repository（新建仓库），此时系统会提示你验证邮箱，你需要去刚刚注册用的邮箱验证地址； 2. 验证完毕即可重新New reository，用户名一定要用：你的注册用户名.github.io，其他无需修改，然后点击Create repository即可; 3. 下面自动进入一个快速设置页面，告诉我们如何在仓库内添加东西，这就需要在Windows本地设置了。
+1.3 Windows本地配置Git 本文开篇就说了Windows下的Git程序，但是没有做配置，还是不能用的，这里解说下基本的配置： 1. 首先打开Git Bash做些全局设置： 1. git config &amp;ndash;global user.name &amp;ldquo;你的注册用户名&amp;rdquo; 2. git config &amp;ndash;global user.email &amp;ldquo;你的邮箱&amp;rdquo; 3. git config &amp;ndash;global color.ui auto 2. 设置SSH Key： 3. ssh-keygen -t rsa -C &amp;ldquo;你的邮箱&amp;rdquo; 然后会要求输入存储id_rsa的目录，接着是输入密码，这个密码可以与github的不同，过程中确认即可，最后会出现一个随机图形，说明生成SSH密匙成功，这样我们需要到刚刚的存储目录下打开id_rsa.pub复制里面的内容，到你的github页面上-&amp;gt;点击右上角头像旁三角-&amp;gt;settings-&amp;gt;SSH keys-&amp;gt;add SSH key-&amp;gt;黏贴刚刚复制的内容保存。
+1.4 使用hugo hugo是一个快速的静态网站引擎，使用Go语言开发，可以用Markdown格式的文章生成一个完整的静态网站，然后托管到自己的用户名.Github.io的Github仓库中，实现一个静态站点，一般用于博客或者项目主页等。那么我们先来了解下如何获取和使用： 1. 先从官网下载相关的版本，比如我是32位windows系统的，我下载hugo_0.14_windows_386.zip； 2.</description>
+    </item>
+    
+    <item>
+      <title>nexus3安装及使用</title>
+      <link>https://peterhan-enjoy.github.com/utils/nexus3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/utils/nexus3/</guid>
+      <description>Nexus3 安装：  Nexus3 运行时需要java8以上的环境，官方说不支持openjdk，但是我使用目前没有发现问题；
+Nexus3允许为程序配置专用的jre环境，这样的话不会影响外部程序的运行。版本不一样也没问题。
+ 只需要修改启动文件，/bin/nexus。 INSTALL4J_JAVA_HOME_OVERRIDE=/usr/lib/jvm/java-8-oracle
+ 在linux安装 两种方式：docker安装，和包安装
+以下介绍包安装方式，nexus3没有硬编码目录，在任何目录下都可以运行，只需要解压tar包
+解压命令：
+tar -zxvf 包名  Nexus3开机自启动： 两种方式：主要区别是在linux系统的区别CentOS6,7
+6采用init.d,chkconfig的方式
+sudo ln -s $ NEXUS_HOME / bin / nexus /etc/init.d/nexus cd /etc/init.d sudo chkconfig --add nexus sudo chkconfig --levels 345 nexus on sudo service nexus start  第二种方式CentOS7，以服务 的方式运行
+编写nexus.service文件 ：
+vi /etc/systemd/system/nexus.service [Unit] Description=nexus service After=network.target [Service] Type=forking LimitNOFILE=65536 ExecStart=/opt/nexus/bin/nexus start ExecStop=/opt/nexus/bin/nexus stop User=nexus Restart=on-abort [Install] WantedBy=multi-user.target ：wq sudo systemctl daemon-reload sudo systemctl enable nexus.</description>
+    </item>
+    
+    <item>
+      <title>pm2常用 命令</title>
+      <link>https://peterhan-enjoy.github.com/utils/pm20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/utils/pm20/</guid>
+      <description>1. 启动 pm2 start app.js pm2 start app.js --name my-api #my-api为PM2进程名称 pm2 start app.js -i 0 #根据CPU核数启动进程个数 pm2 start app.js --watch #实时监控app.js的方式启动，当app.js文件有变动时，pm2会自动reload  2. 查看进程 pm2 list pm2 show 0 或者 # pm2 info 0 #查看进程详细信息，0为PM2进程id  3. 监控 pm2 monit  4. 停止 pm2 stop all #停止PM2列表中所有的进程 pm2 stop 0 #停止PM2列表中进程为0的进程  5. 重载 pm2 reload all #重载PM2列表中所有的进程 pm2 reload 0 #重载PM2列表中进程为0的进程  6. 重启 pm2 restart all #重启PM2列表中所有的进程 pm2 restart 0 #重启PM2列表中进程为0的进程  7.</description>
+    </item>
+    
+    <item>
+      <title>内网搭建npm私服</title>
+      <link>https://peterhan-enjoy.github.com/utils/verdaccio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/utils/verdaccio/</guid>
+      <description> 1、下载verdaccio 从github下载verdaccio，得到下载的包，之后拷贝到内网环境，在verdaccio文件目录下
+npm install -g verdaccio --unsafe-perm  2、配置 C:\Users\用户名\AppData\Roaming\verdaccio\config.yaml 在末尾加listen: 0.0.0.0:4873，不配置的话只能本机访问。
+内网环境下将uplinks部分去掉或注释。
+3、启动 verdaccio  4、托管启动 安装pm2 从github下载pm2，得到下载的包，之后拷贝到内网环境，在pm2文件目录下
+npm install npm link  使用pm2启动 pm2 start verdaccio  Pm2常用命令
+5、访问 访问localhost:4873,可以看到登录页面
+6、注册及登录 npm adduser –registry http://localhost:4873  如果已经配置了地址，则不需要&amp;ndash;registry部分，按照提示输入username，psd。
+7、公共组件打包 将写好的组件通过 npm run build打包，生成dist文件夹。 将路径切换到项目的dist的文件夹下，执行命令npm init，生成package.json,里面包含了版本，组件名等信息： 之后在npm上发布
+npm publish --registry http://localhost:4873  之后在需要使用的项目下载
+npm install table-two --registry=http://localhost:4873  </description>
     </item>
     
   </channel>
