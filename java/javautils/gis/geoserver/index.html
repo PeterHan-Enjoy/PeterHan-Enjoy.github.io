@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-22T10:43:46 CST">
+<title>Geoserver :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/java/javautils/gis/geoserver/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/utils/ffmpeg/">
+            ffmpeg 安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/">java</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/java/javautils/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/javautils/">java工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/excelutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/excelutil/">
+            Excel工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/exceltohtmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/exceltohtmlutil/">
+            Excel转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/java/javautils/gis/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/javautils/gis/">Gis相关工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/gis/dae2gltf/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/dae2gltf/">
+            Dae转换Gltf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/geoserver/" class="dd-item active">
+        <div>
+          <a href="/java/javautils/gis/geoserver/">
+            Geoserver
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/">
+            Kml导入
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/shputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/shputil/">
+            Shp工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/jstutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/jstutil/">
+            java几何运算工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/java/javautils/html2image/" class="dd-item">
+        <div>
+          <a href="/java/javautils/html2image/">
+            Html转换Image
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/jsonutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/jsonutil/">
+            Json工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/pdfutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/pdfutil/">
+            Pdf工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/httpclientutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/httpclientutil/">
+            Post请求
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/wordutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/wordutil/">
+            Word工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/word2htmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/word2htmlutil/">
+            Word转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/csvutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/csvutil/">
+            csv 工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/java/javautils/ffmpeg/">
+            ffmpeg 使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/decryptionziputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/decryptionziputil/">
+            加密解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/base64util/" class="dd-item">
+        <div>
+          <a href="/java/javautils/base64util/">
+            图片base64转换工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/zipfileutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/zipfileutil/">
+            解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option>
+    <option value="/java/" >
+   java</option> 
+    <option value="/java/javautils/" >
+  - 
+   java工具类</option> 
+      <option value="/java/javautils/excelutil/" >-- Excel工具类</option>
+      <option value="/java/javautils/exceltohtmlutil/" >-- Excel转换html</option>
+    <option value="/java/javautils/gis/" >
+  -- 
+   Gis相关工具类</option> 
+      <option value="/java/javautils/gis/dae2gltf/" >--- Dae转换Gltf</option>
+      <option value="/java/javautils/gis/geoserver/"  selected>--- Geoserver</option>
+      <option value="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" >--- Kml导入</option>
+      <option value="/java/javautils/gis/shputil/" >--- Shp工具类</option>
+      <option value="/java/javautils/gis/jstutil/" >--- java几何运算工具类</option>
+  
+      <option value="/java/javautils/html2image/" >-- Html转换Image</option>
+      <option value="/java/javautils/jsonutil/" >-- Json工具类</option>
+      <option value="/java/javautils/pdfutil/" >-- Pdf工具类</option>
+      <option value="/java/javautils/httpclientutil/" >-- Post请求</option>
+      <option value="/java/javautils/wordutil/" >-- Word工具类</option>
+      <option value="/java/javautils/word2htmlutil/" >-- Word转换html</option>
+      <option value="/java/javautils/csvutil/" >-- csv 工具类</option>
+      <option value="/java/javautils/ffmpeg/" >-- ffmpeg 使用</option>
+      <option value="/java/javautils/decryptionziputil/" >-- 加密解压缩工具类</option>
+      <option value="/java/javautils/base64util/" >-- 图片base64转换工具类</option>
+      <option value="/java/javautils/zipfileutil/" >-- 解压缩工具类</option>
+  
+  
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>Geoserver</h1>
+
+    
+    
+    
+    <p><a href="https://pan.baidu.com/s/1omL1tRzhtQXRpfOY7GEWRw">下载地址</a>提取码：300y
+通过geoserver远程发布</p>
+
+<pre><code>
+import it.geosolutions.geoserver.rest.GeoServerRESTManager;
+import it.geosolutions.geoserver.rest.GeoServerRESTPublisher;
+import it.geosolutions.geoserver.rest.GeoServerRESTReader;
+import org.apache.commons.httpclient.NameValuePair;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class GeoServerUtil {
+    public static final String RESTURL;
+
+    public static final String RESTUSER;
+
+    public static final String RESTPW;
+
+    public static final String GS_VERSION;
+
+    public static java.net.URL URL;
+
+    public static GeoServerRESTManager manager;
+
+    public static GeoServerRESTReader reader;
+
+    public static GeoServerRESTPublisher publisher;
+
+   // private static ResourceBundle bundle = ResourceBundle.getBundle(&quot;constant&quot;);
+
+    //初始化用户名密码赋值,发布图集时会进行身份认证
+    static {
+        RESTURL = getenv(&quot;gsmgr_resturl&quot;, &quot;http://localhost:6060/geoserver/&quot;);
+        RESTUSER = getenv(&quot;gsmgr_restuser&quot;,&quot;admin&quot;);
+        RESTPW = getenv(&quot;gsmgr_restpw&quot;, &quot;geoserver&quot;);
+        GS_VERSION = getenv(&quot;gsmgr_version&quot;, &quot;2.8.2&quot;);
+        try {
+            URL = new URL(RESTURL);
+            manager = new GeoServerRESTManager(URL, RESTUSER, RESTPW);
+            reader = manager.getReader();
+            publisher = manager.getPublisher();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //获取环境信息
+    private static String getenv(String envName, String envDefault) {
+        String env = System.getenv(envName);
+        String prop = System.getProperty(envName, env);
+        return prop != null ? prop : envDefault;
+    }
+
+    public  static boolean  publishShpAndReloadStore(String workspace,String zipFilePath,String coordinateSystem) throws  Exception{
+        //坐标系,判断是否为空
+        if(ComUtil.isEmpty(coordinateSystem)){
+            coordinateSystem= GeoServerRESTPublisher.DEFAULT_CRS;
+        }
+        //存在相应的工作区
+        if(!reader.existsWorkspace(workspace)){
+            publisher.createWorkspace(workspace);
+        }
+        boolean published;
+       /* if(Constant.AtlasStyleType.ATLAS_STYLE_TYPE_5.equals(styleType)){*/
+          /*  published = publisher.publishShp(workspace, storeName, layerName, new File(zipFilePath),coordinateSystem,
+                    new NameValuePair[]{new NameValuePair(&quot;charset&quot;, &quot;GBK&quot;)});*/
+          //published = publisher.publishGeoTIFF(workspace,storeName,new File(zipFilePath));
+        String name = new File(zipFilePath).getName();
+        name = name.substring(0,name.lastIndexOf(&quot;.&quot;));
+        published = publisher.publishShp(workspace,name,name,new File(zipFilePath),coordinateSystem,new NameValuePair[]{new NameValuePair(&quot;charset&quot;, &quot;ISO8859-1&quot;)});
+        return published;
+    }
+
+
+    public  static boolean  publishTifAndReloadStore(String workspace,String zipFilePath,String storeName) throws  Exception{
+        //存在相应的工作区
+        if(!reader.existsWorkspace(workspace)){
+            publisher.createWorkspace(workspace);
+        }
+        boolean published;
+        published = publisher.publishGeoTIFF(workspace,storeName,new File(zipFilePath));
+        return published;
+    }
+    public static boolean unPublishShpAndReloadStore(String workspace,String storeName){
+        return publisher.removeLayer(workspace,storeName);
+    }
+
+    public static void main(String[] args) {
+        try {
+           //boolean b = GeoServerUtil.publishShpAndReloadStore(&quot;testshp&quot;,&quot;H:\\下载\\shp矢量文件\\test.zip&quot;,&quot;shpstore&quot;,&quot;shplayer&quot;,&quot;&quot;,&quot;EPSG:4326&quot;);
+
+           boolean b = GeoServerUtil.publishTifAndReloadStore(&quot;testtif&quot;,&quot;C:test.tif&quot;,&quot;tifjava03&quot;);
+
+          // boolean b = GeoServerUtil.publishShpAndReloadStore(&quot;testshp&quot;,&quot;D:\\PeterHan\\test.zip&quot;,&quot;shp0123&quot;,&quot;shp0123&quot;,&quot;&quot;,&quot;&quot;);
+          // System.out.print(b);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //HTTPUtils.post(&quot;http://localhost:8080/geoserver/rest/workspaces/testshp/datastores/shpstore/file.shp&quot;,&quot;&lt;featureType&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;metadata /&gt;&lt;keywords /&gt;&lt;metadataLinks /&gt;&lt;attributes /&gt;&lt;name&gt;shplayer&lt;/name&gt;&lt;title&gt;shplayer&lt;/title&gt;&lt;srs&gt;EPSG:4326&lt;/srs&gt;&lt;projectionPolicy&gt;FORCE_DECLARED&lt;/projectionPolicy&gt;&lt;/featureType&gt;&quot;,&quot;application/xml&quot;,&quot;admin&quot;,&quot;geoserver&quot;);
+        try {
+           /* String url = XmlUtil.getMapUrl(&quot;bh_bhtb&quot;,&quot;testshp&quot;,&quot;shp&quot;);
+            System.out.print(url);*/
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+
+</code></pre>
+
+<p>解析发布后信息</p>
+
+<pre><code>
+import com.nuclear_Project.image.bean.ImageServer;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+import java.io.File;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Iterator;
+
+
+/**
+ * &lt;p&gt;
+ *  xml解析工具类
+ * &lt;/p&gt;
+ *
+ * @author liugh
+ * @since 2018/4/3
+ */
+public class XmlUtil {
+
+   private static String GEO_SERVER_PATH=&quot;D:\\Program Files (x86)\\GeoServer 2.8.2\\data_dir\\workspaces&quot;;
+   private static String BUNDLE_URL = &quot;http://localhost:6060/geoserver/&quot;;
+   private static String XML_ELEMENT_NAME=&quot;latLonBoundingBox&quot;;
+
+    /*public static void main(String[] args)throws Exception {
+        getMapUrl(&quot;1522723368940&quot;,&quot;unitMap&quot;);
+    }*/
+
+    //获取图集发布地址
+    public static String  getMapUrl(String layerId, String workspace, String type, ImageServer server)throws Exception{
+        File file =new File(GEO_SERVER_PATH+File.separator+workspace);
+        String[] fileList = file.list();
+        StringBuilder mapUrl = new StringBuilder();
+        mapUrl.append(BUNDLE_URL+workspace)
+                .append(&quot;/wms?service=WMS&amp;version=1.1.0&amp;request=GetMap&amp;layers=&quot;).append(workspace+&quot;:&quot;+layerId).append(&quot;&amp;styles=&amp;bbox=&quot;);
+        if(!ComUtil.isEmpty(fileList)){
+            for (String fileName:fileList) {
+                if(fileName.equals(layerId)){
+                    String []  coordinates = readXMLDocument(layerId,workspace,type);
+                    mapUrl.append(coordinates[0]+&quot;,&quot;+coordinates[2]+&quot;,&quot;+coordinates[1]+&quot;,&quot;+coordinates[3]).append(&quot;&amp;width=768&amp;height=437&amp;srs=&quot;).append(coordinates[4]);
+                    server.setNwlong(new BigDecimal(coordinates[0]));
+                    server.setNwlat(new BigDecimal(coordinates[2]));
+                    server.setSelong(new BigDecimal(coordinates[1]));
+                    server.setSelat(new BigDecimal(coordinates[3]));
+                }
+            }
+        }else{
+            return null;
+        }
+        mapUrl.append(&quot;&amp;format=application/openlayers&quot;);
+        return  mapUrl.toString();
+    }
+
+    private static String []  readXMLDocument(String layerId, String workspace,String type){
+        String str=&quot;&quot;;
+        if(type.equalsIgnoreCase(&quot;tif&quot;)||type.equalsIgnoreCase(&quot;tiff&quot;)){
+            str=&quot;coverage.xml&quot;;
+        }else if(type.equals(&quot;shp&quot;)){
+            str=&quot;featuretype.xml&quot;;
+        }
+        File file = new File(GEO_SERVER_PATH+File.separator+workspace+
+                File.separator+layerId+File.separator+layerId+File.separator+str);
+        if (!file.exists()) {
+            try {
+                throw new IOException(&quot;Can't find the path&quot;);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        //创建SAXReader对象
+        SAXReader saxReader = new SAXReader();
+        Document document;
+        try {
+            //读取文件 转换成Document
+            document = saxReader.read(file);
+            //获取根节点元素对象  遍历当前节点下的所有节点
+            for (Iterator iter = document.getRootElement().elementIterator(); iter.hasNext();){
+                //获取节点
+                Element e1 = (Element) iter.next();
+
+                //如果过节点的名称等于beanName那么继续进入循环读取beanName节点下的所有节点
+                if(e1.getName().equalsIgnoreCase(XML_ELEMENT_NAME)){
+                    String [] ss = new String[5];
+                    int i =0;
+                    //遍历beanName当前节点下的所有节点
+                    for (Iterator iter1 = e1.elementIterator(); iter1.hasNext();){
+                        Element e2 = (Element) iter1.next();
+                        ss[i]= e2.getStringValue();
+                        i++;
+                    }
+                    return ss;
+                }
+            }
+        } catch (DocumentException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return null;
+    }
+}
+
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/java/javautils/gis/dae2gltf/" title="Dae转换Gltf"> <i class="fa fa-chevron-left"></i><label>Dae转换Gltf</label></a>
+    <a class="nav nav-next" href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" title="Kml导入" style="margin-right: 0px;"><label>Kml导入</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

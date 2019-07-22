@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-22T10:43:47 CST">
+<title>解压缩工具类 :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/java/javautils/zipfileutil/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/utils/ffmpeg/">
+            ffmpeg 安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/">java</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/java/javautils/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/javautils/">java工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/excelutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/excelutil/">
+            Excel工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/exceltohtmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/exceltohtmlutil/">
+            Excel转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/java/javautils/gis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/gis/">Gis相关工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/gis/dae2gltf/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/dae2gltf/">
+            Dae转换Gltf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/geoserver/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/geoserver/">
+            Geoserver
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/">
+            Kml导入
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/shputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/shputil/">
+            Shp工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/jstutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/jstutil/">
+            java几何运算工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/java/javautils/html2image/" class="dd-item">
+        <div>
+          <a href="/java/javautils/html2image/">
+            Html转换Image
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/jsonutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/jsonutil/">
+            Json工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/pdfutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/pdfutil/">
+            Pdf工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/httpclientutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/httpclientutil/">
+            Post请求
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/wordutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/wordutil/">
+            Word工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/word2htmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/word2htmlutil/">
+            Word转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/csvutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/csvutil/">
+            csv 工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/java/javautils/ffmpeg/">
+            ffmpeg 使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/decryptionziputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/decryptionziputil/">
+            加密解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/base64util/" class="dd-item">
+        <div>
+          <a href="/java/javautils/base64util/">
+            图片base64转换工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/zipfileutil/" class="dd-item active">
+        <div>
+          <a href="/java/javautils/zipfileutil/">
+            解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option>
+    <option value="/java/" >
+   java</option> 
+    <option value="/java/javautils/" >
+  - 
+   java工具类</option> 
+      <option value="/java/javautils/excelutil/" >-- Excel工具类</option>
+      <option value="/java/javautils/exceltohtmlutil/" >-- Excel转换html</option>
+    <option value="/java/javautils/gis/" >
+  -- 
+   Gis相关工具类</option>
+      <option value="/java/javautils/html2image/" >-- Html转换Image</option>
+      <option value="/java/javautils/jsonutil/" >-- Json工具类</option>
+      <option value="/java/javautils/pdfutil/" >-- Pdf工具类</option>
+      <option value="/java/javautils/httpclientutil/" >-- Post请求</option>
+      <option value="/java/javautils/wordutil/" >-- Word工具类</option>
+      <option value="/java/javautils/word2htmlutil/" >-- Word转换html</option>
+      <option value="/java/javautils/csvutil/" >-- csv 工具类</option>
+      <option value="/java/javautils/ffmpeg/" >-- ffmpeg 使用</option>
+      <option value="/java/javautils/decryptionziputil/" >-- 加密解压缩工具类</option>
+      <option value="/java/javautils/base64util/" >-- 图片base64转换工具类</option>
+      <option value="/java/javautils/zipfileutil/"  selected>-- 解压缩工具类</option>
+  
+  
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>解压缩工具类</h1>
+
+    
+    
+    
+    <pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.github.axet&lt;/groupId&gt;
+    &lt;artifactId&gt;java-unrar&lt;/artifactId&gt;
+    &lt;version&gt;1.7.0-8&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;commons-logging&lt;/groupId&gt;
+    &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;
+    &lt;version&gt;1.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<pre><code>import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+
+import de.innosystec.unrar.NativeStorage;
+import org.apache.tools.ant.Project;
+import org.apache.tools.ant.taskdefs.Expand;
+
+import de.innosystec.unrar.Archive;
+import de.innosystec.unrar.rarfile.FileHeader;
+
+public class ZipFileUtil {
+    private static final int  BUFFER_SIZE = 2 * 1024;
+    /**
+     * 解压zip格式压缩包
+     * 对应的是ant.jar
+     */
+    private static void unzip(String sourceZip,String destDir) throws Exception{
+        try{
+            Project p = new Project();
+            Expand e = new Expand();
+            e.setProject(p);
+            e.setSrc(new File(sourceZip));
+            e.setOverwrite(false);
+            e.setDest(new File(destDir));
+           /*
+           ant下的zip工具默认压缩编码为UTF-8编码，
+           而winRAR软件压缩是用的windows默认的GBK或者GB2312编码
+           所以解压缩时要制定编码格式
+           */
+            e.setEncoding(&quot;gbk&quot;);
+            e.execute();
+        }catch(Exception e){
+            throw e;
+        }
+    }
+    /**
+     * 解压rar格式压缩包。
+     * 对应的是java-unrar-0.3.jar，但是java-unrar-0.3.jar又会用到commons-logging-1.1.1.jar
+     */
+    private static void unrar(String sourceRar,String destDir) throws Exception{
+        Archive a = null;
+        FileOutputStream fos = null;
+        try{
+            NativeStorage nativeStorage = new NativeStorage(new File(sourceRar));
+            a = new Archive(nativeStorage);
+            FileHeader fh = a.nextFileHeader();
+            while(fh!=null){
+                if(!fh.isDirectory()){
+                    //1 根据不同的操作系统拿到相应的 destDirName 和 destFileName
+                    String compressFileName = fh.getFileNameString().trim();
+                    String destFileName = &quot;&quot;;
+                    String destDirName = &quot;&quot;;
+                    //非windows系统
+                    if(File.separator.equals(&quot;/&quot;)){
+                        destFileName = destDir + compressFileName.replaceAll(&quot;\\\\&quot;, &quot;/&quot;);
+                        destDirName = destFileName.substring(0, destFileName.lastIndexOf(&quot;/&quot;));
+                        //windows系统
+                    }else{
+                        destFileName = destDir + compressFileName.replaceAll(&quot;/&quot;, &quot;\\\\&quot;);
+                        destDirName = destFileName.substring(0, destFileName.lastIndexOf(&quot;\\&quot;));
+                    }
+                    //2创建文件夹
+                    File dir = new File(destDirName);
+                    if(!dir.exists()||!dir.isDirectory()){
+                        dir.mkdirs();
+                    }
+                    //3解压缩文件
+                    fos = new FileOutputStream(new File(destFileName));
+                    a.extractFile(fh, fos);
+                    fos.close();
+                    fos = null;
+                }
+                fh = a.nextFileHeader();
+            }
+            a.close();
+            a = null;
+        }catch(Exception e){
+            throw e;
+        }finally{
+            if(fos!=null){
+                try{fos.close();fos=null;}catch(Exception e){e.printStackTrace();}
+            }
+            if(a!=null){
+                try{a.close();a=null;}catch(Exception e){e.printStackTrace();}
+            }
+        }
+    }
+    /**
+     * 解压缩
+     */
+    public static void deCompress(String sourceFile,String destDir) throws Exception{
+        //保证文件夹路径最后是&quot;/&quot;或者&quot;\&quot;
+        char lastChar = destDir.charAt(destDir.length()-1);
+        if(lastChar!='/'&amp;&amp;lastChar!='\\'){
+            destDir += File.separator;
+        }
+        //根据类型，进行相应的解压缩
+        String type = sourceFile.substring(sourceFile.lastIndexOf(&quot;.&quot;)+1);
+        if(type.equals(&quot;zip&quot;)){
+            ZipFileUtil.unzip(sourceFile, destDir);
+        }else if(type.equals(&quot;rar&quot;)){
+            ZipFileUtil.unrar(sourceFile, destDir);
+        }else{
+            throw new Exception(&quot;只支持zip和rar格式的压缩包！&quot;);
+        }
+    }
+
+    /**
+     * 压缩成ZIP 方法1
+     * @param srcDir 压缩文件夹路径
+     * @param out    压缩文件输出流
+     * @param KeepDirStructure  是否保留原来的目录结构,true:保留目录结构;
+     *                          false:所有文件跑到压缩包根目录下(注意：不保留目录结构可能会出现同名文件,会压缩失败)
+     * @throws RuntimeException 压缩失败会抛出运行时异常
+     */
+    public static void toZip(String srcDir, OutputStream out, boolean KeepDirStructure)
+        throws RuntimeException{
+
+        long start = System.currentTimeMillis();
+        ZipOutputStream zos = null ;
+        try {
+            zos = new ZipOutputStream(out);
+            File sourceFile = new File(srcDir);
+            compress(sourceFile,zos,sourceFile.getName(),KeepDirStructure);
+            long end = System.currentTimeMillis();
+            System.out.println(&quot;压缩完成，耗时：&quot; + (end - start) +&quot; ms&quot;);
+        } catch (Exception e) {
+            throw new RuntimeException(&quot;zip error from ZipUtils&quot;,e);
+        }finally{
+            if(zos != null){
+                try {
+                    zos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+        /**
+         * 压缩成ZIP 方法2
+         * @param srcFiles 需要压缩的文件列表
+         * @param out           压缩文件输出流
+         * @throws RuntimeException 压缩失败会抛出运行时异常
+         */
+    public static void toZip(List&lt;File&gt; srcFiles , OutputStream out)throws RuntimeException {
+        long start = System.currentTimeMillis();
+        ZipOutputStream zos = null ;
+        try {
+            zos = new ZipOutputStream(out);
+            for (File srcFile : srcFiles) {
+                byte[] buf = new byte[BUFFER_SIZE];
+                zos.putNextEntry(new ZipEntry(srcFile.getName()));
+                int len;
+                FileInputStream in = new FileInputStream(srcFile);
+                while ((len = in.read(buf)) != -1){
+                    zos.write(buf, 0, len);
+                }
+                zos.closeEntry();
+                in.close();
+            }
+            long end = System.currentTimeMillis();
+            System.out.println(&quot;压缩完成，耗时：&quot; + (end - start) +&quot; ms&quot;);
+        } catch (Exception e) {
+            throw new RuntimeException(&quot;zip error from ZipUtils&quot;,e);
+        }finally{
+            if(zos != null){
+                try {
+                    zos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+        /**
+         * 递归压缩方法
+         * @param sourceFile 源文件
+         * @param zos        zip输出流
+         * @param name       压缩后的名称
+         * @param KeepDirStructure  是否保留原来的目录结构,true:保留目录结构;
+         *                          false:所有文件跑到压缩包根目录下(注意：不保留目录结构可能会出现同名文件,会压缩失败)
+         * @throws Exception
+         */
+    private static void compress(File sourceFile, ZipOutputStream zos, String name,
+                                 boolean KeepDirStructure) throws Exception{
+        byte[] buf = new byte[BUFFER_SIZE];
+        if(sourceFile.isFile()){
+            // 向zip输出流中添加一个zip实体，构造器中name为zip实体的文件的名字
+            zos.putNextEntry(new ZipEntry(name));
+            // copy文件到zip输出流中
+            int len;
+            FileInputStream in = new FileInputStream(sourceFile);
+            while ((len = in.read(buf)) != -1){
+                zos.write(buf, 0, len);
+            }
+            // Complete the entry
+            zos.closeEntry();
+            in.close();
+        } else {
+            File[] listFiles = sourceFile.listFiles();
+            if(listFiles == null || listFiles.length == 0){
+                // 需要保留原来的文件结构时,需要对空文件夹进行处理
+                if(KeepDirStructure){
+                    // 空文件夹的处理
+                    zos.putNextEntry(new ZipEntry(name + &quot;/&quot;));
+                    // 没有文件，不需要文件的copy
+                    zos.closeEntry();
+                }
+            }else {
+                for (File file : listFiles) {
+                    // 判断是否需要保留原来的文件结构
+                    if (KeepDirStructure) {
+                        // 注意：file.getName()前面需要带上父文件夹的名字加一斜杠,
+                        // 不然最后压缩包中就不能保留原来的文件结构,即：所有文件都跑到压缩包根目录下了
+                        compress(file, zos, name + &quot;/&quot; + file.getName(),KeepDirStructure);
+                    } else {
+                        compress(file, zos, file.getName(),KeepDirStructure);
+                    }
+                }
+            }
+        }
+    }
+    public static void main(String[] args) throws FileNotFoundException {
+       /* try {
+            ZipFileUtil.deCompress(&quot;H:\\test\\1.rar&quot;,&quot;H:\\test&quot;);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+       File file = new File(&quot;D:\\PeterHan\\test.shp&quot;);
+       File file2 = new File(&quot;D:\\PeterHan\\test.shp&quot;);
+       File file3 = new File(&quot;D:\\PeterHan\\test.shp&quot;);
+       File file4 = new File(&quot;D:\\PeterHan\\test.shp&quot;);
+       List&lt;File&gt; files = new ArrayList&lt;&gt;();
+       files.add(file);
+       files.add(file2);
+       files.add(file3);
+       files.add(file4);
+       FileOutputStream fos = new FileOutputStream(new File(&quot;D:\\PeterHan\\test.zip&quot;););
+       toZip(files,fos);
+
+    }
+}
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/java/javautils/base64util/" title="图片base64转换工具类"> <i class="fa fa-chevron-left"></i><label>图片base64转换工具类</label></a>
+    <a class="nav nav-next" href="/design/" title="设计模式" style="margin-right: 0px;"><label>设计模式</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

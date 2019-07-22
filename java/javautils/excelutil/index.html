@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-22T10:43:46 CST">
+<title>Excel工具类 :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/java/javautils/excelutil/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/utils/ffmpeg/">
+            ffmpeg 安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/">java</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/java/javautils/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/javautils/">java工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/excelutil/" class="dd-item active">
+        <div>
+          <a href="/java/javautils/excelutil/">
+            Excel工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/exceltohtmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/exceltohtmlutil/">
+            Excel转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/java/javautils/gis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/gis/">Gis相关工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/gis/dae2gltf/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/dae2gltf/">
+            Dae转换Gltf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/geoserver/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/geoserver/">
+            Geoserver
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/">
+            Kml导入
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/shputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/shputil/">
+            Shp工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/jstutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/jstutil/">
+            java几何运算工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/java/javautils/html2image/" class="dd-item">
+        <div>
+          <a href="/java/javautils/html2image/">
+            Html转换Image
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/jsonutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/jsonutil/">
+            Json工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/pdfutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/pdfutil/">
+            Pdf工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/httpclientutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/httpclientutil/">
+            Post请求
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/wordutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/wordutil/">
+            Word工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/word2htmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/word2htmlutil/">
+            Word转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/csvutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/csvutil/">
+            csv 工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/java/javautils/ffmpeg/">
+            ffmpeg 使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/decryptionziputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/decryptionziputil/">
+            加密解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/base64util/" class="dd-item">
+        <div>
+          <a href="/java/javautils/base64util/">
+            图片base64转换工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/zipfileutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/zipfileutil/">
+            解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option>
+    <option value="/java/" >
+   java</option> 
+    <option value="/java/javautils/" >
+  - 
+   java工具类</option> 
+      <option value="/java/javautils/excelutil/"  selected>-- Excel工具类</option>
+      <option value="/java/javautils/exceltohtmlutil/" >-- Excel转换html</option>
+    <option value="/java/javautils/gis/" >
+  -- 
+   Gis相关工具类</option>
+      <option value="/java/javautils/html2image/" >-- Html转换Image</option>
+      <option value="/java/javautils/jsonutil/" >-- Json工具类</option>
+      <option value="/java/javautils/pdfutil/" >-- Pdf工具类</option>
+      <option value="/java/javautils/httpclientutil/" >-- Post请求</option>
+      <option value="/java/javautils/wordutil/" >-- Word工具类</option>
+      <option value="/java/javautils/word2htmlutil/" >-- Word转换html</option>
+      <option value="/java/javautils/csvutil/" >-- csv 工具类</option>
+      <option value="/java/javautils/ffmpeg/" >-- ffmpeg 使用</option>
+      <option value="/java/javautils/decryptionziputil/" >-- 加密解压缩工具类</option>
+      <option value="/java/javautils/base64util/" >-- 图片base64转换工具类</option>
+      <option value="/java/javautils/zipfileutil/" >-- 解压缩工具类</option>
+  
+  
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>Excel工具类</h1>
+
+    
+    
+    
+    <pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+    &lt;artifactId&gt;poi&lt;/artifactId&gt;
+    &lt;version&gt;3.14&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<pre><code>
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.NotOLE2FileException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CreationHelper;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+/**
+ * 将Excel文件读入到一个List集合中，必须给出“属性”(fields)，会按照给定的属性列表遍历该属性&lt;br /&gt;
+ * 然后调用该属性的set方法赋值 ， 并添加到List集合中 &lt;br /&gt;
+ * 注意:给出的属性应和Excel文件的列一一对应，否则会出现异常
+ *
+ */
+public class ExcelUtil&lt;T&gt; {
+    private File file;
+    private InputStream inputStream;
+    private int ignoreRow = 1;// 忽略的行数
+    private Class&lt;T&gt; entityClass = null;
+    private String[] fields;// 要写入的字段
+    private String[] header;
+    private String sheetName = &quot;sheet1&quot;;
+    private String par = &quot;yyyy-MM-dd&quot;;
+    private static final String HSSF = &quot;application/vnd.ms-excel&quot;;
+    private static final String XSSF = &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;;
+
+    /**
+     *
+     * @param className
+     *            传入类的包名+类名
+     * @param fileToBeRead
+     *            要读取的文件
+     *
+     * @param fields
+     *            要写入的目标类的哪些字段，请按照excel的列的顺序
+     * @throws ClassNotFoundException
+     * @throws FileNotFoundException
+     */
+    public ExcelUtil(Class&lt;T&gt; clazz, String filePath, String... fields) throws ClassNotFoundException, FileNotFoundException {
+        init(clazz, new File(filePath), fields);
+    }
+
+    public ExcelUtil(Class&lt;T&gt; clazz, File file, String... fields) throws ClassNotFoundException, FileNotFoundException {
+        init(clazz, file, fields);
+    }
+
+    public ExcelUtil(Class&lt;T&gt; clazz, String... fields) throws FileNotFoundException {
+        this.entityClass = clazz;
+        this.fields = fields;
+    }
+
+    private void init(Class&lt;T&gt; clazz, File file, String... fields) throws FileNotFoundException {
+        this.entityClass = clazz;
+        this.file = file;
+        this.inputStream = new FileInputStream(this.file);
+        this.fields = fields;
+    }
+
+    /**
+     * 设置工作薄名称
+     *
+     * @param sheetName
+     */
+    public void setSheetName(String sheetName) {
+        this.sheetName = sheetName;
+    }
+
+    /**
+     * 设置头部
+     *
+     * @param header
+     */
+    public void setHeader(String[] header) {
+        this.header = header;
+    }
+
+    public List&lt;T&gt; convertToList() {
+        List&lt;T&gt; list = null;
+        try {
+            list = toList2003();
+        } catch (Exception e2) {
+            e2.printStackTrace();
+            try {
+                list = toList2007();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+
+        return list;
+    }
+
+    public List&lt;T&gt; convertToList(String fileType) throws FileNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException,
+            InvocationTargetException, IOException, NotOLE2FileException {
+        List&lt;T&gt; list = null;
+        try {
+            if (fileType != null &amp;&amp; fileType.equals(HSSF)) {
+                list = toList2003();
+            } else if (fileType != null &amp;&amp; fileType.equals(XSSF)) {
+                list = toList2007();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
+        }
+
+        return list;
+    }
+
+    /**
+     * 设置忽略的行数，默认忽略第一行
+     *
+     * @param ignoreRow
+     *            要忽略的行数，默认忽略第一行
+     */
+    public void setIgnoreRow(int ignoreRow) {
+        this.ignoreRow = ignoreRow;
+    }
+
+    /**
+     * 将excel文件按照用户给定的字段，封装到对象中，并返回一个list集合 适用于2003版本
+     *
+     * @throws IOException
+     * @throws FileNotFoundException
+     * @throws SecurityException
+     * @throws NoSuchMethodException
+     * @throws InvocationTargetException
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     *
+     */
+    public List&lt;T&gt; toList2003() throws FileNotFoundException, IOException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        // 创建对工作表的引用。
+
+        HSSFWorkbook workbook = new HSSFWorkbook(this.inputStream);
+        HSSFSheet sheet = workbook.getSheetAt(0);
+        // 在Excel文档中，第一张工作表的缺省索引是0，
+        // 用于存储目标对象，excel每一行都是一个实体对象
+        List&lt;T&gt; list = new ArrayList&lt;T&gt;();
+        // 创建泛类的实例对象
+        Constructor&lt;T&gt; constructor = entityClass.getConstructor();
+        // Field[] objField = entityClass.getFields();
+        Method[] methods = entityClass.getMethods();
+        // 读取左上端单元
+        HSSFRow row = null;
+
+        for (int i = ignoreRow; sheet.getRow(i) != null; i++) {
+            // 指针指向第i行
+            row = sheet.getRow(i);
+            T instance = constructor.newInstance();
+
+            for (int j = 0; j &lt; fields.length; j++) {
+                String field = fields[j];
+
+                for (Method method : methods) {
+                    String methodName = method.getName();
+                    String prefix = methodName.substring(0, 3);
+                    String suffix = methodName.substring(3);
+
+                    if (prefix.equals(&quot;set&quot;) &amp;&amp; suffix.equalsIgnoreCase(field)) {
+                        HSSFCell cell = null;
+                        cell = row.getCell(j);
+                        if (cell == null) {
+                            continue;
+                        }
+                        // 单元格类型
+                        int cellType = cell.getCellType();
+                        if (cellType == Cell.CELL_TYPE_NUMERIC) {
+                            double value = row.getCell(j).getNumericCellValue();
+                            if (DateUtil.isCellDateFormatted(cell)) {
+                                // 日期
+                                Date date = org.apache.poi.ss.usermodel.DateUtil.getJavaDate(value);
+                                method.invoke(instance, date);
+                                continue;
+                            }
+                            setValue(method, instance, value);
+                        } else if (cellType == Cell.CELL_TYPE_STRING) {
+                            String value = row.getCell(j).getStringCellValue();
+                            setValue(method, instance, value);
+                        } else if (cellType == Cell.CELL_TYPE_FORMULA) {
+                            // 公式型
+                            try {
+                                double value = cell.getNumericCellValue();
+                                setValue(method, instance, value);
+                            } catch (IllegalStateException e) {
+                                String value = String.valueOf(cell.getRichStringCellValue());
+                                setValue(method, instance, value);
+                            }
+                        }
+                    }
+                }
+            }
+            list.add(instance);
+        }
+        workbook.close();
+        return list;
+
+    }
+
+    public List&lt;T&gt; toList2007() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, FileNotFoundException, IOException, NoSuchMethodException, SecurityException, InstantiationException {
+        // 创建对工作表的引用。
+        XSSFWorkbook workbook = new XSSFWorkbook(this.inputStream);
+        XSSFSheet sheet = workbook.getSheetAt(0);
+        // 在Excel文档中，第一张工作表的缺省索引是0，
+        // 用于存储目标对象，excel每一行都是一个实体对象
+        List&lt;T&gt; list = new ArrayList&lt;T&gt;();
+        // 创建泛类的实例对象
+        Constructor&lt;T&gt; constructor = entityClass.getConstructor();
+        // Field[] objField = entityClass.getFields();
+        Method[] methods = entityClass.getMethods();
+        // 读取左上端单元
+        XSSFRow row = null;
+
+        for (int i = ignoreRow; sheet.getRow(i) != null; i++) {
+            // 指针指向第i行
+            row = sheet.getRow(i);
+            T instance = constructor.newInstance();
+
+            for (int j = 0; j &lt; fields.length; j++) {
+                String field = fields[j];
+
+                for (Method method : methods) {
+                    String methodName = method.getName();
+                    String prefix = methodName.substring(0, 3);
+                    String suffix = methodName.substring(3);
+
+                    if (prefix.equals(&quot;set&quot;) &amp;&amp; suffix.equalsIgnoreCase(field)) {
+                        XSSFCell cell = null;
+                        cell = row.getCell(j);
+                        if (cell == null) {
+                            continue;
+                        }
+                        int cellType = cell.getCellType();
+                        if (cellType == Cell.CELL_TYPE_NUMERIC) {
+                            double value = row.getCell(j).getNumericCellValue();
+                            if (DateUtil.isCellDateFormatted(cell)) {
+                                // 日期
+                                Date date = org.apache.poi.ss.usermodel.DateUtil.getJavaDate(value);
+                                method.invoke(instance, date);
+                                continue;
+                            }
+
+                            setValue(method, instance, value);
+                        } else if (cellType == Cell.CELL_TYPE_STRING) {
+                            String value = row.getCell(j).getStringCellValue();
+                            setValue(method, instance, value);
+                        } else if (cellType == Cell.CELL_TYPE_FORMULA) {
+                            // 公式型
+                            try {
+                                double value = cell.getNumericCellValue();
+                                setValue(method, instance, value);
+                            } catch (IllegalStateException e) {
+                                String value = String.valueOf(cell.getRichStringCellValue());
+                                setValue(method, instance, value);
+                            }
+                        }
+                    }
+                }
+            }
+            list.add(instance);
+        }
+        workbook.close();
+        return list;
+    }
+
+    /**
+     *
+     * 去掉字符串右边的空格
+     *
+     * @param str
+     *            要处理的字符串
+     *
+     * @return 处理后的字符串
+     */
+    private static String rlTrim(String str) {
+        // 去除ascii 160
+        if (str.startsWith(&quot; &quot;)) {
+            int startIndex = str.indexOf(&quot; &quot;);
+            str = str.substring(startIndex + 1, str.length());
+        }
+        if (str.endsWith(&quot; &quot;)) {
+            int endIndex = str.lastIndexOf(&quot; &quot;);
+            str = str.substring(0, endIndex);
+        }
+
+        // 去除ascii 32
+        return str.trim();
+    }
+
+    /**
+     * 注入值
+     *
+     * @param method
+     * @param instance
+     * @param value
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws InvocationTargetException
+     */
+    private void setValue(Method method, T instance, double value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException {
+        Class&lt;?&gt;[] parameterTypes = method.getParameterTypes();
+        Class&lt;?&gt; class1 = parameterTypes[0];
+        if (class1.equals(String.class)) {
+            method.invoke(instance, rlTrim(value + &quot;&quot;));
+        } else if (class1.equals(int.class)) {
+            method.invoke(instance, (int) value);
+        } else if (class1.equals(Integer.class)) {
+            method.invoke(instance, (int) value);
+        } else if (class1.equals(double.class)) {
+            method.invoke(instance, value);
+        } else {
+            method.invoke(instance, value);
+        }
+    }
+
+    /**
+     * 注入值
+     *
+     * @param method
+     * @param instance
+     * @param value
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws InvocationTargetException
+     */
+    private void setValue(Method method, T instance, String value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException {
+        Class&lt;?&gt;[] parameterTypes = method.getParameterTypes();
+        Class&lt;?&gt; class1 = parameterTypes[0];
+        if (class1.equals(String.class)) {
+            method.invoke(instance, rlTrim(value));
+        } else if (class1.equals(int.class)) {
+            method.invoke(instance, Integer.parseInt(value));
+        } else if (class1.equals(Integer.class)) {
+            method.invoke(instance, Integer.parseInt(value));
+        } else if (class1.equals(double.class)) {
+            method.invoke(instance, Double.parseDouble(value));
+        } else {
+            method.invoke(instance, rlTrim(value));
+        }
+    }
+
+    private List&lt;T&gt; convertSheetToList(Sheet sheet, Integer ignoreRow, String... fields) throws FileNotFoundException, IOException, NoSuchMethodException, SecurityException, InstantiationException,
+            IllegalAccessException, IllegalArgumentException, InvocationTargetException, ClassNotFoundException {
+
+        // 用于存储目标对象，excel每一行都是一个实体对象
+        List&lt;T&gt; list = new ArrayList&lt;T&gt;();
+        // 创建泛类的实例对象
+        Constructor constructor = entityClass.getConstructor(null);
+        Field[] objField = entityClass.getFields();
+        Method[] methods = entityClass.getMethods();
+        // 读取左上端单元
+        Row row = null;
+
+        for (int i = ignoreRow; sheet.getRow(i) != null; i++) {
+            // 指针指向第i行
+            row = sheet.getRow(i);
+            T instance = (T) constructor.newInstance(null);
+
+            for (int j = 0; j &lt; fields.length; j++) {
+                String field = fields[j];
+
+                for (Method method : methods) {
+                    String methodName = method.getName();
+                    String prefix = methodName.substring(0, 3);
+                    String suffix = methodName.substring(3);
+
+                    if (prefix.equals(&quot;set&quot;) &amp;&amp; suffix.equalsIgnoreCase(field)) {
+                        Cell cell = null;
+                        cell = row.getCell(j);
+                        if (cell == null) {
+                            continue;
+                        }
+                        // 单元格类型
+                        int cellType = cell.getCellType();
+                        if (cellType == HSSFCell.CELL_TYPE_NUMERIC) {
+                            double value = row.getCell(j).getNumericCellValue();
+                            Type[] types = method.getGenericParameterTypes();
+                            for (Type type : types) {
+                                String parameterName = ((Class) type).getSimpleName();
+                                if (parameterName.equals(&quot;String&quot;)) {
+                                    method.invoke(instance, rlTrim((int) value + &quot;&quot;));
+                                } else if (parameterName.equals(&quot;int&quot;)) {
+                                    method.invoke(instance, (int) value);
+                                } else if (parameterName.equals(&quot;Integer&quot;)) {
+                                    method.invoke(instance, (int) value);
+                                } else if (parameterName.equalsIgnoreCase(&quot;double&quot;)) {
+                                    method.invoke(instance, value);
+                                } else {
+                                    method.invoke(instance, value);
+                                }
+                            }
+
+                        } else if (cellType == HSSFCell.CELL_TYPE_STRING) {
+                            String value = row.getCell(j).getStringCellValue();
+
+                            Type[] types = method.getGenericParameterTypes();
+                            for (Type type : types) {
+                                String parameterName = ((Class) type).getSimpleName();
+                                if (parameterName.equals(&quot;String&quot;)) {
+                                    method.invoke(instance, rlTrim(value));
+                                } else if (parameterName.equals(&quot;int&quot;)) {
+                                    method.invoke(instance, Integer.parseInt(value));
+                                } else if (parameterName.equals(&quot;Integer&quot;)) {
+                                    method.invoke(instance, Integer.parseInt(value));
+                                } else if (parameterName.equalsIgnoreCase(&quot;double&quot;)) {
+                                    method.invoke(instance, Double.parseDouble(value));
+                                } else {
+                                    method.invoke(instance, rlTrim(value));
+                                }
+                            }
+                        } else if (cellType == HSSFCell.CELL_TYPE_FORMULA) {
+                            // 公式型
+                            String value = &quot;&quot;;
+                            try {
+                                value = String.valueOf(cell.getNumericCellValue());
+                            } catch (IllegalStateException e) {
+                                value = String.valueOf(cell.getRichStringCellValue());
+                            }
+
+                            Type[] types = method.getGenericParameterTypes();
+                            for (Type type : types) {
+                                String parameterName = ((Class) type).getSimpleName();
+                                if (parameterName.equals(&quot;String&quot;)) {
+                                    method.invoke(instance, rlTrim(value));
+                                } else if (parameterName.equals(&quot;int&quot;)) {
+                                    method.invoke(instance, Integer.parseInt(value));
+                                } else if (parameterName.equals(&quot;Integer&quot;)) {
+                                    method.invoke(instance, Integer.parseInt(value));
+                                } else {
+                                    method.invoke(instance, rlTrim(value));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            list.add(instance);
+        }
+        return list;
+    }
+
+    /**
+     * List 转Excel
+     *
+     * @return
+     * @throws SecurityException
+     * @throws NoSuchFieldException
+     * @throws IllegalAccessException
+     * @throws IllegalArgumentException
+     */
+    public ByteArrayOutputStream convertList2Excel(List&lt;T&gt; list) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        HSSFSheet sheet = workbook.createSheet(sheetName);
+        // 创建表头
+        int index = 0;
+        if (header != null) {
+            HSSFRow row = sheet.createRow(index);
+            for (int i = 0; i &lt; header.length; i++) {
+                HSSFCell cell = row.createCell(i);
+                cell.setCellType(HSSFCell.CELL_TYPE_STRING);
+                cell.setCellValue(header[i]);
+            }
+            index++;
+        }
+        for (int i = 0; i &lt; list.size(); i++) {
+            HSSFRow row = sheet.createRow(i + index);
+            T instance = list.get(i);
+            for (int j = 0; j &lt; fields.length; j++) {
+                String field = fields[j];
+
+                Field entityField = entityClass.getDeclaredField(field);
+                if (!entityField.isAccessible()) {
+                    entityField.setAccessible(true);
+                }
+                Cell cell = row.createCell(j);
+                Object object = entityField.get(instance);
+                if (object instanceof String) {
+                    cell.setCellType(HSSFCell.CELL_TYPE_STRING);
+                    cell.setCellValue((String) object);
+                }
+                if (object instanceof Double) {
+                    cell.setCellType(HSSFCell.CELL_TYPE_NUMERIC);
+                    Double num = (double) object;
+                    if (num != 0) {
+                        cell.setCellValue(num);
+                    } else {
+                        cell.setCellType(HSSFCell.CELL_TYPE_STRING);
+                        cell.setCellValue(&quot;&quot;);
+                    }
+                }
+                if (object instanceof Float) {
+                    cell.setCellType(HSSFCell.CELL_TYPE_NUMERIC);
+                    cell.setCellValue((float) object);
+                }
+                if (object instanceof Integer) {
+                    cell.setCellType(HSSFCell.CELL_TYPE_NUMERIC);
+                    cell.setCellValue((int) object);
+                }
+                if (object instanceof Date) {
+                    cell.setCellType(HSSFCell.CELL_TYPE_STRING);
+                    cell.setCellValue((Date) object);
+                    CreationHelper createHelper = workbook.getCreationHelper();
+                    CellStyle cellStyle = workbook.createCellStyle();
+                    cellStyle.setDataFormat(createHelper.createDataFormat().getFormat(par));
+                    cell.setCellStyle(cellStyle);
+
+                }
+            }
+        }
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try {
+            workbook.write(outputStream);
+            workbook.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return outputStream;
+    }
+
+    public void setPar(String par) {
+        this.par = par;
+    }
+}
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/java/javautils/" title="java工具类"> <i class="fa fa-chevron-left"></i><label>java工具类</label></a>
+    <a class="nav nav-next" href="/java/javautils/exceltohtmlutil/" title="Excel转换html" style="margin-right: 0px;"><label>Excel转换html</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

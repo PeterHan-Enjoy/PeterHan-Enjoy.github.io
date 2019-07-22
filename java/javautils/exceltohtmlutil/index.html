@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-22T10:43:46 CST">
+<title>Excel转换html :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/java/javautils/exceltohtmlutil/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/utils/ffmpeg/">
+            ffmpeg 安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/">java</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/java/javautils/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/javautils/">java工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/excelutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/excelutil/">
+            Excel工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/exceltohtmlutil/" class="dd-item active">
+        <div>
+          <a href="/java/javautils/exceltohtmlutil/">
+            Excel转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/java/javautils/gis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/gis/">Gis相关工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/gis/dae2gltf/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/dae2gltf/">
+            Dae转换Gltf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/geoserver/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/geoserver/">
+            Geoserver
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/">
+            Kml导入
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/shputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/shputil/">
+            Shp工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/jstutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/jstutil/">
+            java几何运算工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/java/javautils/html2image/" class="dd-item">
+        <div>
+          <a href="/java/javautils/html2image/">
+            Html转换Image
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/jsonutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/jsonutil/">
+            Json工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/pdfutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/pdfutil/">
+            Pdf工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/httpclientutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/httpclientutil/">
+            Post请求
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/wordutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/wordutil/">
+            Word工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/word2htmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/word2htmlutil/">
+            Word转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/csvutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/csvutil/">
+            csv 工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/java/javautils/ffmpeg/">
+            ffmpeg 使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/decryptionziputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/decryptionziputil/">
+            加密解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/base64util/" class="dd-item">
+        <div>
+          <a href="/java/javautils/base64util/">
+            图片base64转换工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/zipfileutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/zipfileutil/">
+            解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option>
+    <option value="/java/" >
+   java</option> 
+    <option value="/java/javautils/" >
+  - 
+   java工具类</option> 
+      <option value="/java/javautils/excelutil/" >-- Excel工具类</option>
+      <option value="/java/javautils/exceltohtmlutil/"  selected>-- Excel转换html</option>
+    <option value="/java/javautils/gis/" >
+  -- 
+   Gis相关工具类</option>
+      <option value="/java/javautils/html2image/" >-- Html转换Image</option>
+      <option value="/java/javautils/jsonutil/" >-- Json工具类</option>
+      <option value="/java/javautils/pdfutil/" >-- Pdf工具类</option>
+      <option value="/java/javautils/httpclientutil/" >-- Post请求</option>
+      <option value="/java/javautils/wordutil/" >-- Word工具类</option>
+      <option value="/java/javautils/word2htmlutil/" >-- Word转换html</option>
+      <option value="/java/javautils/csvutil/" >-- csv 工具类</option>
+      <option value="/java/javautils/ffmpeg/" >-- ffmpeg 使用</option>
+      <option value="/java/javautils/decryptionziputil/" >-- 加密解压缩工具类</option>
+      <option value="/java/javautils/base64util/" >-- 图片base64转换工具类</option>
+      <option value="/java/javautils/zipfileutil/" >-- 解压缩工具类</option>
+  
+  
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>Excel转换html</h1>
+
+    
+    
+    
+    <pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+    &lt;artifactId&gt;poi&lt;/artifactId&gt;
+    &lt;version&gt;3.1.4&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<pre><code>
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @功能描述 POI 读取 Excel 转 HTML 支持 03xls 和 07xlsx 版本  包含样式
+ * @author Devil
+ * @创建时间 2015/4/19 21:34
+ */
+public class ExcelToHtmlUtil {
+
+    /**
+     * 程序入口方法
+     * @param filePath 文件的路径
+     * @param isWithStyle 是否需要表格样式 包含 字体 颜色 边框 对齐方式
+     * @return &lt;table&gt;...&lt;/table&gt; 字符串
+     */
+    public String readExcelToHtml(String filePath , boolean isWithStyle){
+
+        InputStream is = null;
+        String htmlExcel = null;
+        try {
+            File sourcefile = new File(filePath);
+            is = new FileInputStream(sourcefile);
+            Workbook wb = WorkbookFactory.create(is);
+            if (wb instanceof XSSFWorkbook) {
+                XSSFWorkbook xWb = (XSSFWorkbook) wb;
+                htmlExcel = ExcelToHtmlUtil.getExcelInfo(xWb,isWithStyle);
+            }else if(wb instanceof HSSFWorkbook){
+                HSSFWorkbook hWb = (HSSFWorkbook) wb;
+                htmlExcel = ExcelToHtmlUtil.getExcelInfo(hWb,isWithStyle);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            try {
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return htmlExcel;
+    }
+
+    public static String xSSFWorkbookToHtml(HSSFWorkbook wb,boolean isWithStyle) {
+        return ExcelToHtmlUtil.getExcelInfo(wb,isWithStyle);
+    }
+
+
+
+    public static String getExcelInfo(Workbook wb,boolean isWithStyle){
+
+        StringBuffer sb = new StringBuffer();
+        Sheet sheet = wb.getSheetAt(0);//获取第一个Sheet的内容
+        int lastRowNum = sheet.getLastRowNum();
+        Map&lt;String, String&gt; map[] = getRowSpanColSpanMap(sheet);
+        sb.append(&quot;&lt;table style='border-collapse:collapse;' width='100%'&gt;&quot;);
+        Row row = null;        //兼容
+        Cell cell = null;    //兼容
+
+        for (int rowNum = sheet.getFirstRowNum(); rowNum &lt;= lastRowNum; rowNum++) {
+            row = sheet.getRow(rowNum);
+            if (row == null) {
+                sb.append(&quot;&lt;tr&gt;&lt;td &gt; &amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&quot;);
+                continue;
+            }
+            sb.append(&quot;&lt;tr&gt;&quot;);
+            int lastColNum = row.getLastCellNum();
+            for (int colNum = 0; colNum &lt; lastColNum; colNum++) {
+                cell = row.getCell(colNum);
+                if (cell == null) {    //特殊情况 空白的单元格会返回null
+                    sb.append(&quot;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&quot;);
+                    continue;
+                }
+
+                String stringValue = getCellValue(cell);
+                if (map[0].containsKey(rowNum + &quot;,&quot; + colNum)) {
+                    String pointString = map[0].get(rowNum + &quot;,&quot; + colNum);
+                    map[0].remove(rowNum + &quot;,&quot; + colNum);
+                    int bottomeRow = Integer.valueOf(pointString.split(&quot;,&quot;)[0]);
+                    int bottomeCol = Integer.valueOf(pointString.split(&quot;,&quot;)[1]);
+                    int rowSpan = bottomeRow - rowNum + 1;
+                    int colSpan = bottomeCol - colNum + 1;
+                    sb.append(&quot;&lt;td rowspan= '&quot; + rowSpan + &quot;' colspan= '&quot;+ colSpan + &quot;' &quot;);
+                } else if (map[1].containsKey(rowNum + &quot;,&quot; + colNum)) {
+                    map[1].remove(rowNum + &quot;,&quot; + colNum);
+                    continue;
+                } else {
+                    sb.append(&quot;&lt;td &quot;);
+                }
+
+                //判断是否需要样式
+                if(isWithStyle){
+                    dealExcelStyle(wb, sheet, cell, sb);//处理单元格样式
+                }
+
+                sb.append(&quot;&gt;&quot;);
+                if (stringValue == null || &quot;&quot;.equals(stringValue.trim())) {
+                    sb.append(&quot; &amp;nbsp; &quot;);
+                } else {
+                    // 将ascii码为160的空格转换为html下的空格（&amp;nbsp;）
+                    sb.append(stringValue.replace(String.valueOf((char) 160),&quot;&amp;nbsp;&quot;));
+                }
+                sb.append(&quot;&lt;/td&gt;&quot;);
+            }
+            sb.append(&quot;&lt;/tr&gt;&quot;);
+        }
+
+        sb.append(&quot;&lt;/table&gt;&quot;);
+        return sb.toString();
+    }
+
+    private static Map&lt;String, String&gt;[] getRowSpanColSpanMap(Sheet sheet) {
+
+        Map&lt;String, String&gt; map0 = new HashMap&lt;String, String&gt;();
+        Map&lt;String, String&gt; map1 = new HashMap&lt;String, String&gt;();
+        int mergedNum = sheet.getNumMergedRegions();
+        CellRangeAddress range = null;
+        for (int i = 0; i &lt; mergedNum; i++) {
+            range = sheet.getMergedRegion(i);
+            int topRow = range.getFirstRow();
+            int topCol = range.getFirstColumn();
+            int bottomRow = range.getLastRow();
+            int bottomCol = range.getLastColumn();
+            map0.put(topRow + &quot;,&quot; + topCol, bottomRow + &quot;,&quot; + bottomCol);
+            // System.out.println(topRow + &quot;,&quot; + topCol + &quot;,&quot; + bottomRow + &quot;,&quot; + bottomCol);
+            int tempRow = topRow;
+            while (tempRow &lt;= bottomRow) {
+                int tempCol = topCol;
+                while (tempCol &lt;= bottomCol) {
+                    map1.put(tempRow + &quot;,&quot; + tempCol, &quot;&quot;);
+                    tempCol++;
+                }
+                tempRow++;
+            }
+            map1.remove(topRow + &quot;,&quot; + topCol);
+        }
+        Map[] map = { map0, map1 };
+        return map;
+    }
+
+
+    /**
+     * 获取表格单元格Cell内容
+     * @param cell
+     * @return
+     */
+    private static String getCellValue(Cell cell) {
+
+        String result = new String();  
+        switch (cell.getCellType()) {  
+        case Cell.CELL_TYPE_NUMERIC:// 数字类型  
+            if (HSSFDateUtil.isCellDateFormatted(cell)) {// 处理日期格式、时间格式  
+                SimpleDateFormat sdf = null;  
+                if (cell.getCellStyle().getDataFormat() == HSSFDataFormat.getBuiltinFormat(&quot;h:mm&quot;)) {  
+                    sdf = new SimpleDateFormat(&quot;HH:mm&quot;);  
+                } else {// 日期  
+                    sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);  
+                }  
+                Date date = cell.getDateCellValue();  
+                result = sdf.format(date);  
+            } else if (cell.getCellStyle().getDataFormat() == 58) {  
+                // 处理自定义日期格式：m月d日(通过判断单元格的格式id解决，id的值是58)  
+                SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);  
+                double value = cell.getNumericCellValue();  
+                Date date = org.apache.poi.ss.usermodel.DateUtil  
+                        .getJavaDate(value);  
+                result = sdf.format(date);  
+            } else {  
+                double value = cell.getNumericCellValue();  
+                CellStyle style = cell.getCellStyle();  
+                DecimalFormat format = new DecimalFormat();  
+                String temp = style.getDataFormatString();  
+                // 单元格设置成常规  
+                if (temp.equals(&quot;General&quot;)) {  
+                    format.applyPattern(&quot;#&quot;);  
+                }  
+                result = format.format(value);  
+            }  
+            break;  
+        case Cell.CELL_TYPE_STRING:// String类型  
+            result = cell.getRichStringCellValue().toString();  
+            break;  
+        case Cell.CELL_TYPE_BLANK:  
+            result = &quot;&quot;;  
+            break;
+        default:  
+            result = &quot;&quot;;  
+            break;  
+        }  
+        return result;  
+    }
+
+    /**
+     * 处理表格样式
+     * @param wb
+     * @param sheet
+     * @param cell
+     * @param sb
+     */
+    private static void dealExcelStyle(Workbook wb,Sheet sheet,Cell cell,StringBuffer sb){
+
+        CellStyle cellStyle = cell.getCellStyle();
+        if (cellStyle != null) {
+            short alignment = cellStyle.getAlignment();
+            sb.append(&quot;align='&quot; + convertAlignToHtml(alignment) + &quot;' &quot;);//单元格内容的水平对齐方式
+            short verticalAlignment = cellStyle.getVerticalAlignment();
+            sb.append(&quot;valign='&quot;+ convertVerticalAlignToHtml(verticalAlignment)+ &quot;' &quot;);//单元格中内容的垂直排列方式
+
+            if (wb instanceof XSSFWorkbook) {
+
+                XSSFFont xf = ((XSSFCellStyle) cellStyle).getFont();
+                short boldWeight = xf.getBoldweight();
+                sb.append(&quot;style='&quot;);
+                sb.append(&quot;font-weight:&quot; + boldWeight + &quot;;&quot;); // 字体加粗
+                sb.append(&quot;font-size: &quot; + xf.getFontHeight() / 2 + &quot;%;&quot;); // 字体大小
+                int columnWidth = sheet.getColumnWidth(cell.getColumnIndex()) ;
+                sb.append(&quot;width:&quot; + columnWidth + &quot;px;&quot;);
+
+                XSSFColor xc = xf.getXSSFColor();
+                if (xc != null &amp;&amp; !&quot;&quot;.equals(xc)) {
+                    sb.append(&quot;color:#&quot; + xc.getARGBHex().substring(2) + &quot;;&quot;); // 字体颜色
+                }
+
+                XSSFColor bgColor = (XSSFColor) cellStyle.getFillForegroundColorColor();
+                //System.out.println(&quot;************************************&quot;);
+                //System.out.println(&quot;BackgroundColorColor: &quot;+cellStyle.getFillBackgroundColorColor());
+                //System.out.println(&quot;ForegroundColor: &quot;+cellStyle.getFillForegroundColor());//0
+                //System.out.println(&quot;BackgroundColorColor: &quot;+cellStyle.getFillBackgroundColorColor());
+                //System.out.println(&quot;ForegroundColorColor: &quot;+cellStyle.getFillForegroundColorColor());
+                //String bgColorStr = bgColor.getARGBHex();
+                //System.out.println(&quot;bgColorStr: &quot;+bgColorStr);
+                if (bgColor != null &amp;&amp; !&quot;&quot;.equals(bgColor)) {
+                    sb.append(&quot;background-color:#&quot; + bgColor.getARGBHex().substring(2) + &quot;;&quot;); // 背景颜色
+                }
+                sb.append(getBorderStyle(0,cellStyle.getBorderTop(), ((XSSFCellStyle) cellStyle).getTopBorderXSSFColor()));
+                sb.append(getBorderStyle(1,cellStyle.getBorderRight(), ((XSSFCellStyle) cellStyle).getRightBorderXSSFColor()));
+                sb.append(getBorderStyle(2,cellStyle.getBorderBottom(), ((XSSFCellStyle) cellStyle).getBottomBorderXSSFColor()));
+                sb.append(getBorderStyle(3,cellStyle.getBorderLeft(), ((XSSFCellStyle) cellStyle).getLeftBorderXSSFColor()));
+
+            }else if(wb instanceof HSSFWorkbook){
+
+                HSSFFont hf = ((HSSFCellStyle) cellStyle).getFont(wb);
+                short boldWeight = hf.getBoldweight();
+                short fontColor = hf.getColor();
+                sb.append(&quot;style='&quot;);
+                HSSFPalette palette = ((HSSFWorkbook) wb).getCustomPalette(); // 类HSSFPalette用于求的颜色的国际标准形式
+                HSSFColor hc = palette.getColor(fontColor);
+                sb.append(&quot;font-weight:&quot; + boldWeight + &quot;;&quot;); // 字体加粗
+                sb.append(&quot;font-size: &quot; + hf.getFontHeight() / 2 + &quot;%;&quot;); // 字体大小
+                String fontColorStr = convertToStardColor(hc);
+                if (fontColorStr != null &amp;&amp; !&quot;&quot;.equals(fontColorStr.trim())) {
+                    sb.append(&quot;color:&quot; + fontColorStr + &quot;;&quot;); // 字体颜色
+                }
+                int columnWidth = sheet.getColumnWidth(cell.getColumnIndex()) ;
+                sb.append(&quot;width:&quot; + columnWidth + &quot;px;&quot;);
+                short bgColor = cellStyle.getFillForegroundColor();
+                hc = palette.getColor(bgColor);
+                String bgColorStr = convertToStardColor(hc);
+                if (bgColorStr != null &amp;&amp; !&quot;&quot;.equals(bgColorStr.trim())) {
+                    sb.append(&quot;background-color:&quot; + bgColorStr + &quot;;&quot;); // 背景颜色
+                }
+                sb.append( getBorderStyle(palette,0,cellStyle.getBorderTop(),cellStyle.getTopBorderColor()));
+                sb.append( getBorderStyle(palette,1,cellStyle.getBorderRight(),cellStyle.getRightBorderColor()));
+                sb.append( getBorderStyle(palette,3,cellStyle.getBorderLeft(),cellStyle.getLeftBorderColor()));
+                sb.append( getBorderStyle(palette,2,cellStyle.getBorderBottom(),cellStyle.getBottomBorderColor()));
+            }
+
+            sb.append(&quot;' &quot;);
+        }
+    }
+
+    /**
+     * 单元格内容的水平对齐方式
+     * @param alignment
+     * @return
+     */
+    private static String convertAlignToHtml(short alignment) {
+
+        String align = &quot;left&quot;;
+        switch (alignment) {
+        case CellStyle.ALIGN_LEFT:
+            align = &quot;left&quot;;
+            break;
+        case CellStyle.ALIGN_CENTER:
+            align = &quot;center&quot;;
+            break;
+        case CellStyle.ALIGN_RIGHT:
+            align = &quot;right&quot;;
+            break;
+        default:
+            break;
+        }
+        return align;
+    }
+
+    /**
+     * 单元格中内容的垂直排列方式
+     * @param verticalAlignment
+     * @return
+     */
+    private static String convertVerticalAlignToHtml(short verticalAlignment) {
+
+        String valign = &quot;middle&quot;;
+        switch (verticalAlignment) {
+        case CellStyle.VERTICAL_BOTTOM:
+            valign = &quot;bottom&quot;;
+            break;
+        case CellStyle.VERTICAL_CENTER:
+            valign = &quot;center&quot;;
+            break;
+        case CellStyle.VERTICAL_TOP:
+            valign = &quot;top&quot;;
+            break;
+        default:
+            break;
+        }
+        return valign;
+    }
+
+    private static String convertToStardColor(HSSFColor hc) {
+
+        StringBuffer sb = new StringBuffer(&quot;&quot;);
+        if (hc != null) {
+            if (HSSFColor.AUTOMATIC.index == hc.getIndex()) {
+                return null;
+            }
+            sb.append(&quot;#&quot;);
+            for (int i = 0; i &lt; hc.getTriplet().length; i++) {
+                sb.append(fillWithZero(Integer.toHexString(hc.getTriplet()[i])));
+            }
+        }
+
+        return sb.toString();
+    }
+
+    private static String fillWithZero(String str) {
+        if (str != null &amp;&amp; str.length() &lt; 2) {
+            return &quot;0&quot; + str;
+        }
+        return str;
+    }
+
+    static String[] bordesr={&quot;border-top:&quot;,&quot;border-right:&quot;,&quot;border-bottom:&quot;,&quot;border-left:&quot;};
+    static String[] borderStyles={&quot;solid &quot;,&quot;solid &quot;,&quot;solid &quot;,&quot;solid &quot;,&quot;solid &quot;,&quot;solid &quot;,&quot;solid &quot;,&quot;solid &quot;,&quot;solid &quot;,&quot;solid&quot;,&quot;solid&quot;,&quot;solid&quot;,&quot;solid&quot;,&quot;solid&quot;};
+
+    private static  String getBorderStyle(  HSSFPalette palette ,int b,short s, short t){
+
+        if(s==0)return  bordesr[b]+borderStyles[s]+&quot;#d0d7e5 1px;&quot;;;
+        String borderColorStr = convertToStardColor( palette.getColor(t));
+        borderColorStr=borderColorStr==null|| borderColorStr.length()&lt;1?&quot;#000000&quot;:borderColorStr;
+        return bordesr[b]+borderStyles[s]+borderColorStr+&quot; 1px;&quot;;
+
+    }
+
+    private static  String getBorderStyle(int b,short s, XSSFColor xc){
+
+         if(s==0)return  bordesr[b]+borderStyles[s]+&quot;#d0d7e5 1px;&quot;;;
+         if (xc != null &amp;&amp; !&quot;&quot;.equals(xc)) {
+             String borderColorStr = xc.getARGBHex();//t.getARGBHex();
+             borderColorStr=borderColorStr==null|| borderColorStr.length()&lt;1?&quot;#000000&quot;:borderColorStr.substring(2);
+             return bordesr[b]+borderStyles[s]+borderColorStr+&quot; 1px;&quot;;
+         }
+
+         return &quot;&quot;;
+    }
+
+}
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/java/javautils/excelutil/" title="Excel工具类"> <i class="fa fa-chevron-left"></i><label>Excel工具类</label></a>
+    <a class="nav nav-next" href="/java/javautils/gis/" title="Gis相关工具类" style="margin-right: 0px;"><label>Gis相关工具类</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

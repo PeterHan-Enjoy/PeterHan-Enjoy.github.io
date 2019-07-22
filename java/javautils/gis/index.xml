@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gis相关工具类 on PerHan_Enjoy</title>
+    <link>https://peterhan-enjoy.github.com/java/javautils/gis/</link>
+    <description>Recent content in Gis相关工具类 on PerHan_Enjoy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://peterhan-enjoy.github.com/java/javautils/gis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dae转换Gltf</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/gis/dae2gltf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/gis/dae2gltf/</guid>
+      <description>下载地址 提取码：e4aq
+系统启动时生成启动文件
+ import com.nuclear_Project.common.bean.SystemConfig; import org.apache.commons.lang3.BooleanUtils; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.context.ApplicationEvent; import org.springframework.context.ApplicationListener; import org.springframework.context.annotation.Configuration; import org.springframework.context.annotation.PropertySource; import org.springframework.context.event.ContextClosedEvent; import org.springframework.context.event.ContextRefreshedEvent; import org.springframework.core.env.Environment; import org.springframework.stereotype.Service; import java.io.BufferedWriter; import java.io.File; import java.io.FileOutputStream; import java.io.OutputStreamWriter; /** * 启动监听器&amp;lt;br /&amp;gt; * 1,初始化系统参数 * */ @Service @Configuration @PropertySource(&amp;quot;classpath:system.properties&amp;quot;) public class SystemStartLister implements ApplicationListener&amp;lt;ApplicationEvent&amp;gt; { @Autowired private Environment env; @Override public void onApplicationEvent(ApplicationEvent event) { try { String path = System.getProperty(&amp;quot;Nuclear_Project.root&amp;quot;); String collpath = path+&amp;quot;\\daetogltf\\COLLADA2GLTF-v2.</description>
+    </item>
+    
+    <item>
+      <title>Geoserver</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/gis/geoserver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/gis/geoserver/</guid>
+      <description>下载地址提取码：300y 通过geoserver远程发布
+ import it.geosolutions.geoserver.rest.GeoServerRESTManager; import it.geosolutions.geoserver.rest.GeoServerRESTPublisher; import it.geosolutions.geoserver.rest.GeoServerRESTReader; import org.apache.commons.httpclient.NameValuePair; import java.io.File; import java.net.MalformedURLException; import java.net.URL; public class GeoServerUtil { public static final String RESTURL; public static final String RESTUSER; public static final String RESTPW; public static final String GS_VERSION; public static java.net.URL URL; public static GeoServerRESTManager manager; public static GeoServerRESTReader reader; public static GeoServerRESTPublisher publisher; // private static ResourceBundle bundle = ResourceBundle.getBundle(&amp;quot;constant&amp;quot;); //初始化用户名密码赋值,发布图集时会进行身份认证 static { RESTURL = getenv(&amp;quot;gsmgr_resturl&amp;quot;, &amp;quot;http://localhost:6060/geoserver/&amp;quot;); RESTUSER = getenv(&amp;quot;gsmgr_restuser&amp;quot;,&amp;quot;admin&amp;quot;); RESTPW = getenv(&amp;quot;gsmgr_restpw&amp;quot;, &amp;quot;geoserver&amp;quot;); GS_VERSION = getenv(&amp;quot;gsmgr_version&amp;quot;, &amp;quot;2.</description>
+    </item>
+    
+    <item>
+      <title>Kml导入</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;de.micromata.jak&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;JavaAPIforKml&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;dom4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;dom4j&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.6.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import com.nuclear_Project.common.util.FileUtil; import com.nuclear_Project.specificObjective.bean.KmlLine; import com.nuclear_Project.specificObjective.bean.KmlPoint; import com.nuclear_Project.specificObjective.bean.KmlPolygon; import com.nuclear_Project.specificObjective.bean.KmlProperty; import de.micromata.opengis.kml.v_2_2_0.*; import org.apache.commons.io.FilenameUtils; import org.apache.commons.io.IOUtils; import org.dom4j.DocumentException; import org.dom4j.Element; import org.dom4j.io.SAXReader; import java.io.*; import java.math.BigDecimal; import java.util.ArrayList; import java.util.Iterator; import java.util.List; public class ParsingKmlUtil { //以下三行都是自定义的KML类，用于获取名称name、所有点points、样式颜色color private List&amp;lt;KmlPoint&amp;gt; kmlPointList = new ArrayList&amp;lt;&amp;gt;(); private List&amp;lt;KmlLine&amp;gt; kmlLineList = new ArrayList&amp;lt;&amp;gt;(); private List&amp;lt;KmlPolygon&amp;gt; kmlPolygonList = new ArrayList&amp;lt;&amp;gt;(); private KmlProperty kmlProperty = new KmlProperty(); /** * 保存kml数据到临时表 * * @param file 上传的文件实体 * @return 自定义的KML文件实体 */ public KmlProperty parseKmlForJAK(File file) throws FileNotFoundException { ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); BufferedReader reader = new BufferedReader( new FileReader(file)); try { IOUtils.</description>
+    </item>
+    
+    <item>
+      <title>Shp工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/gis/shputil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/gis/shputil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.geotools&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;gt-shapefile&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;19.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.geotools&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;gt-swing&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;19.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import org.geotools.data.FileDataStore; import org.geotools.data.FileDataStoreFinder; import org.geotools.data.shapefile.ShapefileDataStore; import org.geotools.data.simple.SimpleFeatureCollection; import org.geotools.data.simple.SimpleFeatureIterator; import org.geotools.data.simple.SimpleFeatureSource; import org.opengis.feature.simple.SimpleFeature; import org.opengis.filter.Filter; import java.io.File; import java.io.IOException; import java.nio.charset.Charset; import java.util.List; public class ShpUtil { public static void main(String[] args){ String path1 = &amp;quot;D:\\PeterHan\\test.shp&amp;quot; ; //读取shp SimpleFeatureCollection colls1 = readShp(path1); //拿到所有features SimpleFeatureIterator iters = colls1.features(); //遍历打印 while(iters.hasNext()){ SimpleFeature sf = iters.next(); List&amp;lt;Object&amp;gt; list = sf.getAttributes(); System.</description>
+    </item>
+    
+    <item>
+      <title>java几何运算工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/gis/jstutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/gis/jstutil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.vividsolutions&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jts&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.13&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  任意多边形相交面积
+public static void main(String[] args) { // TODO Auto-generated method stub Coordinate[] coordinates1 = new Coordinate[]{ new Coordinate(125.72447156,39.82054423),new Coordinate(125.72447156,39.76282084), new Coordinate(125.77791891,39.76282084),new Coordinate(125.77791891,39.82054423), new Coordinate(125.72447156,39.82054423) }; Coordinate[] coordinates2 = new Coordinate[]{ new Coordinate(125.164119759729,40.0612609250715),new Coordinate(126.100803385316,39.9877343597289), new Coordinate(126.174165535013,39.2037784330532),new Coordinate(125.396225932331,39.2476580006858), new Coordinate(124.902255206616,39.7014452467443),new Coordinate(124.902267040602,39.7014536164514), new Coordinate(124.902267040602,39.7014536164514),new Coordinate(125.164119759729,40.0612609250715) }; /* Coordinate[] coordinates2 = new Coordinate[]{ new Coordinate(125,40),new Coordinate(125,38), new Coordinate(125.75,38),new Coordinate(125.75,40), new Coordinate(125,40) };*/ Geometry g1 = new GeometryFactory().createPolygon(coordinates1); Geometry g2 = new GeometryFactory().</description>
+    </item>
+    
+  </channel>
+</rss>

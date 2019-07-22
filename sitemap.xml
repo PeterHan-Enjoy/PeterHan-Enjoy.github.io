@@ -23,12 +23,76 @@
   </url>
   
   <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/gis/dae2gltf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/excelutil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/exceltohtmlutil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/gis/geoserver/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/gis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/html2image/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/jsonutil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/pdfutil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/httpclientutil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/gis/shputil/</loc>
+  </url>
+  
+  <url>
     <loc>https://peterhan-enjoy.github.com/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/wordutil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/word2htmlutil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/csvutil/</loc>
+  </url>
+  
+  <url>
     <loc>https://peterhan-enjoy.github.com/utils/docker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/ffmpeg/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/utils/ffmpeg/</loc>
   </url>
   
   <url>
@@ -37,6 +101,18 @@
   
   <url>
     <loc>https://peterhan-enjoy.github.com/utils/hugo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/gis/jstutil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/</loc>
   </url>
   
   <url>
@@ -52,11 +128,19 @@
   </url>
   
   <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/decryptionziputil/</loc>
+  </url>
+  
+  <url>
     <loc>https://peterhan-enjoy.github.com/design/singletonpattern/</loc>
   </url>
   
   <url>
     <loc>https://peterhan-enjoy.github.com/design/commandpattern/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/base64util/</loc>
   </url>
   
   <url>
@@ -73,6 +157,10 @@
   
   <url>
     <loc>https://peterhan-enjoy.github.com/design/observerpattern/</loc>
+  </url>
+  
+  <url>
+    <loc>https://peterhan-enjoy.github.com/java/javautils/zipfileutil/</loc>
   </url>
   
   <url>

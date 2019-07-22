@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-22T10:43:46 CST">
+<title>Pdf工具类 :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/java/javautils/pdfutil/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/utils/ffmpeg/">
+            ffmpeg 安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/">java</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/java/javautils/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/javautils/">java工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/excelutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/excelutil/">
+            Excel工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/exceltohtmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/exceltohtmlutil/">
+            Excel转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/java/javautils/gis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/gis/">Gis相关工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/gis/dae2gltf/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/dae2gltf/">
+            Dae转换Gltf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/geoserver/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/geoserver/">
+            Geoserver
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/">
+            Kml导入
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/shputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/shputil/">
+            Shp工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/jstutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/jstutil/">
+            java几何运算工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/java/javautils/html2image/" class="dd-item">
+        <div>
+          <a href="/java/javautils/html2image/">
+            Html转换Image
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/jsonutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/jsonutil/">
+            Json工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/pdfutil/" class="dd-item active">
+        <div>
+          <a href="/java/javautils/pdfutil/">
+            Pdf工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/httpclientutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/httpclientutil/">
+            Post请求
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/wordutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/wordutil/">
+            Word工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/word2htmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/word2htmlutil/">
+            Word转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/csvutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/csvutil/">
+            csv 工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/java/javautils/ffmpeg/">
+            ffmpeg 使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/decryptionziputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/decryptionziputil/">
+            加密解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/base64util/" class="dd-item">
+        <div>
+          <a href="/java/javautils/base64util/">
+            图片base64转换工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/zipfileutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/zipfileutil/">
+            解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option>
+    <option value="/java/" >
+   java</option> 
+    <option value="/java/javautils/" >
+  - 
+   java工具类</option> 
+      <option value="/java/javautils/excelutil/" >-- Excel工具类</option>
+      <option value="/java/javautils/exceltohtmlutil/" >-- Excel转换html</option>
+    <option value="/java/javautils/gis/" >
+  -- 
+   Gis相关工具类</option>
+      <option value="/java/javautils/html2image/" >-- Html转换Image</option>
+      <option value="/java/javautils/jsonutil/" >-- Json工具类</option>
+      <option value="/java/javautils/pdfutil/"  selected>-- Pdf工具类</option>
+      <option value="/java/javautils/httpclientutil/" >-- Post请求</option>
+      <option value="/java/javautils/wordutil/" >-- Word工具类</option>
+      <option value="/java/javautils/word2htmlutil/" >-- Word转换html</option>
+      <option value="/java/javautils/csvutil/" >-- csv 工具类</option>
+      <option value="/java/javautils/ffmpeg/" >-- ffmpeg 使用</option>
+      <option value="/java/javautils/decryptionziputil/" >-- 加密解压缩工具类</option>
+      <option value="/java/javautils/base64util/" >-- 图片base64转换工具类</option>
+      <option value="/java/javautils/zipfileutil/" >-- 解压缩工具类</option>
+  
+  
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>Pdf工具类</h1>
+
+    
+    
+    
+    <pre><code>&lt;dependency&gt;
+            &lt;groupId&gt;com.lowagie&lt;/groupId&gt;
+            &lt;artifactId&gt;itext&lt;/artifactId&gt;
+            &lt;version&gt;2.1.5&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<pre><code>
+import java.awt.Color;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import com.cnmts.common.service.FileService;
+import com.cnmts.inspections.bean.RespInspectionTemplateInfo;
+import com.lowagie.text.Cell;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Element;
+import com.lowagie.text.Font;
+import com.lowagie.text.PageSize;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.Phrase;
+import com.lowagie.text.Table;
+import com.lowagie.text.pdf.BaseFont;
+import com.lowagie.text.pdf.PdfCopy;
+import com.lowagie.text.pdf.PdfImportedPage;
+import com.lowagie.text.pdf.PdfReader;
+import com.lowagie.text.pdf.PdfWriter;
+
+public class PdfUtil {
+
+    private static final int N = 1;
+
+    public static String CreatePdf(List&lt;RespInspectionTemplateInfo&gt; list) throws FileNotFoundException, DocumentException {
+
+        String fileName = UUID.randomUUID().toString() + &quot;.pdf&quot;;
+
+        String relatiePath = FileService.temp+&quot;/&quot;+DateUtil.getYear() + &quot;/&quot; + DateUtil.getMonth();
+        relatiePath = relatiePath + &quot;/&quot; + fileName;
+        File file = new File(relatiePath);
+        if (!file.getParentFile().exists()) {
+            file.getParentFile().mkdirs();
+        }
+
+        // 创建一个文档对象纸张大小为A4
+        Document doc = new Document(PageSize.A4, 40, 40, 40, 40);
+        // 设置要输出到磁盘上的文件名称
+        PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream(new File(relatiePath)));
+
+        MyEvent event = new MyEvent();
+        writer.setPageEvent(event);
+
+        /*
+         * //设置作者信息 doc.addAuthor(&quot;sxyx2008&quot;); //设置文档创建日期 doc.addCreationDate();
+         */
+        // 设置标题
+        doc.addTitle(&quot;iText测试&quot;);
+        // 设置值主题
+        doc.addSubject(&quot;iText&quot;);
+
+        // 打开文档开始写内容
+        doc.open();
+        // 构建一段落
+        Paragraph par3 = new Paragraph(&quot;检查记录表&quot;, ChineseFont());
+        // 设置局中对齐
+        par3.setAlignment(Element.ALIGN_CENTER);
+        // 添加到文档
+        doc.add(par3);
+
+        // 创建一个四列的表格
+        Table table = new Table(6);
+        // 设置边框
+        table.setBorder(1);
+        table.setBorderColor(Color.GRAY);
+        table.setWidth(530);
+
+        float[] widths = { 18, 170, 60, 130, 60, 50 };
+        table.setWidths(widths);
+
+        table.setPadding(2);
+
+        table.setLocked(true);
+        // 创建表头
+
+        Cell cell1 = new Cell(new Phrase(&quot;编号\r\n#&quot;, ChineseFont()));
+        cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell1.setVerticalAlignment(Element.ALIGN_CENTER);
+
+        Cell cell2 = new Cell(new Phrase(&quot;项目\r\nItem&quot;, ChineseFont()));
+        cell2.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell2.setVerticalAlignment(Element.ALIGN_CENTER);
+
+        Cell cell3 = new Cell(new Phrase(&quot;设备\r\nAsset&quot;, ChineseFont()));
+        cell3.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell3.setVerticalAlignment(Element.ALIGN_CENTER);
+
+        Cell cell4 = new Cell(new Phrase(&quot;运行状态\r\nStatus&quot;, ChineseFont()));
+        cell4.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell4.setVerticalAlignment(Element.ALIGN_CENTER);
+
+        Cell cell5 = new Cell(new Phrase(&quot;采取/建议的措施\r\nPorposed Action&quot;, ChineseFont()));
+        cell5.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell5.setVerticalAlignment(Element.ALIGN_CENTER);
+
+        Cell cell6 = new Cell(new Phrase(&quot;备注\r\nRemark&quot;, ChineseFont()));
+        cell6.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell6.setVerticalAlignment(Element.ALIGN_CENTER);
+
+        table.addCell(cell1);
+        table.addCell(cell2);
+        table.addCell(cell3);
+        table.addCell(cell4);
+        table.addCell(cell5);
+        table.addCell(cell6);
+        // 添加此代码后每页都会显示表头
+        table.endHeaders();
+
+        // 循环向表格中添加100条记录 100行4列的表格
+
+        // 以下代码的作用是创建100行数据,其中每行有四列,列依次为 编号 姓名 性别 备注
+        for (int i = 0; i &lt; list.size(); i++) {
+
+            Cell cell11 = new Cell(new Phrase(i + 1 + &quot;&quot;, ChineseFont()));
+
+            Cell cell22 = new Cell(new Phrase(list.get(i).getItemName(), ChineseFont()));
+
+            Cell cell33 = new Cell(new Phrase(list.get(i).getAssetName(), ChineseFont()));
+
+            Cell cell44 = null;
+            if (list.get(i).getConditionMeasure() == 1) {
+                cell44 = new Cell(new Phrase(&quot;一般 不良&quot;, ChineseFont()));
+            } else if (list.get(i).getConditionMeasure() == 2) {
+                cell44 = new Cell(new Phrase(&quot;良好 一般 不良&quot;, ChineseFont()));
+            } else if (list.get(i).getConditionMeasure() == 3) {
+                cell44 = new Cell(new Phrase(&quot;很好 良好 一般 低劣 不良&quot;, ChineseFont()));
+            } else if (list.get(i).getConditionMeasure() == 4) {
+                cell44 = new Cell(new Phrase(&quot;得分(    )&quot;, ChineseFont()));
+            } else {
+                cell44 = new Cell(new Phrase(&quot;比例(    )&quot;, ChineseFont()));
+            }
+
+            Cell cell55 = new Cell(new Phrase(&quot;&quot;));
+
+            Cell cell66 = new Cell(new Phrase(&quot;&quot;));
+
+            // 单元格水平对齐方式
+            cell11.setHorizontalAlignment(Element.ALIGN_LEFT);
+            // 单元格垂直对齐方式
+            cell11.setVerticalAlignment(Element.ALIGN_CENTER);
+
+            cell22.setHorizontalAlignment(Element.ALIGN_LEFT);
+            cell22.setVerticalAlignment(Element.ALIGN_CENTER);
+
+            cell33.setHorizontalAlignment(Element.ALIGN_LEFT);
+            cell33.setVerticalAlignment(Element.ALIGN_CENTER);
+
+            cell44.setHorizontalAlignment(Element.ALIGN_LEFT);
+            cell44.setVerticalAlignment(Element.ALIGN_CENTER);
+
+            cell55.setHorizontalAlignment(Element.ALIGN_LEFT);
+            cell55.setVerticalAlignment(Element.ALIGN_CENTER);
+
+            cell66.setHorizontalAlignment(Element.ALIGN_LEFT);
+            cell66.setVerticalAlignment(Element.ALIGN_CENTER);
+
+            table.addCell(cell11);
+            table.addCell(cell22);
+            table.addCell(cell33);
+            table.addCell(cell44);
+            table.addCell(cell55);
+            table.addCell(cell66);
+
+        }
+
+        // 将表格添加到新的文档
+        doc.add(table);
+        doc.close();
+        writer.close();
+        return relatiePath;
+    }
+
+    // pdf文档中文字符处理
+    public static Font ChineseFont() {
+        BaseFont baseFont = null;
+        try {
+            baseFont = BaseFont.createFont(&quot;c:\\windows\\fonts\\SIMHEI.TTF&quot;, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Font chineseFont = new Font(baseFont, 8, Font.NORMAL, Color.black);
+        return chineseFont;
+    }
+
+    public static byte[] mergePdfFiles(String[] files) {
+        try {
+            Document document = new Document(new PdfReader(files[0]).getPageSize(1));
+
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+            PdfCopy copy = new PdfCopy(document, bos);
+
+            document.open();
+
+            for (int i = 0; i &lt; files.length; i++) {
+                if (files[i] == null || files[i].equals(&quot;&quot;)) {
+                    continue;
+                }
+
+                PdfReader reader = new PdfReader(files[i]);
+
+                int n = reader.getNumberOfPages();
+
+                for (int j = 1; j &lt;= n; j++) {
+                    document.newPage();
+                    PdfImportedPage page = copy.getImportedPage(reader, j);
+                    copy.addPage(page);
+                }
+            }
+            bos.flush();
+            bos.close();
+            copy.close();
+            document.close();
+            return bos.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void partitionPdfFile(String filepath) {
+        Document document = null;
+        PdfCopy copy = null;
+
+        try {
+            PdfReader reader = new PdfReader(filepath);
+
+            int n = reader.getNumberOfPages();
+
+            if (n &lt; N) {
+                System.out.println(&quot;The document does not have &quot; + N + &quot; pages to partition !&quot;);
+                return;
+            }
+
+            int size = n / N;
+            String staticpath = filepath.substring(0, filepath.lastIndexOf(&quot;\\&quot;) + 1);
+            String savepath = null;
+            ArrayList&lt;String&gt; savepaths = new ArrayList&lt;String&gt;();
+            for (int i = 1; i &lt;= N; i++) {
+                if (i &lt; 10) {
+                    savepath = filepath.substring(filepath.lastIndexOf(&quot;\\&quot;) + 1, filepath.length() - 4);
+                    savepath = staticpath + savepath + &quot;0&quot; + i + &quot;.pdf&quot;;
+                    savepaths.add(savepath);
+                } else {
+                    savepath = filepath.substring(filepath.lastIndexOf(&quot;\\&quot;) + 1, filepath.length() - 4);
+                    savepath = staticpath + savepath + i + &quot;.pdf&quot;;
+                    savepaths.add(savepath);
+                }
+            }
+
+            for (int i = 0; i &lt; N - 1; i++) {
+                document = new Document(reader.getPageSize(1));
+                copy = new PdfCopy(document, new FileOutputStream(savepaths.get(i)));
+                document.open();
+                for (int j = size * i + 1; j &lt;= size * (i + 1); j++) {
+                    document.newPage();
+                    PdfImportedPage page = copy.getImportedPage(reader, j);
+                    copy.addPage(page);
+                }
+                document.close();
+            }
+
+            document = new Document(reader.getPageSize(1));
+            copy = new PdfCopy(document, new FileOutputStream(savepaths.get(N - 1)));
+            document.open();
+            for (int j = size * (N - 1) + 1; j &lt;= n; j++) {
+                document.newPage();
+                PdfImportedPage page = copy.getImportedPage(reader, j);
+                copy.addPage(page);
+            }
+            document.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<p>通过Myevent在每页的开始和结尾加标注</p>
+
+<pre><code>
+import java.io.IOException;
+
+import com.lowagie.text.BadElementException;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Image;
+import com.lowagie.text.pdf.PdfPageEventHelper;
+import com.lowagie.text.pdf.PdfWriter;
+
+public class MyEvent extends PdfPageEventHelper{
+
+    Image image;
+
+    Image image2;
+
+    Image image3;
+
+    @Override
+    public void onOpenDocument(PdfWriter writer, Document document) {
+        String  fileNameInResource = &quot;/images/1.png&quot;;  
+        String  fileNameInResource2 =&quot;/images/2.png&quot;;
+        String  fileNameInResource3 = &quot;/images/3.png&quot;;  
+        try {
+                image = Image.getInstance(fileNameInResource);
+            image.setAbsolutePosition(30, 20);
+            image.setWidthPercentage(10);
+
+            image2 = Image.getInstance(fileNameInResource2);
+            image2.setAbsolutePosition(470, 25);
+
+
+            image3 = Image.getInstance(fileNameInResource3);
+            image3.setAbsolutePosition(30, 800);
+
+        } catch (BadElementException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onEndPage(PdfWriter writer, Document document) {
+        try {
+            writer.getDirectContent().addImage(image);
+            writer.getDirectContent().addImage(image2);
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void onStartPage(PdfWriter writer,Document document) {
+         try {
+            writer.getDirectContent().addImage(image3);
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+     }
+}
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/java/javautils/jsonutil/" title="Json工具类"> <i class="fa fa-chevron-left"></i><label>Json工具类</label></a>
+    <a class="nav nav-next" href="/java/javautils/httpclientutil/" title="Post请求" style="margin-right: 0px;"><label>Post请求</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

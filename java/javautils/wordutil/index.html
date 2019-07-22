@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-22T10:43:46 CST">
+<title>Word工具类 :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/java/javautils/wordutil/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/utils/ffmpeg/">
+            ffmpeg 安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/">java</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/java/javautils/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/javautils/">java工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/excelutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/excelutil/">
+            Excel工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/exceltohtmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/exceltohtmlutil/">
+            Excel转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/java/javautils/gis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/gis/">Gis相关工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/gis/dae2gltf/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/dae2gltf/">
+            Dae转换Gltf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/geoserver/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/geoserver/">
+            Geoserver
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/">
+            Kml导入
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/shputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/shputil/">
+            Shp工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/jstutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/jstutil/">
+            java几何运算工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/java/javautils/html2image/" class="dd-item">
+        <div>
+          <a href="/java/javautils/html2image/">
+            Html转换Image
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/jsonutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/jsonutil/">
+            Json工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/pdfutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/pdfutil/">
+            Pdf工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/httpclientutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/httpclientutil/">
+            Post请求
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/wordutil/" class="dd-item active">
+        <div>
+          <a href="/java/javautils/wordutil/">
+            Word工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/word2htmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/word2htmlutil/">
+            Word转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/csvutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/csvutil/">
+            csv 工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/java/javautils/ffmpeg/">
+            ffmpeg 使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/decryptionziputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/decryptionziputil/">
+            加密解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/base64util/" class="dd-item">
+        <div>
+          <a href="/java/javautils/base64util/">
+            图片base64转换工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/zipfileutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/zipfileutil/">
+            解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option>
+    <option value="/java/" >
+   java</option> 
+    <option value="/java/javautils/" >
+  - 
+   java工具类</option> 
+      <option value="/java/javautils/excelutil/" >-- Excel工具类</option>
+      <option value="/java/javautils/exceltohtmlutil/" >-- Excel转换html</option>
+    <option value="/java/javautils/gis/" >
+  -- 
+   Gis相关工具类</option>
+      <option value="/java/javautils/html2image/" >-- Html转换Image</option>
+      <option value="/java/javautils/jsonutil/" >-- Json工具类</option>
+      <option value="/java/javautils/pdfutil/" >-- Pdf工具类</option>
+      <option value="/java/javautils/httpclientutil/" >-- Post请求</option>
+      <option value="/java/javautils/wordutil/"  selected>-- Word工具类</option>
+      <option value="/java/javautils/word2htmlutil/" >-- Word转换html</option>
+      <option value="/java/javautils/csvutil/" >-- csv 工具类</option>
+      <option value="/java/javautils/ffmpeg/" >-- ffmpeg 使用</option>
+      <option value="/java/javautils/decryptionziputil/" >-- 加密解压缩工具类</option>
+      <option value="/java/javautils/base64util/" >-- 图片base64转换工具类</option>
+      <option value="/java/javautils/zipfileutil/" >-- 解压缩工具类</option>
+  
+  
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>Word工具类</h1>
+
+    
+    
+    
+    <pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+    &lt;artifactId&gt;poi&lt;/artifactId&gt;
+    &lt;version&gt;3.14&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<pre><code>
+import java.math.BigInteger;
+import java.util.List;
+
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
+import org.apache.poi.xwpf.usermodel.TextAlignment;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.apache.poi.xwpf.usermodel.XWPFTableCell;
+import org.apache.poi.xwpf.usermodel.XWPFTableRow;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTHpsMeasure;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTc;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTcPr;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTVerticalJc;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.STMerge;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.STVerticalJc;
+
+public class WordUtil {
+
+    /**
+     * 创建一行，如果有则直接使用
+     *
+     * @param table
+     * @param rowNum
+     * @return
+     */
+    public static XWPFTableRow createRow(XWPFTable table, int rowNum) {
+        XWPFTableRow row = table.getRow(rowNum);
+        if (row == null) {
+            row = table.createRow();
+        }
+        return row;
+    }
+
+    /**
+     * 创建一列，如果有则使用
+     *
+     * @param row
+     *            行
+     * @param cellNum
+     *            列号
+     * @return
+     */
+    public static XWPFTableCell createCell(XWPFTableRow row, int cellNum) {
+        XWPFTableCell cell = row.getCell(cellNum);
+        if (cell == null) {
+            cell = row.createCell();
+        }
+        return cell;
+    }
+
+    /**
+     * 和并列
+     *
+     * @param cell
+     *            被合并的列
+     * @param from
+     *            起始列号
+     * @param index
+     *            当前列号
+     * @param to
+     *            结束列号
+     */
+    public static void mergeCell(XWPFTableCell cell, int from, int index, int to) {
+        CTTcPr cellCTTcPr = getCellCTTcPr(cell);
+        if (from == index) {
+            cellCTTcPr.addNewHMerge().setVal(STMerge.RESTART);
+        } else {
+            cellCTTcPr.addNewHMerge().setVal(STMerge.CONTINUE);
+        }
+    }
+
+    /**
+     * 合并行
+     *
+     * @param cell
+     *            被合并的列
+     * @param from
+     *            起始行号
+     * @param index
+     *            当前行号
+     * @param to
+     *            结束行号
+     */
+    public static void mergeRow(XWPFTableCell cell, int from, int index, int to) {
+        CTTcPr cellCTTcPr = getCellCTTcPr(cell);
+        if (from == index) {
+            cellCTTcPr.addNewVMerge().setVal(STMerge.RESTART);
+        } else {
+            cellCTTcPr.addNewVMerge().setVal(STMerge.CONTINUE);
+        }
+    }
+
+    /**
+     * @Description: 得到Cell的CTTcPr,不存在则新建
+     * @param cell
+     * @return
+     */
+    public static CTTcPr getCellCTTcPr(XWPFTableCell cell) {
+        CTTc cttc = cell.getCTTc();
+        CTTcPr tcPr = cttc.isSetTcPr() ? cttc.getTcPr() : cttc.addNewTcPr();
+        return tcPr;
+    }
+
+    /**
+     * 设置单元格垂直对齐
+     *
+     * @param vAlign
+     *            STVerticalJc
+     * @param cell
+     */
+    public static void setCellVAlign(STVerticalJc.Enum vAlign, XWPFTableCell cell) {
+        CTTcPr cellCTTcPr = getCellCTTcPr(cell);
+        CTVerticalJc vJc = cellCTTcPr.isSetVAlign() ? cellCTTcPr.getVAlign() : cellCTTcPr.addNewVAlign();
+        vJc.setVal(STVerticalJc.CENTER);
+    }
+
+    /**
+     * 设置水平对齐方式
+     *
+     * @param align
+     *            ParagraphAlignment
+     * @param cell
+     */
+    public static void setCellHAlign(ParagraphAlignment align, XWPFTableCell cell) {
+        List&lt;XWPFParagraph&gt; paragraphs = cell.getParagraphs();
+        for (XWPFParagraph xwpfParagraph : paragraphs) {
+            xwpfParagraph.setAlignment(align);
+        }
+    }
+
+    /**
+     * @Description: 设置单元格Margin
+     */
+    public static void setTableCellMargin(XWPFTable table, int top, int left, int bottom, int right) {
+        table.setCellMargins(top, left, bottom, right);
+    }
+
+    /**
+     * 获得XWPFRun
+     *
+     * @param p
+     *            段落
+     * @param isInsert
+     * @param isNewLine
+     * @return
+     */
+    public static XWPFRun getOrAddParagraphFirstRun(XWPFParagraph p, boolean isInsert, boolean isNewLine) {
+        XWPFRun pRun = null;
+        if (isInsert) {
+            pRun = p.createRun();
+        } else {
+            if (p.getRuns() != null &amp;&amp; p.getRuns().size() &gt; 0) {
+                pRun = p.getRuns().get(0);
+            } else {
+                pRun = p.createRun();
+            }
+        }
+        if (isNewLine) {
+            pRun.addBreak();
+        }
+        return pRun;
+    }
+
+    /**
+     * @Description: 得到XWPFRun的CTRPr
+     */
+    public static CTRPr getRunCTRPr(XWPFParagraph p, XWPFRun pRun) {
+        CTRPr pRpr = null;
+        if (pRun.getCTR() != null) {
+            pRpr = pRun.getCTR().getRPr();
+            if (pRpr == null) {
+                pRpr = pRun.getCTR().addNewRPr();
+            }
+        } else {
+            pRpr = p.getCTP().addNewR().addNewRPr();
+        }
+        return pRpr;
+    }
+
+    /**
+     * @Description: 设置段落对齐
+     */
+    public static void setParagraphAlignInfo(XWPFParagraph p, ParagraphAlignment pAlign, TextAlignment valign) {
+        if (pAlign != null) {
+            p.setAlignment(pAlign);
+        }
+        if (valign != null) {
+            p.setVerticalAlignment(valign);
+        }
+    }
+
+    public static void setFontStyle(XWPFParagraph p, XWPFRun pRun, String fontSize, boolean isBlod, boolean isItalic) {
+        CTRPr pRpr = getRunCTRPr(p, pRun);
+        // 设置字体大小
+        CTHpsMeasure sz = pRpr.isSetSz() ? pRpr.getSz() : pRpr.addNewSz();
+        sz.setVal(new BigInteger(fontSize));
+
+        CTHpsMeasure szCs = pRpr.isSetSzCs() ? pRpr.getSzCs() : pRpr.addNewSzCs();
+        szCs.setVal(new BigInteger(fontSize));
+
+        // 设置字体样式
+        // 加粗
+        if (isBlod) {
+            pRun.setBold(isBlod);
+        }
+        // 倾斜
+        if (isItalic) {
+            pRun.setItalic(isItalic);
+        }
+    }
+
+    /**
+     * 设置单元格文本
+     *
+     * @param cell
+     * @param text
+     *            文本内容
+     * @param fontSize
+     *            字号
+     */
+    public static void setCellText(XWPFTableCell cell, String text, String fontSize) {
+        List&lt;XWPFParagraph&gt; paragraphs = cell.getParagraphs();
+        if (paragraphs == null || paragraphs.size() &lt; 1) {
+            cell.addParagraph();
+        }
+        XWPFParagraph cellParagraph = cell.getParagraphs().get(0);
+        XWPFRun cellRun = WordUtil.getOrAddParagraphFirstRun(cellParagraph, false, false);
+        WordUtil.setFontStyle(cellParagraph, cellRun, fontSize, false, false);
+        cellRun.setText(text);
+        cell.setParagraph(cellParagraph);
+    }
+
+    public static void setCellText2(XWPFTableCell cell, String text, String fontSize,String fontFamily,boolean bold) {
+        List&lt;XWPFParagraph&gt; paragraphs = cell.getParagraphs();
+        if (paragraphs == null || paragraphs.size() &lt; 1) {
+            cell.addParagraph();
+        }
+        XWPFParagraph cellParagraph = cell.getParagraphs().get(0);
+        XWPFRun cellRun = WordUtil.getOrAddParagraphFirstRun(cellParagraph, false, false);
+        cellRun.setFontFamily(fontFamily);
+        WordUtil.setFontStyle(cellParagraph, cellRun, fontSize, bold, false);
+        cellRun.setText(text);
+        cell.setParagraph(cellParagraph);
+    }
+
+}
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/java/javautils/httpclientutil/" title="Post请求"> <i class="fa fa-chevron-left"></i><label>Post请求</label></a>
+    <a class="nav nav-next" href="/java/javautils/word2htmlutil/" title="Word转换html" style="margin-right: 0px;"><label>Word转换html</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

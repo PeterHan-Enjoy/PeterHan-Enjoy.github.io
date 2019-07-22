@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java工具类 on PerHan_Enjoy</title>
+    <link>https://peterhan-enjoy.github.com/java/javautils/</link>
+    <description>Recent content in java工具类 on PerHan_Enjoy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://peterhan-enjoy.github.com/java/javautils/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Excel工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/excelutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/excelutil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.poi&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;poi&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.14&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import java.io.ByteArrayOutputStream; import java.io.File; import java.io.FileInputStream; import java.io.FileNotFoundException; import java.io.IOException; import java.io.InputStream; import java.lang.reflect.Constructor; import java.lang.reflect.Field; import java.lang.reflect.InvocationTargetException; import java.lang.reflect.Method; import java.lang.reflect.Type; import java.util.ArrayList; import java.util.Date; import java.util.List; import org.apache.poi.hssf.usermodel.HSSFCell; import org.apache.poi.hssf.usermodel.HSSFRow; import org.apache.poi.hssf.usermodel.HSSFSheet; import org.apache.poi.hssf.usermodel.HSSFWorkbook; import org.apache.poi.poifs.filesystem.NotOLE2FileException; import org.apache.poi.ss.usermodel.Cell; import org.apache.poi.ss.usermodel.CellStyle; import org.apache.poi.ss.usermodel.CreationHelper; import org.apache.poi.ss.usermodel.DateUtil; import org.apache.poi.ss.usermodel.Row; import org.apache.poi.ss.usermodel.Sheet; import org.apache.poi.xssf.usermodel.XSSFCell; import org.apache.poi.xssf.usermodel.XSSFRow; import org.apache.poi.xssf.usermodel.XSSFSheet; import org.apache.poi.xssf.usermodel.XSSFWorkbook; /** * 将Excel文件读入到一个List集合中，必须给出“属性”(fields)，会按照给定的属性列表遍历该属性&amp;lt;br /&amp;gt; * 然后调用该属性的set方法赋值 ， 并添加到List集合中 &amp;lt;br /&amp;gt; * 注意:给出的属性应和Excel文件的列一一对应，否则会出现异常 * */ public class ExcelUtil&amp;lt;T&amp;gt; { private File file; private InputStream inputStream; private int ignoreRow = 1;// 忽略的行数 private Class&amp;lt;T&amp;gt; entityClass = null; private String[] fields;// 要写入的字段 private String[] header; private String sheetName = &amp;quot;sheet1&amp;quot;; private String par = &amp;quot;yyyy-MM-dd&amp;quot;; private static final String HSSF = &amp;quot;application/vnd.</description>
+    </item>
+    
+    <item>
+      <title>Excel转换html</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/exceltohtmlutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/exceltohtmlutil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.poi&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;poi&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.4&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import org.apache.poi.hssf.usermodel.*; import org.apache.poi.hssf.util.HSSFColor; import org.apache.poi.ss.usermodel.*; import org.apache.poi.ss.util.CellRangeAddress; import org.apache.poi.xssf.usermodel.XSSFCellStyle; import org.apache.poi.xssf.usermodel.XSSFColor; import org.apache.poi.xssf.usermodel.XSSFFont; import org.apache.poi.xssf.usermodel.XSSFWorkbook; import java.io.File; import java.io.FileInputStream; import java.io.IOException; import java.io.InputStream; import java.text.DecimalFormat; import java.text.SimpleDateFormat; import java.util.Date; import java.util.HashMap; import java.util.Map; /** * @功能描述 POI 读取 Excel 转 HTML 支持 03xls 和 07xlsx 版本 包含样式 * @author Devil * @创建时间 2015/4/19 21:34 */ public class ExcelToHtmlUtil { /** * 程序入口方法 * @param filePath 文件的路径 * @param isWithStyle 是否需要表格样式 包含 字体 颜色 边框 对齐方式 * @return &amp;lt;table&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>Html转换Image</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/html2image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/html2image/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.github.xuwei-k&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;html2image&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.1.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import gui.ava.html.image.generator.HtmlImageGenerator; public class Html2Image { public static void main(String[] args){ HtmlImageGenerator imageGenerator = new HtmlImageGenerator(); String htmlstr = &amp;quot;&amp;quot;; imageGenerator.loadHtml(htmlstr); imageGenerator.getBufferedImage(); imageGenerator.saveAsImage(&amp;quot;d:/hello-world.png&amp;quot;); imageGenerator.saveAsHtmlWithMap(&amp;quot;hello-world.html&amp;quot;, &amp;quot;hello-world.png&amp;quot;); } }  </description>
+    </item>
+    
+    <item>
+      <title>Json工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/jsonutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/jsonutil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.jackson&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jackson-mapper-asl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.8.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import org.codehaus.jackson.map.ObjectMapper; public class JsonUtil { private static ObjectMapper mapper; private static ObjectMapper getMapper(){ if (mapper == null) { mapper = new ObjectMapper(); } return mapper; } public static String toJson(Object obj) { String str = null; try { str = getMapper().writeValueAsString(obj); } catch (Exception e) { e.printStackTrace(); } return str; } public static &amp;lt;T&amp;gt; T toObj(String json,Class&amp;lt;T&amp;gt; clazz) { try { T obj = getMapper().</description>
+    </item>
+    
+    <item>
+      <title>Pdf工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/pdfutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/pdfutil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.lowagie&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;itext&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.1.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import java.awt.Color; import java.io.ByteArrayOutputStream; import java.io.File; import java.io.FileNotFoundException; import java.io.FileOutputStream; import java.io.IOException; import java.util.ArrayList; import java.util.List; import java.util.UUID; import com.cnmts.common.service.FileService; import com.cnmts.inspections.bean.RespInspectionTemplateInfo; import com.lowagie.text.Cell; import com.lowagie.text.Document; import com.lowagie.text.DocumentException; import com.lowagie.text.Element; import com.lowagie.text.Font; import com.lowagie.text.PageSize; import com.lowagie.text.Paragraph; import com.lowagie.text.Phrase; import com.lowagie.text.Table; import com.lowagie.text.pdf.BaseFont; import com.lowagie.text.pdf.PdfCopy; import com.lowagie.text.pdf.PdfImportedPage; import com.lowagie.text.pdf.PdfReader; import com.lowagie.text.pdf.PdfWriter; public class PdfUtil { private static final int N = 1; public static String CreatePdf(List&amp;lt;RespInspectionTemplateInfo&amp;gt; list) throws FileNotFoundException, DocumentException { String fileName = UUID.</description>
+    </item>
+    
+    <item>
+      <title>Post请求</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/httpclientutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/httpclientutil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.httpcomponents&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;httpclient&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.5.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import java.io.BufferedInputStream; import java.io.BufferedOutputStream; import java.io.File; import java.io.FileOutputStream; import java.io.IOException; import java.io.InputStream; import java.util.ArrayList; import java.util.Iterator; import java.util.List; import java.util.Map; import java.util.Set; import org.apache.http.HttpResponse; import org.apache.http.ParseException; import org.apache.http.client.HttpClient; import org.apache.http.client.entity.UrlEncodedFormEntity; import org.apache.http.client.methods.HttpGet; import org.apache.http.client.methods.HttpPost; import org.apache.http.NameValuePair; import org.apache.http.impl.client.HttpClientBuilder; import org.apache.http.message.BasicNameValuePair; import org.apache.http.protocol.HTTP; import org.apache.http.util.EntityUtils; public class HttpClientUtils { private static final String userAgent_firefox = &amp;quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.0.3) Gecko/2008092417 Firefox/3.</description>
+    </item>
+    
+    <item>
+      <title>Word工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/wordutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/wordutil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.poi&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;poi&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.14&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import java.math.BigInteger; import java.util.List; import org.apache.poi.xwpf.usermodel.ParagraphAlignment; import org.apache.poi.xwpf.usermodel.TextAlignment; import org.apache.poi.xwpf.usermodel.XWPFParagraph; import org.apache.poi.xwpf.usermodel.XWPFRun; import org.apache.poi.xwpf.usermodel.XWPFTable; import org.apache.poi.xwpf.usermodel.XWPFTableCell; import org.apache.poi.xwpf.usermodel.XWPFTableRow; import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTHpsMeasure; import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr; import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTc; import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTcPr; import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTVerticalJc; import org.openxmlformats.schemas.wordprocessingml.x2006.main.STMerge; import org.openxmlformats.schemas.wordprocessingml.x2006.main.STVerticalJc; public class WordUtil { /** * 创建一行，如果有则直接使用 * * @param table * @param rowNum * @return */ public static XWPFTableRow createRow(XWPFTable table, int rowNum) { XWPFTableRow row = table.getRow(rowNum); if (row == null) { row = table.</description>
+    </item>
+    
+    <item>
+      <title>Word转换html</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/word2htmlutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/word2htmlutil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.poi&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;poi&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.4&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import org.apache.commons.lang3.SystemUtils; import org.apache.poi.hwpf.HWPFDocument; import org.apache.poi.hwpf.converter.PicturesManager; import org.apache.poi.hwpf.converter.WordToHtmlConverter; import org.apache.poi.hwpf.usermodel.Picture; import org.apache.poi.hwpf.usermodel.PictureType; import org.apache.poi.xwpf.converter.core.BasicURIResolver; import org.apache.poi.xwpf.converter.core.FileImageExtractor; import org.apache.poi.xwpf.converter.core.XWPFConverterException; import org.apache.poi.xwpf.converter.xhtml.XHTMLConverter; import org.apache.poi.xwpf.converter.xhtml.XHTMLOptions; import org.apache.poi.xwpf.usermodel.XWPFDocument; import org.w3c.dom.Document; import javax.xml.parsers.DocumentBuilderFactory; import javax.xml.parsers.ParserConfigurationException; import javax.xml.transform.OutputKeys; import javax.xml.transform.Transformer; import javax.xml.transform.TransformerException; import javax.xml.transform.TransformerFactory; import javax.xml.transform.dom.DOMSource; import javax.xml.transform.stream.StreamResult; import java.io.*; import java.util.List; /** * * word转换html的工具类 * * @author xiaoming * * @time 2016年11月29日 下午3:53:08 */ public class Word2HtmlUtil { private static String word2003 = &amp;quot;application/msword&amp;quot;; private static String word2007 = &amp;quot;application/vnd.</description>
+    </item>
+    
+    <item>
+      <title>csv 工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/csvutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/csvutil/</guid>
+      <description>import com.nuclear_Project.common.bean.Dictionary; import java.io.*; import java.lang.reflect.*; import java.util.ArrayList; import java.util.List; public class CSVUtil&amp;lt;T&amp;gt; { private String[] fields; private Class&amp;lt;T&amp;gt; entityClass; public CSVUtil(Class&amp;lt;T&amp;gt; clazz,String... fields){ this.entityClass = clazz; this.fields = fields; } public List&amp;lt;T&amp;gt; importCSV(File file) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException { List&amp;lt;String&amp;gt; dataList = importCSVFile(file); List&amp;lt;T&amp;gt; list = new ArrayList&amp;lt;T&amp;gt;(); Constructor constructor = entityClass.getConstructor(null); Method[] methods = entityClass.getMethods(); Field[] fields = entityClass.getDeclaredFields(); for(String s:dataList){ T instance = (T) constructor.newInstance(null); String entity = s; String[] values = entity.</description>
+    </item>
+    
+    <item>
+      <title>ffmpeg 使用</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/ffmpeg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/ffmpeg/</guid>
+      <description>1. 获取视频信息 import java.io.*; import java.util.regex.Matcher; import java.util.regex.Pattern; /** * 获取视频的信息 */ public class VideoInfo { //视频路径 private String ffmpegApp; //视频时 private int hours; //视频分 private int minutes; //视频秒 private float seconds; //视频width private int width; //视频height private int heigt; public VideoInfo() {} public VideoInfo(String ffmpegApp) { this.ffmpegApp = ffmpegApp; } public String toString() { return &amp;quot;time: &amp;quot; + hours + &amp;quot;:&amp;quot; + minutes + &amp;quot;:&amp;quot; + seconds + &amp;quot;, width = &amp;quot; + width + &amp;quot;, height= &amp;quot; + heigt; } public void getInfo(String videoFilename) throws IOException, InterruptedException { String tmpFile = videoFilename + &amp;quot;.</description>
+    </item>
+    
+    <item>
+      <title>加密解压缩工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/decryptionziputil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/decryptionziputil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.lingala.zip4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;zip4j&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.3.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   import net.lingala.zip4j.core.ZipFile; import net.lingala.zip4j.exception.ZipException; import net.lingala.zip4j.model.ZipParameters; import net.lingala.zip4j.util.Zip4jConstants; import java.io.File; /** * 压缩指定文件或目录为ZIP格式压缩文件 * 支持中文(修改源码后) * 支持密码(仅支持256bit的AES加密解密) * 依赖bcprov项目(bcprov-jdk16-140.jar) * * @author zyh */ public class DecryptionZipUtil { private static void zipFile() throws ZipException { // 生成的压缩文件 ZipFile zipFile = new ZipFile(&amp;quot;D:\\test.zip&amp;quot;); ZipParameters parameters = new ZipParameters(); // 压缩方式 parameters.setCompressionMethod(Zip4jConstants.COMP_DEFLATE); // 压缩级别 parameters.setCompressionLevel(Zip4jConstants.DEFLATE_LEVEL_NORMAL); parameters.setEncryptFiles( true ); parameters.setEncryptionMethod(Zip4jConstants.ENC_METHOD_AES); parameters.setAesKeyStrength(Zip4jConstants.AES_STRENGTH_256); parameters.setPassword(&amp;quot;111&amp;quot;); // 要打包的文件夹 File currentFile = new File(&amp;quot;D:\\test&amp;quot;); File[] fs = currentFile.</description>
+    </item>
+    
+    <item>
+      <title>图片base64转换工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/base64util/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/base64util/</guid>
+      <description>import java.io.ByteArrayOutputStream; public class Base64Util { private static byte[] base64DecodeChars = new byte[] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1 }; private static char[] codec_table = { &#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;, &#39;U&#39;, &#39;V&#39;, &#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;, &#39;k&#39;, &#39;l&#39;, &#39;m&#39;, &#39;n&#39;, &#39;o&#39;, &#39;p&#39;, &#39;q&#39;, &#39;r&#39;, &#39;s&#39;, &#39;t&#39;, &#39;u&#39;, &#39;v&#39;, &#39;w&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;, &#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;+&#39;, &#39;/&#39; }; public static byte[] decode(String str) { byte[] data = str.</description>
+    </item>
+    
+    <item>
+      <title>解压缩工具类</title>
+      <link>https://peterhan-enjoy.github.com/java/javautils/zipfileutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/javautils/zipfileutil/</guid>
+      <description>&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.github.axet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;java-unrar&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.7.0-8&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;commons-logging&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;commons-logging&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  import java.io.*; import java.util.ArrayList; import java.util.List; import java.util.zip.ZipEntry; import java.util.zip.ZipOutputStream; import de.innosystec.unrar.NativeStorage; import org.apache.tools.ant.Project; import org.apache.tools.ant.taskdefs.Expand; import de.innosystec.unrar.Archive; import de.innosystec.unrar.rarfile.FileHeader; public class ZipFileUtil { private static final int BUFFER_SIZE = 2 * 1024; /** * 解压zip格式压缩包 * 对应的是ant.jar */ private static void unzip(String sourceZip,String destDir) throws Exception{ try{ Project p = new Project(); Expand e = new Expand(); e.setProject(p); e.</description>
+    </item>
+    
+  </channel>
+</rss>

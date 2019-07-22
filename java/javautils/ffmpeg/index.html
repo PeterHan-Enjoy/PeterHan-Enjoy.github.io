@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-22T10:43:46 CST">
+<title>ffmpeg 使用 :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/java/javautils/ffmpeg/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/utils/ffmpeg/">
+            ffmpeg 安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/">java</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/java/javautils/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/javautils/">java工具类</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/excelutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/excelutil/">
+            Excel工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/exceltohtmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/exceltohtmlutil/">
+            Excel转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/java/javautils/gis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/gis/">Gis相关工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/gis/dae2gltf/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/dae2gltf/">
+            Dae转换Gltf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/geoserver/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/geoserver/">
+            Geoserver
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/">
+            Kml导入
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/shputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/shputil/">
+            Shp工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/jstutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/jstutil/">
+            java几何运算工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/java/javautils/html2image/" class="dd-item">
+        <div>
+          <a href="/java/javautils/html2image/">
+            Html转换Image
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/jsonutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/jsonutil/">
+            Json工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/pdfutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/pdfutil/">
+            Pdf工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/httpclientutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/httpclientutil/">
+            Post请求
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/wordutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/wordutil/">
+            Word工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/word2htmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/word2htmlutil/">
+            Word转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/csvutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/csvutil/">
+            csv 工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/ffmpeg/" class="dd-item active">
+        <div>
+          <a href="/java/javautils/ffmpeg/">
+            ffmpeg 使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/decryptionziputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/decryptionziputil/">
+            加密解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/base64util/" class="dd-item">
+        <div>
+          <a href="/java/javautils/base64util/">
+            图片base64转换工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/zipfileutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/zipfileutil/">
+            解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option>
+    <option value="/java/" >
+   java</option> 
+    <option value="/java/javautils/" >
+  - 
+   java工具类</option> 
+      <option value="/java/javautils/excelutil/" >-- Excel工具类</option>
+      <option value="/java/javautils/exceltohtmlutil/" >-- Excel转换html</option>
+    <option value="/java/javautils/gis/" >
+  -- 
+   Gis相关工具类</option>
+      <option value="/java/javautils/html2image/" >-- Html转换Image</option>
+      <option value="/java/javautils/jsonutil/" >-- Json工具类</option>
+      <option value="/java/javautils/pdfutil/" >-- Pdf工具类</option>
+      <option value="/java/javautils/httpclientutil/" >-- Post请求</option>
+      <option value="/java/javautils/wordutil/" >-- Word工具类</option>
+      <option value="/java/javautils/word2htmlutil/" >-- Word转换html</option>
+      <option value="/java/javautils/csvutil/" >-- csv 工具类</option>
+      <option value="/java/javautils/ffmpeg/"  selected>-- ffmpeg 使用</option>
+      <option value="/java/javautils/decryptionziputil/" >-- 加密解压缩工具类</option>
+      <option value="/java/javautils/base64util/" >-- 图片base64转换工具类</option>
+      <option value="/java/javautils/zipfileutil/" >-- 解压缩工具类</option>
+  
+  
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>ffmpeg 使用</h1>
+
+    
+    
+    
+    
+
+<h4 id="1-获取视频信息">1. 获取视频信息</h4>
+
+<pre><code>import java.io.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * 获取视频的信息
+ */
+public class VideoInfo
+{
+    //视频路径
+    private String ffmpegApp;
+    //视频时
+    private int hours;
+    //视频分
+    private int minutes;
+    //视频秒
+    private float seconds;
+    //视频width
+    private int width;
+    //视频height
+    private int heigt;
+
+
+    public VideoInfo() {}
+
+    public VideoInfo(String ffmpegApp)
+    {
+        this.ffmpegApp = ffmpegApp;
+    }
+
+    public String toString()
+    {
+        return &quot;time: &quot; + hours + &quot;:&quot; + minutes + &quot;:&quot; + seconds + &quot;, width = &quot; + width + &quot;, height= &quot; + heigt;
+    }
+
+    public void getInfo(String videoFilename) throws IOException,
+            InterruptedException
+    {
+        String tmpFile = videoFilename + &quot;.tmp.png&quot;;
+        ProcessBuilder processBuilder = new ProcessBuilder(ffmpegApp, &quot;-y&quot;,
+                &quot;-i&quot;, videoFilename, &quot;-vframes&quot;, &quot;1&quot;, &quot;-ss&quot;, &quot;0:0:0&quot;, &quot;-an&quot;,
+                &quot;-vcodec&quot;, &quot;png&quot;, &quot;-f&quot;, &quot;rawvideo&quot;, &quot;-s&quot;, &quot;100*100&quot;, tmpFile);
+
+        Process process = processBuilder.start();
+
+        InputStream stderr = process.getErrorStream();
+        InputStreamReader isr = new InputStreamReader(stderr);
+        BufferedReader br = new BufferedReader(isr);
+        String line;
+        //打印 sb，获取更多信息。 如 bitrate、width、heigt
+        StringBuffer sb = new StringBuffer();
+        while ((line = br.readLine()) != null)
+        {
+            sb.append(line);
+        }
+
+        new File(tmpFile).delete();
+
+        System.out.println(&quot;video info:\n&quot; + sb);
+        Pattern pattern = Pattern.compile(&quot;Duration: (.*?),&quot;);
+        Matcher matcher = pattern.matcher(sb);
+
+        if (matcher.find())
+        {
+            String time = matcher.group(1);
+            calcTime(time);
+        }
+
+        pattern = Pattern.compile(&quot;w:\\d+ h:\\d+&quot;);
+        matcher = pattern.matcher(sb);
+
+        if (matcher.find())
+        {
+            String wh = matcher.group();
+            //w:100 h:100
+            String[] strs = wh.split(&quot;\\s+&quot;);
+            if(strs != null &amp;&amp; strs.length == 2)
+            {
+                width = Integer.parseInt(strs[0].split(&quot;:&quot;)[1]);
+                heigt = Integer.parseInt(strs[1].split(&quot;:&quot;)[1]);
+            }
+        }
+
+        process.waitFor();
+        if(br != null)
+            br.close();
+        if(isr != null)
+            isr.close();
+        if(stderr != null)
+            stderr.close();
+    }
+
+    private void calcTime(String timeStr)
+    {
+        String[] parts = timeStr.split(&quot;:&quot;);
+        hours = Integer.parseInt(parts[0]);
+        minutes = Integer.parseInt(parts[1]);
+        seconds = Float.parseFloat(parts[2]);
+    }
+
+    public String getFfmpegApp()
+    {
+        return ffmpegApp;
+    }
+
+    public void setFfmpegApp(String ffmpegApp)
+    {
+        this.ffmpegApp = ffmpegApp;
+    }
+
+    public int getHours()
+    {
+        return hours;
+    }
+
+    public void setHours(int hours)
+    {
+        this.hours = hours;
+    }
+
+    public int getMinutes()
+    {
+        return minutes;
+    }
+
+    public void setMinutes(int minutes)
+    {
+        this.minutes = minutes;
+    }
+
+    public float getSeconds()
+    {
+        return seconds;
+    }
+
+    public void setSeconds(float seconds)
+    {
+        this.seconds = seconds;
+    }
+
+    public int getWidth()
+    {
+        return width;
+    }
+
+    public void setWidth(int width)
+    {
+        this.width = width;
+    }
+
+    public int getHeigt()
+    {
+        return heigt;
+    }
+
+    public void setHeigt(int heigt)
+    {
+        this.heigt = heigt;
+    }
+
+    public static void main(String[] args)
+    {
+        VideoInfo videoInfo = new VideoInfo(&quot;H:\\ffmpeg-20180808-af4c2ac-win64-static\\bin\\ffmpeg.exe&quot;);
+        try
+        {
+            videoInfo.getInfo(&quot;h:/1532786415142.mp4&quot;);
+            System.out.println(videoInfo);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h4 id="2-获取截图">2.获取截图</h4>
+
+<pre><code>import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+public class VideoThumbTaker {
+     protected String ffmpegApp;
+
+        public VideoThumbTaker(String ffmpegApp)
+        {
+            this.ffmpegApp = ffmpegApp;
+        }
+
+        @SuppressWarnings(&quot;unused&quot;)
+        /****
+         * 获取指定时间内的图片
+         * @param videoFilename:视频路径
+         * @param thumbFilename:图片保存路径
+         * @param width:图片长
+         * @param height:图片宽
+         * @param hour:指定时
+         * @param min:指定分
+         * @param sec:指定秒
+         * @throws IOException
+         * @throws InterruptedException
+         */
+        public void getThumb(String videoFilename, String thumbFilename, int width,
+                int height, int hour, int min, float sec) throws IOException,
+                InterruptedException
+        {
+            ProcessBuilder processBuilder = new ProcessBuilder(ffmpegApp, &quot;-y&quot;,
+                    &quot;-i&quot;, videoFilename, &quot;-vframes&quot;, &quot;1&quot;, &quot;-ss&quot;, hour + &quot;:&quot; + min
+                            + &quot;:&quot; + sec, &quot;-f&quot;, &quot;mjpeg&quot;, &quot;-s&quot;, width + &quot;*&quot; + height,
+                    &quot;-an&quot;, thumbFilename);
+
+            Process process = processBuilder.start();
+
+            InputStream stderr = process.getErrorStream();
+            InputStreamReader isr = new InputStreamReader(stderr);
+            BufferedReader br = new BufferedReader(isr);
+            String line;
+            while ((line = br.readLine()) != null)
+                ;
+            process.waitFor();
+
+            if(br != null)
+                br.close();
+            if(isr != null)
+                isr.close();
+            if(stderr != null)
+                stderr.close();
+        }
+
+        public static void main(String[] args)
+        {
+            VideoThumbTaker videoThumbTaker = new VideoThumbTaker(&quot;H:\\ffmpeg-20180808-af4c2ac-win64-static\\bin\\ffmpeg.exe&quot;);
+            try
+            {
+                videoThumbTaker.getThumb(&quot;C:/java/apache-tomcat-7.0.54/apache-tomcat-7.0.54/webapps/zhsqData/tempFile/25a464df-735c-4321-b60b-bd1faae2b127_src.mp4&quot;, &quot;C:/java/apache-tomcat-7.0.54/apache-tomcat-7.0.54/webapps/zhsqData/tempFile/thumbTest2.png&quot;,    800, 600, 0, 0, 9);
+                System.out.println(&quot;over&quot;);
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+}
+</code></pre>
+
+<h4 id="3-合成视频">3. 合成视频</h4>
+
+<p>合成视频有很多方式，多次试验，以下方法最好用
+生成txt文件</p>
+
+<pre><code>file 'input1.mkv'
+file 'input2.mkv'
+file 'input3.mkv'
+</code></pre>
+
+<pre><code>private static void createMp4(String txtFilePath, String filePath) throws IOException {
+        List&lt;String&gt; s = new ArrayList&lt;&gt;();
+        s.add(&quot;H:\\ffmpeg-20180808-af4c2ac-win64-static\\bin\\ffmpeg.exe&quot;);
+        s.add(&quot;-f&quot;);
+        s.add(&quot;concat&quot;);
+        s.add(&quot;-safe&quot;);
+        s.add(&quot;0&quot;);
+        s.add(&quot;-i&quot;);
+        s.add(txtFilePath);
+        s.add(&quot;-c&quot;);
+        s.add(&quot;copy&quot;);
+        s.add(filePath);
+
+        ProcessBuilder builder = new ProcessBuilder();
+        builder.command(s);
+        builder.start();
+    }
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/java/javautils/csvutil/" title="csv 工具类"> <i class="fa fa-chevron-left"></i><label>csv 工具类</label></a>
+    <a class="nav nav-next" href="/java/javautils/decryptionziputil/" title="加密解压缩工具类" style="margin-right: 0px;"><label>加密解压缩工具类</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>
