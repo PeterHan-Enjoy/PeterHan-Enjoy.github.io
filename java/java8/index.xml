@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java8新特性 on PerHan_Enjoy</title>
+    <link>https://peterhan-enjoy.github.com/java/java8/</link>
+    <description>Recent content in Java8新特性 on PerHan_Enjoy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://peterhan-enjoy.github.com/java/java8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1. Lambda 表达式</title>
+      <link>https://peterhan-enjoy.github.com/java/java8/lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/java8/lambda/</guid>
+      <description>语法 lambda 表达式的语法格式如下：
+(parameters) -&amp;gt; expression 或 (parameters) -&amp;gt;{ statements; }  以下是lambda表达式的重要特征:
+ 可选类型声明：不需要声明参数类型，编译器可以统一识别参数值。 可选的参数圆括号：一个参数无需定义圆括号，但多个参数需要定义圆括号。 可选的大括号：如果主体包含了一个语句，就不需要使用大括号。 可选的返回关键字：如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值。  Lambda 表达式实例 Lambda 表达式的简单例子:
+// 1. 不需要参数,返回值为 5 () -&amp;gt; 5 // 2. 接收一个参数(数字类型),返回其2倍的值 x -&amp;gt; 2 * x // 3. 接受2个参数(数字),并返回他们的差值 (x, y) -&amp;gt; x – y // 4. 接收2个int型整数,返回他们的和 (int x, int y) -&amp;gt; x + y // 5. 接受一个 string 对象,并在控制台打印,不返回任何值(看起来像是返回void) (String s) -&amp;gt; System.out.print(s)  使用 Lambda 表达式需要注意以下两点：</description>
+    </item>
+    
+    <item>
+      <title>2. 方法引用</title>
+      <link>https://peterhan-enjoy.github.com/java/java8/method/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/java8/method/</guid>
+      <description>方法引用是用来直接访问类或者实例的已经存在的方法或者构造方法。方法引用提供了一种引用而不执行方法的方式，它需要由兼容的函数式接口构成的目标类型上下文。计算时，方法引用会创建函数式接口的一个实例。
+当Lambda表达式中只是执行一个方法调用时，不用Lambda表达式，直接通过方法引用的形式可读性更高一些。方法引用是一种更简洁易懂的Lambda表达式。
+注意方法引用是一个Lambda表达式，其中方法引用的操作符是双冒号&amp;rdquo;::&amp;ldquo;。
+============================================================================
+简单地说，就是一个Lambda表达式。在Java 8中，我们会使用Lambda表达式创建匿名方法，但是有时候，我们的Lambda表达式可能仅仅调用一个已存在的方法，而不做任何其它事，对于这种情况，通过一个方法名字来引用这个已存在的方法会更加清晰，Java 8的方法引用允许我们这样做。方法引用是一个更加紧凑，易读的Lambda表达式，注意方法引用是一个Lambda表达式，其中方法引用的操作符是双冒号&amp;rdquo;::&amp;ldquo;。
++ 构造器引用：它的语法是Class::new，或者更一般的Class&amp;lt; T &amp;gt;::new实例如下：
+final Car car = Car.create( Car::new ); final List&amp;lt; Car &amp;gt; cars = Arrays.asList( car );   静态方法引用：它的语法是Class::static_method，实例如下：
+cars.forEach( Car::collide );  特定类的任意对象的方法引用：它的语法是Class::method实例如下：
+cars.forEach( Car::repair );  +特定对象的方法引用：它的语法是instance::method实例如下：
+final Car police = Car.create( Car::new ); cars.forEach( police::follow );   </description>
+    </item>
+    
+    <item>
+      <title>3. 函数式接口</title>
+      <link>https://peterhan-enjoy.github.com/java/java8/functioninterface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/java8/functioninterface/</guid>
+      <description>函数式接口(Functional Interface)就是一个有且仅有一个抽象方法，但是可以有多个非抽象方法的接口。
+函数式接口可以被隐式转换为 lambda 表达式。
+Lambda 表达式和方法引用（实际上也可认为是Lambda表达式）上。
+如定义了一个函数式接口如下：
+@FunctionalInterface interface GreetingService { void sayMessage(String message); }  那么就可以使用Lambda表达式来表示该接口的一个实现(注：JAVA 8 之前一般是用匿名类实现的)：
+GreetingService greetService1 = message -&amp;gt; System.out.println(&amp;quot;Hello &amp;quot; + message);  函数式接口可以对现有的函数友好地支持 lambda。
+JDK 1.8 之前已有的函数式接口:
+ java.lang.Runnable java.util.concurrent.Callable java.security.PrivilegedAction java.util.Comparator java.io.FileFilter java.nio.file.PathMatcher java.lang.reflect.InvocationHandler java.beans.PropertyChangeListener java.awt.event.ActionListener javax.swing.event.ChangeListener
+  JDK 1.8 新增加的函数接口：
+ java.util.function
+  java.util.function 它包含了很多类，用来支持 Java的 函数式编程，该包中的函数式接口有：
+   序号 接口 &amp;amp; 描述     1 BiConsumer 代表了一个接受两个输入参数的操作，并且不返回任何结果   2 BiFunction代表了一个接受两个输入参数的方法，并且返回一个结果   3 BinaryOperator代表了一个作用于于两个同类型操作符的操作，并且返回了操作符同类型的结果   4 BiPredicate代表了一个两个参数的boolean值方法   5 BooleanSupplier代表了boolean值结果的提供方   6 Consumer代表了接受一个输入参数并且无返回的操作   7 DoubleBinaryOperator代表了作用于两个double值操作符的操作，并且返回了一个double值的结果。   8 DoubleConsumer代表一个接受double值参数的操作，并且不返回结果。   9 DoubleFunction代表接受一个double值参数的方法，并且返回结果   10 DoublePredicate代表一个拥有double值参数的boolean值方法   11 DoubleSupplier代表一个double值结构的提供方   12 DoubleToIntFunction接受一个double类型输入，返回一个int类型结果。   13 DoubleToLongFunction接受一个double类型输入，返回一个long类型结果   14 DoubleUnaryOperator接受一个参数同为类型double,返回值类型也为double 。   15 Function接受一个输入参数，返回一个结果。   16 IntBinaryOperator接受两个参数同为类型int,返回值类型也为int 。   17 IntConsumer接受一个int类型的输入参数，无返回值 。   18 IntFunction接受一个int类型输入参数，返回一个结果 。   19 IntPredicate：接受一个int输入参数，返回一个布尔值的结果。   20 IntSupplier无参数，返回一个int类型结果。   21 IntToDoubleFunction接受一个int类型输入，返回一个double类型结果 。   22 IntToLongFunction接受一个int类型输入，返回一个long类型结果。   23 IntUnaryOperator接受一个参数同为类型int,返回值类型也为int 。   24 LongBinaryOperator接受两个参数同为类型long,返回值类型也为long。   25 LongConsumer接受一个long类型的输入参数，无返回值。   26 LongFunction接受一个long类型输入参数，返回一个结果。   27 LongPredicateR接受一个long输入参数，返回一个布尔值类型结果。   28 LongSupplier无参数，返回一个结果long类型的值。   29 LongToDoubleFunction接受一个long类型输入，返回一个double类型结果。   30 LongToIntFunction接受一个long类型输入，返回一个int类型结果。   31 LongUnaryOperator接受一个参数同为类型long,返回值类型也为long。   32 ObjDoubleConsumer接受一个object类型和一个double类型的输入参数，无返回值。   33 ObjIntConsumer接受一个object类型和一个int类型的输入参数，无返回值。   34 ObjLongConsumer接受一个object类型和一个long类型的输入参数，无返回值。   35 Predicate接受一个输入参数，返回一个布尔值结果。   36 Supplier无参数，返回一个结果。   37 ToDoubleBiFunction接受两个输入参数，返回一个double类型结果   38 ToDoubleFunction接受一个输入参数，返回一个double类型结果   39 ToIntBiFunction接受两个输入参数，返回一个int类型结果。   40 ToIntFunction接受一个输入参数，返回一个int类型结果。   41 ToLongBiFunction接受两个输入参数，返回一个long类型结果。   42 ToLongFunction接受一个输入参数，返回一个long类型结果。   43 UnaryOperator接受一个参数为类型T,返回值类型也为T。    函数式接口实例 Predicate  接口是一个函数式接口，它接受一个输入参数 T，返回一个布尔值结果。</description>
+    </item>
+    
+    <item>
+      <title>4. 默认方法</title>
+      <link>https://peterhan-enjoy.github.com/java/java8/defaultmethod/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/java8/defaultmethod/</guid>
+      <description>Java 8 新增了接口的默认方法。
+简单说，默认方法就是接口可以有实现方法，而且不需要实现类去实现其方法。
+我们只需在方法名前面加个 default 关键字即可实现默认方法。
+为什么要有这个特性？
+首先，之前的接口是个双刃剑，好处是面向抽象而不是面向具体编程，缺陷是，当需要修改接口时候，需要修改全部实现该接口的类，目前的 java 8 之前的集合框架没有 foreach 方法，通常能想到的解决办法是在JDK里给相关的接口添加新的方法及实现。然而，对于已经发布的版本，是没法在给接口添加新方法的同时不影响已有的实现。所以引进的默认方法。他们的目的是为了解决接口的修改与现有的实现不兼容的问题。
+语法 默认方法语法格式如下：
+public interface Vehicle { default void print(){ System.out.println(&amp;quot;我是一辆车!&amp;quot;); } }  多个默认方法 一个接口有默认方法，考虑这样的情况，一个类实现了多个接口，且这些接口有相同的默认方法，以下实例说明了这种情况的解决方法：
+public interface Vehicle { default void print(){ System.out.println(&amp;quot;我是一辆车!&amp;quot;); } } public interface FourWheeler { default void print(){ System.out.println(&amp;quot;我是一辆四轮车!&amp;quot;); } }  第一个解决方案是创建自己的默认方法，来覆盖重写接口的默认方法：
+public class Car implements Vehicle, FourWheeler { default void print(){ System.out.println(&amp;quot;我是一辆四轮汽车!&amp;quot;); } }  第二种解决方案可以使用 super 来调用指定接口的默认方法：
+public class Car implements Vehicle, FourWheeler { public void print(){ Vehicle.</description>
+    </item>
+    
+    <item>
+      <title>5. Stream</title>
+      <link>https://peterhan-enjoy.github.com/java/java8/stream/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/java8/stream/</guid>
+      <description>Java 8 API添加了一个新的抽象称为流Stream，可以让你以一种声明的方式处理数据。
+Stream 使用一种类似用 SQL 语句从数据库查询数据的直观方式来提供一种对 Java 集合运算和表达的高阶抽象。
+Stream API可以极大提高Java程序员的生产力，让程序员写出高效率、干净、简洁的代码。
+这种风格将要处理的元素集合看作一种流， 流在管道中传输， 并且可以在管道的节点上进行处理， 比如筛选， 排序，聚合等。
+元素流在管道中经过中间操作（intermediate operation）的处理，最后由最终操作(terminal operation)得到前面处理的结果。
+ Stream（流）是一个来自数据源的元素队列并支持聚合操作 元素是特定类型的对象，形成一个队列。 Java中的Stream并不会存储元素，而是按需计算。 数据源 流的来源。 可以是集合，数组，I/O channel， 产生器generator 等。 聚合操作 类似SQL语句一样的操作， 比如filter, map, reduce, find, match, sorted等。 和以前的Collection操作不同， Stream操作还有两个基础的特征：
+ Pipelining: 中间操作都会返回流对象本身。 这样多个操作可以串联成一个管道， 如同流式风格（fluent style）。 这样做可以对操作进行优化， 比如延迟执行(laziness)和短路( short-circuiting)。
+ 内部迭代： 以前对集合遍历都是通过Iterator或者For-Each的方式, 显式的在集合外部进行迭代， 这叫做外部迭代。 Stream提供了内部迭代的方式， 通过访问者模式(Visitor)实现。
+生成流 在 Java 8 中, 集合接口有两个方法来生成流：
+ stream() − 为集合创建串行流。
+ parallelStream() − 为集合创建并行流。</description>
+    </item>
+    
+    <item>
+      <title>6. Optional</title>
+      <link>https://peterhan-enjoy.github.com/java/java8/optional/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/java8/optional/</guid>
+      <description>Optional 类是一个可以为null的容器对象。如果值存在则isPresent()方法会返回true，调用get()方法会返回该对象。
+Optional 是个容器：它可以保存类型T的值，或者仅仅保存null。Optional提供很多有用的方法，这样我们就不用显式进行空值检测。
+Optional 类的引入很好的解决空指针异常。
+类声明 以下是一个 java.util.Optional 类的声明：
+public final class Optional&amp;lt;T&amp;gt; extends Object  类方法    序号 方法 &amp;amp; 描述     1 static  Optional empty()返回空的 Optional 实例。   2 boolean equals(Object obj)判断其他对象是否等于 Optional。   3 Optional filter(Predicate&amp;lt;? super  predicate)如果值存在，并且这个值匹配给定的 predicate，返回一个Optional用以描述这个值，否则返回一个空的Optional。   4  Optional flatMap(Function&amp;lt;? super T,Optional&amp;gt; mapper)如果值存在，返回基于Optional包含的映射方法的值，否则返回一个空的Optional   5 T get()如果在这个Optional中包含这个值，返回值，否则抛出异常：NoSuchElementException   6 int hashCode()返回存在值的哈希码，如果值不存在 返回 0。   7 void ifPresent(Consumer&amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>7. Nashorn JavaScript</title>
+      <link>https://peterhan-enjoy.github.com/java/java8/nashorn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/java8/nashorn/</guid>
+      <description>Nashorn 一个 javascript 引擎。
+从JDK 1.8开始，Nashorn取代Rhino(JDK 1.6, JDK1.7)成为Java的嵌入式JavaScript引擎。Nashorn完全支持ECMAScript 5.1规范以及一些扩展。它使用基于JSR 292的新语言特性，其中包含在JDK 7中引入的 invokedynamic，将JavaScript编译成Java字节码。
+与先前的Rhino实现相比，这带来了2到10倍的性能提升。
+jjs jjs是个基于Nashorn引擎的命令行工具。它接受一些JavaScript源代码为参数，并且执行这些源代码。
+例如，我们创建一个具有如下内容的sample.js文件：
+print(&#39;Hello World!&#39;);  打开控制台，输入以下命令：
+$ jjs sample.js  以上程序输出结果为：
+Hello World!  jjs 交互式编程 打开控制台，输入以下命令：
+$ jjs jjs&amp;gt; print(&amp;quot;Hello, World!&amp;quot;) Hello, World! jjs&amp;gt; quit() &amp;gt;&amp;gt;  传递参数 打开控制台，输入以下命令：
+$ jjs -- a b c jjs&amp;gt; print(&#39;字母: &#39; +arguments.join(&amp;quot;, &amp;quot;)) 字母: a, b, c jjs&amp;gt;  Java 中调用 JavaScript 使用 ScriptEngineManager, JavaScript 代码可以在 Java 中执行，实例如下：</description>
+    </item>
+    
+    <item>
+      <title>8. 日期时间 API</title>
+      <link>https://peterhan-enjoy.github.com/java/java8/dateapi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/java8/dateapi/</guid>
+      <description>Java 8通过发布新的Date-Time API (JSR 310)来进一步加强对日期与时间的处理。
+在旧版的 Java 中，日期时间 API 存在诸多问题，其中有：
+ 非线程安全 − java.util.Date 是非线程安全的，所有的日期类都是可变的，这是Java日期类最大的问题之一。
+ 设计很差 − Java的日期/时间类的定义并不一致，在java.util和java.sql的包中都有日期类，此外用于格式化和解析的类在java.text包中定义。java.util.Date同时包含日期和时间，而java.sql.Date仅包含日期，将其纳入java.sql包并不合理。另外这两个类都有相同的名字，这本身就是一个非常糟糕的设计。
+ 时区处理麻烦 − 日期类并不提供国际化，没有时区支持，因此Java引入了java.util.Calendar和java.util.TimeZone类，但他们同样存在上述所有的问题。
+  Java 8 在 java.time 包下提供了很多新的 API。以下为两个比较重要的 API：
+ Local(本地) − 简化了日期时间的处理，没有时区的问题。
+ Zoned(时区) − 通过制定的时区处理日期时间。
+  新的java.time包涵盖了所有处理日期，时间，日期/时间，时区，时刻（instants），过程（during）与时钟（clock）的操作。
+本地化日期时间 API LocalDate/LocalTime 和 LocalDateTime 类可以在处理时区不是必须的情况。代码如下：
+Java8Tester.java 文件 import java.time.LocalDate; import java.time.LocalTime; import java.time.LocalDateTime; import java.time.Month; public class Java8Tester { public static void main(String args[]){ Java8Tester java8tester = new Java8Tester(); java8tester.</description>
+    </item>
+    
+    <item>
+      <title>9. Base64</title>
+      <link>https://peterhan-enjoy.github.com/java/java8/base64/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peterhan-enjoy.github.com/java/java8/base64/</guid>
+      <description>在Java 8中，Base64编码已经成为Java类库的标准。
+Java 8 内置了 Base64 编码的编码器和解码器。
+Base64工具类提供了一套静态方法获取下面三种BASE64编解码器：
+ 基本：输出被映射到一组字符A-Za-z0-9+/，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+/。 URL：输出映射到一组字符A-Za-z0-9+_,输出是URL和文件。 MIME：输出隐射到MIME友好格式。输出每行不超过76字符，并且使用&amp;rsquo;\r&amp;rsquo;并跟随&amp;rsquo;\n&amp;rsquo;作为分割。编码输出最后没有行分割。
+内嵌类    序号 内嵌类 &amp;amp; 描述     1 static class Base64.Decoder该类实现一个解码器用于，使用 Base64 编码来解码字节数据。   2 static class Base64.Encoder该类实现一个编码器，使用 Base64 编码来编码字节数据。     方法    序号 方法名 &amp;amp; 描述     1 static Base64.Decoder getDecoder()返回一个 Base64.Decoder ，解码使用基本型 base64 编码方案。   2 static Base64.Encoder getEncoder()返回一个 Base64.Encoder ，编码使用基本型 base64 编码方案。   3 static Base64.</description>
+    </item>
+    
+  </channel>
+</rss>

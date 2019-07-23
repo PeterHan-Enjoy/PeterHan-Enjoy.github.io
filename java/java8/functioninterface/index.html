@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-23T15:12:12 CST">
+<title>3. 函数式接口 :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/java/java8/functioninterface/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/utils/ffmpeg/">
+            ffmpeg 安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/">java</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/java/java8/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/java8/">Java8新特性</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/java8/lambda/" class="dd-item">
+        <div>
+          <a href="/java/java8/lambda/">
+            1. Lambda 表达式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/method/" class="dd-item">
+        <div>
+          <a href="/java/java8/method/">
+            2. 方法引用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/functioninterface/" class="dd-item active">
+        <div>
+          <a href="/java/java8/functioninterface/">
+            3. 函数式接口
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/defaultmethod/" class="dd-item">
+        <div>
+          <a href="/java/java8/defaultmethod/">
+            4. 默认方法
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/stream/" class="dd-item">
+        <div>
+          <a href="/java/java8/stream/">
+            5. Stream
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/optional/" class="dd-item">
+        <div>
+          <a href="/java/java8/optional/">
+            6. Optional
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/nashorn/" class="dd-item">
+        <div>
+          <a href="/java/java8/nashorn/">
+            7. Nashorn JavaScript
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/dateapi/" class="dd-item">
+        <div>
+          <a href="/java/java8/dateapi/">
+            8. 日期时间 API
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/base64/" class="dd-item">
+        <div>
+          <a href="/java/java8/base64/">
+            9. Base64
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/jvm/" class="dd-item
+        ">
+      <div>
+      <a href="/java/jvm/">Jvm于虚拟机</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/java/springboot/" class="dd-item
+        ">
+      <div>
+      <a href="/java/springboot/">SpringBoot</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/java/springcloud/" class="dd-item
+        ">
+      <div>
+      <a href="/java/springcloud/">SpringCloud</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/java/javautils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/">java工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/excelutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/excelutil/">
+            Excel工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/exceltohtmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/exceltohtmlutil/">
+            Excel转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/java/javautils/gis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/gis/">Gis相关工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/gis/dae2gltf/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/dae2gltf/">
+            Dae转换Gltf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/geoserver/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/geoserver/">
+            Geoserver
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/">
+            Kml导入
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/shputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/shputil/">
+            Shp工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/jstutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/jstutil/">
+            java几何运算工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/java/javautils/html2image/" class="dd-item">
+        <div>
+          <a href="/java/javautils/html2image/">
+            Html转换Image
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/jsonutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/jsonutil/">
+            Json工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/pdfutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/pdfutil/">
+            Pdf工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/httpclientutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/httpclientutil/">
+            Post请求
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/wordutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/wordutil/">
+            Word工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/word2htmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/word2htmlutil/">
+            Word转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/csvutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/csvutil/">
+            csv 工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/java/javautils/ffmpeg/">
+            ffmpeg 使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/decryptionziputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/decryptionziputil/">
+            加密解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/base64util/" class="dd-item">
+        <div>
+          <a href="/java/javautils/base64util/">
+            图片base64转换工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/zipfileutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/zipfileutil/">
+            解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web/">前端</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/web/es6/" class="dd-item
+        ">
+      <div>
+      <a href="/web/es6/">ES6</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/web/react/" class="dd-item
+        ">
+      <div>
+      <a href="/web/react/">React</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option>
+    <option value="/java/" >
+   java</option> 
+    <option value="/java/java8/" >
+  - 
+   Java8新特性</option> 
+      <option value="/java/java8/lambda/" >-- 1. Lambda 表达式</option>
+      <option value="/java/java8/method/" >-- 2. 方法引用</option>
+      <option value="/java/java8/functioninterface/"  selected>-- 3. 函数式接口</option>
+      <option value="/java/java8/defaultmethod/" >-- 4. 默认方法</option>
+      <option value="/java/java8/stream/" >-- 5. Stream</option>
+      <option value="/java/java8/optional/" >-- 6. Optional</option>
+      <option value="/java/java8/nashorn/" >-- 7. Nashorn JavaScript</option>
+      <option value="/java/java8/dateapi/" >-- 8. 日期时间 API</option>
+      <option value="/java/java8/base64/" >-- 9. Base64</option>
+  
+    <option value="/java/jvm/" >
+  - 
+   Jvm于虚拟机</option>
+    <option value="/java/springboot/" >
+  - 
+   SpringBoot</option>
+    <option value="/java/springcloud/" >
+  - 
+   SpringCloud</option>
+    <option value="/java/javautils/" >
+  - 
+   java工具类</option>
+  
+    <option value="/web/" >
+   前端</option>
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>3. 函数式接口</h1>
+
+    
+    
+    
+    
+
+<p>函数式接口(Functional Interface)就是一个有且仅有一个抽象方法，但是可以有多个非抽象方法的接口。</p>
+
+<p>函数式接口可以被隐式转换为 lambda 表达式。</p>
+
+<p>Lambda 表达式和方法引用（实际上也可认为是Lambda表达式）上。</p>
+
+<p>如定义了一个函数式接口如下：</p>
+
+<pre><code>@FunctionalInterface
+interface GreetingService
+{
+    void sayMessage(String message);
+}
+</code></pre>
+
+<p>那么就可以使用Lambda表达式来表示该接口的一个实现(注：JAVA 8 之前一般是用匿名类实现的)：</p>
+
+<pre><code>GreetingService greetService1 = message -&gt; System.out.println(&quot;Hello &quot; + message);
+</code></pre>
+
+<p>函数式接口可以对现有的函数友好地支持 lambda。</p>
+
+<p>JDK 1.8 之前已有的函数式接口:</p>
+
+<ul>
+<li>java.lang.Runnable</li>
+<li>java.util.concurrent.Callable</li>
+<li>java.security.PrivilegedAction</li>
+<li>java.util.Comparator</li>
+<li>java.io.FileFilter</li>
+<li>java.nio.file.PathMatcher</li>
+<li>java.lang.reflect.InvocationHandler</li>
+<li>java.beans.PropertyChangeListener</li>
+<li>java.awt.event.ActionListener</li>
+<li>javax.swing.event.ChangeListener<br /></li>
+</ul>
+
+<p>JDK 1.8 新增加的函数接口：</p>
+
+<ul>
+<li>java.util.function<br /></li>
+</ul>
+
+<p>java.util.function 它包含了很多类，用来支持 Java的 函数式编程，该包中的函数式接口有：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">接口 &amp; 描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">BiConsumer<T,U> 代表了一个接受两个输入参数的操作，并且不返回任何结果</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">BiFunction<T,U,R>代表了一个接受两个输入参数的方法，并且返回一个结果</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">BinaryOperator<T>代表了一个作用于于两个同类型操作符的操作，并且返回了操作符同类型的结果</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">BiPredicate<T,U>代表了一个两个参数的boolean值方法</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">BooleanSupplier代表了boolean值结果的提供方</td>
+</tr>
+
+<tr>
+<td align="left">6</td>
+<td align="left">Consumer<T>代表了接受一个输入参数并且无返回的操作</td>
+</tr>
+
+<tr>
+<td align="left">7</td>
+<td align="left">DoubleBinaryOperator代表了作用于两个double值操作符的操作，并且返回了一个double值的结果。</td>
+</tr>
+
+<tr>
+<td align="left">8</td>
+<td align="left">DoubleConsumer代表一个接受double值参数的操作，并且不返回结果。</td>
+</tr>
+
+<tr>
+<td align="left">9</td>
+<td align="left">DoubleFunction<R>代表接受一个double值参数的方法，并且返回结果</td>
+</tr>
+
+<tr>
+<td align="left">10</td>
+<td align="left">DoublePredicate代表一个拥有double值参数的boolean值方法</td>
+</tr>
+
+<tr>
+<td align="left">11</td>
+<td align="left">DoubleSupplier代表一个double值结构的提供方</td>
+</tr>
+
+<tr>
+<td align="left">12</td>
+<td align="left">DoubleToIntFunction接受一个double类型输入，返回一个int类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">13</td>
+<td align="left">DoubleToLongFunction接受一个double类型输入，返回一个long类型结果</td>
+</tr>
+
+<tr>
+<td align="left">14</td>
+<td align="left">DoubleUnaryOperator接受一个参数同为类型double,返回值类型也为double 。</td>
+</tr>
+
+<tr>
+<td align="left">15</td>
+<td align="left">Function<T,R>接受一个输入参数，返回一个结果。</td>
+</tr>
+
+<tr>
+<td align="left">16</td>
+<td align="left">IntBinaryOperator接受两个参数同为类型int,返回值类型也为int 。</td>
+</tr>
+
+<tr>
+<td align="left">17</td>
+<td align="left">IntConsumer接受一个int类型的输入参数，无返回值 。</td>
+</tr>
+
+<tr>
+<td align="left">18</td>
+<td align="left">IntFunction<R>接受一个int类型输入参数，返回一个结果 。</td>
+</tr>
+
+<tr>
+<td align="left">19</td>
+<td align="left">IntPredicate：接受一个int输入参数，返回一个布尔值的结果。</td>
+</tr>
+
+<tr>
+<td align="left">20</td>
+<td align="left">IntSupplier无参数，返回一个int类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">21</td>
+<td align="left">IntToDoubleFunction接受一个int类型输入，返回一个double类型结果 。</td>
+</tr>
+
+<tr>
+<td align="left">22</td>
+<td align="left">IntToLongFunction接受一个int类型输入，返回一个long类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">23</td>
+<td align="left">IntUnaryOperator接受一个参数同为类型int,返回值类型也为int 。</td>
+</tr>
+
+<tr>
+<td align="left">24</td>
+<td align="left">LongBinaryOperator接受两个参数同为类型long,返回值类型也为long。</td>
+</tr>
+
+<tr>
+<td align="left">25</td>
+<td align="left">LongConsumer接受一个long类型的输入参数，无返回值。</td>
+</tr>
+
+<tr>
+<td align="left">26</td>
+<td align="left">LongFunction<R>接受一个long类型输入参数，返回一个结果。</td>
+</tr>
+
+<tr>
+<td align="left">27</td>
+<td align="left">LongPredicateR接受一个long输入参数，返回一个布尔值类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">28</td>
+<td align="left">LongSupplier无参数，返回一个结果long类型的值。</td>
+</tr>
+
+<tr>
+<td align="left">29</td>
+<td align="left">LongToDoubleFunction接受一个long类型输入，返回一个double类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">30</td>
+<td align="left">LongToIntFunction接受一个long类型输入，返回一个int类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">31</td>
+<td align="left">LongUnaryOperator接受一个参数同为类型long,返回值类型也为long。</td>
+</tr>
+
+<tr>
+<td align="left">32</td>
+<td align="left">ObjDoubleConsumer<T>接受一个object类型和一个double类型的输入参数，无返回值。</td>
+</tr>
+
+<tr>
+<td align="left">33</td>
+<td align="left">ObjIntConsumer<T>接受一个object类型和一个int类型的输入参数，无返回值。</td>
+</tr>
+
+<tr>
+<td align="left">34</td>
+<td align="left">ObjLongConsumer<T>接受一个object类型和一个long类型的输入参数，无返回值。</td>
+</tr>
+
+<tr>
+<td align="left">35</td>
+<td align="left">Predicate<T>接受一个输入参数，返回一个布尔值结果。</td>
+</tr>
+
+<tr>
+<td align="left">36</td>
+<td align="left">Supplier<T>无参数，返回一个结果。</td>
+</tr>
+
+<tr>
+<td align="left">37</td>
+<td align="left">ToDoubleBiFunction<T,U>接受两个输入参数，返回一个double类型结果</td>
+</tr>
+
+<tr>
+<td align="left">38</td>
+<td align="left">ToDoubleFunction<T>接受一个输入参数，返回一个double类型结果</td>
+</tr>
+
+<tr>
+<td align="left">39</td>
+<td align="left">ToIntBiFunction<T,U>接受两个输入参数，返回一个int类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">40</td>
+<td align="left">ToIntFunction<T>接受一个输入参数，返回一个int类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">41</td>
+<td align="left">ToLongBiFunction<T,U>接受两个输入参数，返回一个long类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">42</td>
+<td align="left">ToLongFunction<T>接受一个输入参数，返回一个long类型结果。</td>
+</tr>
+
+<tr>
+<td align="left">43</td>
+<td align="left">UnaryOperator<T>接受一个参数为类型T,返回值类型也为T。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="函数式接口实例">函数式接口实例</h3>
+
+<p>Predicate <T> 接口是一个函数式接口，它接受一个输入参数 T，返回一个布尔值结果。</p>
+
+<p>该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）。</p>
+
+<p>该接口用于测试对象是 true 或 false。</p>
+
+<p>我们可以通过以下实例（Java8Tester.java）来了解函数式接口 Predicate <T> 的使用：</p>
+
+<pre><code>import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class Java8Tester {
+   public static void main(String args[]){
+      List&lt;Integer&gt; list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+      // Predicate&lt;Integer&gt; predicate = n -&gt; true
+      // n 是一个参数传递到 Predicate 接口的 test 方法
+      // n 如果存在则 test 方法返回 true
+
+      System.out.println(&quot;输出所有数据:&quot;);
+
+      // 传递参数 n
+      eval(list, n-&gt;true);
+
+      // Predicate&lt;Integer&gt; predicate1 = n -&gt; n%2 == 0
+      // n 是一个参数传递到 Predicate 接口的 test 方法
+      // 如果 n%2 为 0 test 方法返回 true
+
+      System.out.println(&quot;输出所有偶数:&quot;);
+      eval(list, n-&gt; n%2 == 0 );
+
+      // Predicate&lt;Integer&gt; predicate2 = n -&gt; n &gt; 3
+      // n 是一个参数传递到 Predicate 接口的 test 方法
+      // 如果 n 大于 3 test 方法返回 true
+
+      System.out.println(&quot;输出大于 3 的所有数字:&quot;);
+      eval(list, n-&gt; n &gt; 3 );
+   }
+   public static void eval(List&lt;Integer&gt; list,              Predicate&lt;Integer&gt; predicate) {
+      for(Integer n: list) {
+
+         if(predicate.test(n)) {
+            System.out.println(n + &quot; &quot;);
+         }
+      }
+
+   }
+   /*
+     private static void eval(List&lt;Integer&gt; list, Predicate&lt;Integer&gt; predicate) {
+      list.stream().filter(predicate).forEach(System.out::println);
+    }
+  */
+}
+</code></pre>
+
+<p>执行以上脚本，输出结果为：</p>
+
+<pre><code>$ javac Java8Tester.java
+$ java Java8Tester
+输出所有数据:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+输出所有偶数:
+2
+4
+6
+8
+输出大于 3 的所有数字:
+4
+5
+6
+7
+8
+9
+</code></pre>
+
+<p>Java 8为函数式接口引入了一个新注解@FunctionalInterface，主要用于编译级错误检查，加上该注解，当你写的接口不符合函数式接口定义的时候，编译器会报错。<br />
+提醒：加不加 @FunctionalInterface 对于接口是不是函数式接口没有影响，该注解只是提醒编译器去检查该接口是否仅包含一个抽象方法</p>
+
+<ul>
+<li>函数式接口里允许定义默认方法</li>
+</ul>
+
+<p>函数式接口里是可以包含默认方法，因为默认方法不是抽象方法，其有一个默认实现，所以是符合函数式接口的定义的；
+如下代码不会报错：</p>
+
+<pre><code>@FunctionalInterface
+interface GreetingService
+{
+    void sayMessage(String message);
+
+    default void doSomeMoreWork1()
+    {
+        // Method body
+    }
+
+    default void doSomeMoreWork2()
+    {
+        // Method body
+    }
+}
+</code></pre>
+
+<ul>
+<li>函数式接口里允许定义静态方法</li>
+</ul>
+
+<p>函数式接口里是可以包含静态方法，因为静态方法不能是抽象方法，是一个已经实现了的方法，所以是符合函数式接口的定义的；
+如下代码不会报错：</p>
+
+<pre><code>@FunctionalInterface
+interface GreetingService
+{
+    void sayMessage(String message);
+    static void printHello(){
+        System.out.println(&quot;Hello&quot;);
+    }
+}
+</code></pre>
+
+<ul>
+<li>函数式接口里允许定义 java.lang.Object 里的 public 方法</li>
+</ul>
+
+<p>函数式接口里是可以包含Object里的public方法，这些方法对于函数式接口来说，不被当成是抽象方法（虽然它们是抽象方法）；因为任何一个函数式接口的实现，默认都继承了 Object 类，包含了来自 java.lang.Object 里对这些抽象方法的实现；
+如下代码不会报错：</p>
+
+<pre><code>@FunctionalInterface
+interface GreetingService  
+{
+    void sayMessage(String message);
+
+    @Override
+    boolean equals(Object obj);
+}
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/java/java8/method/" title="2. 方法引用"> <i class="fa fa-chevron-left"></i><label>2. 方法引用</label></a>
+    <a class="nav nav-next" href="/java/java8/defaultmethod/" title="4. 默认方法" style="margin-right: 0px;"><label>4. 默认方法</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerHan_Enjoy</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-07-23T15:12:12 CST">
+<title>9. Base64 :: PerHan_Enjoy</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/java/java8/base64/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://peterhan-enjoy.github.com/">PerHan_Enjoy</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/utils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/utils/">工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/utils/markdown/" class="dd-item">
+        <div>
+          <a href="/utils/markdown/">
+            Markdown使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/docker/" class="dd-item">
+        <div>
+          <a href="/utils/docker/">
+            docker 基本使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/utils/ffmpeg/">
+            ffmpeg 安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/gitlab/" class="dd-item">
+        <div>
+          <a href="/utils/gitlab/">
+            gitlab 离线安装
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/hugo/" class="dd-item">
+        <div>
+          <a href="/utils/hugo/">
+            hugo 搭建个人博客
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/nexus3/" class="dd-item">
+        <div>
+          <a href="/utils/nexus3/">
+            nexus3安装及使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/pm20/" class="dd-item">
+        <div>
+          <a href="/utils/pm20/">
+            pm2常用 命令
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/utils/verdaccio/" class="dd-item">
+        <div>
+          <a href="/utils/verdaccio/">
+            内网搭建npm私服
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/">java</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/java/java8/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/java/java8/">Java8新特性</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/java8/lambda/" class="dd-item">
+        <div>
+          <a href="/java/java8/lambda/">
+            1. Lambda 表达式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/method/" class="dd-item">
+        <div>
+          <a href="/java/java8/method/">
+            2. 方法引用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/functioninterface/" class="dd-item">
+        <div>
+          <a href="/java/java8/functioninterface/">
+            3. 函数式接口
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/defaultmethod/" class="dd-item">
+        <div>
+          <a href="/java/java8/defaultmethod/">
+            4. 默认方法
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/stream/" class="dd-item">
+        <div>
+          <a href="/java/java8/stream/">
+            5. Stream
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/optional/" class="dd-item">
+        <div>
+          <a href="/java/java8/optional/">
+            6. Optional
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/nashorn/" class="dd-item">
+        <div>
+          <a href="/java/java8/nashorn/">
+            7. Nashorn JavaScript
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/dateapi/" class="dd-item">
+        <div>
+          <a href="/java/java8/dateapi/">
+            8. 日期时间 API
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/java8/base64/" class="dd-item active">
+        <div>
+          <a href="/java/java8/base64/">
+            9. Base64
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/java/jvm/" class="dd-item
+        ">
+      <div>
+      <a href="/java/jvm/">Jvm于虚拟机</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/java/springboot/" class="dd-item
+        ">
+      <div>
+      <a href="/java/springboot/">SpringBoot</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/java/springcloud/" class="dd-item
+        ">
+      <div>
+      <a href="/java/springcloud/">SpringCloud</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/java/javautils/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/">java工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/excelutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/excelutil/">
+            Excel工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/exceltohtmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/exceltohtmlutil/">
+            Excel转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/java/javautils/gis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/java/javautils/gis/">Gis相关工具类</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/java/javautils/gis/dae2gltf/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/dae2gltf/">
+            Dae转换Gltf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/geoserver/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/geoserver/">
+            Geoserver
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/kml%E5%AF%BC%E5%85%A5/">
+            Kml导入
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/shputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/shputil/">
+            Shp工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/gis/jstutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/gis/jstutil/">
+            java几何运算工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/java/javautils/html2image/" class="dd-item">
+        <div>
+          <a href="/java/javautils/html2image/">
+            Html转换Image
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/jsonutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/jsonutil/">
+            Json工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/pdfutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/pdfutil/">
+            Pdf工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/httpclientutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/httpclientutil/">
+            Post请求
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/wordutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/wordutil/">
+            Word工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/word2htmlutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/word2htmlutil/">
+            Word转换html
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/csvutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/csvutil/">
+            csv 工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/ffmpeg/" class="dd-item">
+        <div>
+          <a href="/java/javautils/ffmpeg/">
+            ffmpeg 使用
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/decryptionziputil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/decryptionziputil/">
+            加密解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/base64util/" class="dd-item">
+        <div>
+          <a href="/java/javautils/base64util/">
+            图片base64转换工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/java/javautils/zipfileutil/" class="dd-item">
+        <div>
+          <a href="/java/javautils/zipfileutil/">
+            解压缩工具类
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web/">前端</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/web/es6/" class="dd-item
+        ">
+      <div>
+      <a href="/web/es6/">ES6</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/web/react/" class="dd-item
+        ">
+      <div>
+      <a href="/web/react/">React</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/design/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/design/">设计模式</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/design/singletonpattern/" class="dd-item">
+        <div>
+          <a href="/design/singletonpattern/">
+            单例模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/commandpattern/" class="dd-item">
+        <div>
+          <a href="/design/commandpattern/">
+            命令模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/factorypattern/" class="dd-item">
+        <div>
+          <a href="/design/factorypattern/">
+            工厂模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/strategypattern/" class="dd-item">
+        <div>
+          <a href="/design/strategypattern/">
+            策略模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/decoratorpattern/" class="dd-item">
+        <div>
+          <a href="/design/decoratorpattern/">
+            装饰器模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/design/observerpattern/" class="dd-item">
+        <div>
+          <a href="/design/observerpattern/">
+            观察者模式
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+
+    <div class="nav-select">
+      <center>Navigation :
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/utils/" >
+   工具类</option>
+    <option value="/java/" >
+   java</option> 
+    <option value="/java/java8/" >
+  - 
+   Java8新特性</option> 
+      <option value="/java/java8/lambda/" >-- 1. Lambda 表达式</option>
+      <option value="/java/java8/method/" >-- 2. 方法引用</option>
+      <option value="/java/java8/functioninterface/" >-- 3. 函数式接口</option>
+      <option value="/java/java8/defaultmethod/" >-- 4. 默认方法</option>
+      <option value="/java/java8/stream/" >-- 5. Stream</option>
+      <option value="/java/java8/optional/" >-- 6. Optional</option>
+      <option value="/java/java8/nashorn/" >-- 7. Nashorn JavaScript</option>
+      <option value="/java/java8/dateapi/" >-- 8. 日期时间 API</option>
+      <option value="/java/java8/base64/"  selected>-- 9. Base64</option>
+  
+    <option value="/java/jvm/" >
+  - 
+   Jvm于虚拟机</option>
+    <option value="/java/springboot/" >
+  - 
+   SpringBoot</option>
+    <option value="/java/springcloud/" >
+  - 
+   SpringCloud</option>
+    <option value="/java/javautils/" >
+  - 
+   java工具类</option>
+  
+    <option value="/web/" >
+   前端</option>
+    <option value="/design/" >
+   设计模式</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/peterhan-enjoy.github.com\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+
+
+    <h1>9. Base64</h1>
+
+    
+    
+    
+    
+
+<p>在Java 8中，Base64编码已经成为Java类库的标准。</p>
+
+<p>Java 8 内置了 Base64 编码的编码器和解码器。</p>
+
+<p>Base64工具类提供了一套静态方法获取下面三种BASE64编解码器：</p>
+
+<ul>
+<li>基本：输出被映射到一组字符A-Za-z0-9+/，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+/。</li>
+<li>URL：输出映射到一组字符A-Za-z0-9+_,输出是URL和文件。</li>
+
+<li><p>MIME：输出隐射到MIME友好格式。输出每行不超过76字符，并且使用&rsquo;\r&rsquo;并跟随&rsquo;\n&rsquo;作为分割。编码输出最后没有行分割。</p>
+
+<h2 id="内嵌类">内嵌类</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">内嵌类 &amp; 描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">static class Base64.Decoder该类实现一个解码器用于，使用 Base64 编码来解码字节数据。</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">static class Base64.Encoder该类实现一个编码器，使用 Base64 编码来编码字节数据。</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h2 id="方法">方法</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法名 &amp; 描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">static Base64.Decoder getDecoder()返回一个 Base64.Decoder ，解码使用基本型 base64 编码方案。</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">static Base64.Encoder getEncoder()返回一个 Base64.Encoder ，编码使用基本型 base64 编码方案。</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">static Base64.Decoder getMimeDecoder()返回一个 Base64.Decoder ，解码使用 MIME 型 base64 编码方案。</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">static Base64.Encoder getMimeEncoder()返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案。</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">static Base64.Encoder getMimeEncoder(int lineLength, byte[] lineSeparator)返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案，可以通过参数指定每行的长度及行的分隔符。</td>
+</tr>
+
+<tr>
+<td align="left">6</td>
+<td align="left">static Base64.Decoder getUrlDecoder()返回一个 Base64.Decoder ，解码使用 URL 和文件名安全型 base64 编码方案。</td>
+</tr>
+
+<tr>
+<td align="left">7</td>
+<td align="left">static Base64.Encoder getUrlEncoder()返回一个 Base64.Encoder ，编码使用 URL 和文件名安全型 base64 编码方案。</td>
+</tr>
+</tbody>
+</table>
+
+<p>注意：Base64 类的很多方法从 java.lang.Object 类继承。</p>
+
+<h2 id="base64-实例">Base64 实例</h2>
+
+<p>以下实例演示了 Base64 的使用:</p>
+
+<pre><code>Java8Tester.java 文件
+import java.util.Base64;
+import java.util.UUID;
+import java.io.UnsupportedEncodingException;
+
+public class Java8Tester {
+   public static void main(String args[]){
+      try {
+
+         // 使用基本编码
+         String base64encodedString = Base64.getEncoder().encodeToString(&quot;runoob?java8&quot;.getBytes(&quot;utf-8&quot;));
+         System.out.println(&quot;Base64 编码字符串 (基本) :&quot; + base64encodedString);
+
+         // 解码
+         byte[] base64decodedBytes = Base64.getDecoder().decode(base64encodedString);
+
+         System.out.println(&quot;原始字符串: &quot; + new String(base64decodedBytes, &quot;utf-8&quot;));
+         base64encodedString = Base64.getUrlEncoder().encodeToString(&quot;TutorialsPoint?java8&quot;.getBytes(&quot;utf-8&quot;));
+         System.out.println(&quot;Base64 编码字符串 (URL) :&quot; + base64encodedString);
+
+         StringBuilder stringBuilder = new StringBuilder();
+
+         for (int i = 0; i &lt; 10; ++i) {
+            stringBuilder.append(UUID.randomUUID().toString());
+         }
+
+         byte[] mimeBytes = stringBuilder.toString().getBytes(&quot;utf-8&quot;);
+         String mimeEncodedString = Base64.getMimeEncoder().encodeToString(mimeBytes);
+         System.out.println(&quot;Base64 编码字符串 (MIME) :&quot; + mimeEncodedString);
+
+      }catch(UnsupportedEncodingException e){
+         System.out.println(&quot;Error :&quot; + e.getMessage());
+      }
+   }
+}
+</code></pre>
+
+<p>执行以上脚本，输出结果为：</p>
+
+<pre><code>$ javac Java8Tester.java
+$ java Java8Tester
+原始字符串: runoob?java8
+Base64 编码字符串 (URL) :VHV0b3JpYWxzUG9pbnQ_amF2YTg=
+Base64 编码字符串 (MIME) :M2Q4YmUxMTEtYWRkZi00NzBlLTgyZDgtN2MwNjgzOGY2NGFlOTQ3NDYyMWEtZDM4ZS00YWVhLTkz
+OTYtY2ZjMzZiMzFhNmZmOGJmOGI2OTYtMzkxZi00OTJiLWEyMTQtMjgwN2RjOGI0MTBmZWUwMGNk
+NTktY2ZiZS00MTMxLTgzODctNDRjMjFkYmZmNGM4Njg1NDc3OGItNzNlMC00ZWM4LTgxNzAtNjY3
+NTgyMGY3YzVhZWQyMmNiZGItOTIwZi00NGUzLTlkMjAtOTkzZTI1MjUwMDU5ZjdkYjg2M2UtZTJm
+YS00Y2Y2LWIwNDYtNWQ2MGRiOWQyZjFiMzJhMzYxOWQtNDE0ZS00MmRiLTk3NDgtNmM4NTczYjMx
+ZDIzNGRhOWU4NDAtNTBiMi00ZmE2LWE0M2ItZjU3MWFiNTI2NmQ2NTlmMTFmZjctYjg1NC00NmE1
+LWEzMWItYjk3MmEwZTYyNTdk
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/java/java8/dateapi/" title="8. 日期时间 API"> <i class="fa fa-chevron-left"></i><label>8. 日期时间 API</label></a>
+    <a class="nav nav-next" href="/java/jvm/" title="Jvm于虚拟机" style="margin-right: 0px;"><label>Jvm于虚拟机</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>
